@@ -1,0 +1,11 @@
+custom.${prefix}gkeRequireNodePoolCMEKEncryption:
+  condition: |-
+    has(resource.config.bootDiskKmsKey) == false
+  display_name: Require NodePool CMEK Encryption
+  description: Enforce that GKE nodes are configured with CMEK Encryption
+  resource_types:
+  - container.googleapis.com/NodePool
+  action_type: DENY
+  method_types:
+  - CREATE
+  - UPDATE

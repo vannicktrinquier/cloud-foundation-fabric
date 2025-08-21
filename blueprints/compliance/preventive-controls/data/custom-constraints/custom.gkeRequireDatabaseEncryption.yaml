@@ -1,0 +1,11 @@
+custom.${prefix}gkeRequireDatabaseEncryption:
+  condition: |-
+    resource.databaseEncryption.state != 'ENCRYPTED'
+  display_name: Require secret encryption in etcd
+  description: Enforce that the GKE clusters is configured to encrypt secret in etcd
+  resource_types:
+  - container.googleapis.com/Cluster
+  action_type: DENY
+  method_types:
+  - CREATE
+  - UPDATE

@@ -1,0 +1,12 @@
+custom.${prefix}cloudsqlDisableExternalIP:
+  condition: |-
+    resource.settings.ipConfiguration.ipv4Enabled == true
+  display_name: Require Cloud SQL database instances to not have external IP address
+  description: Ensure That Cloud SQL database instances do not configure external
+    IP address
+  resource_types:
+  - sqladmin.googleapis.com/Instance
+  action_type: DENY
+  method_types:
+  - CREATE
+  - UPDATE

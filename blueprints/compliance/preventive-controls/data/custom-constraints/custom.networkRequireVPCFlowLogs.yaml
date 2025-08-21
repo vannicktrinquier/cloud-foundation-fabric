@@ -1,0 +1,10 @@
+custom.${prefix}networkRequireVPCFlowLogs:
+  resource_types:
+  - compute.googleapis.com/Subnetwork
+  condition: |-
+    resource.logConfig.enable == false
+  action_type: DENY
+  method_types:
+  - CREATE
+  display_name: Enable VPC flow logs
+  description: Enforce that the VPC flow logs is enabled

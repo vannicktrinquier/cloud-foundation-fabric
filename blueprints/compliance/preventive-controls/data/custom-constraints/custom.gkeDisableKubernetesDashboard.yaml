@@ -1,0 +1,11 @@
+custom.${prefix}gkeDisableKubernetesDashboard:
+  resource_types:
+  - container.googleapis.com/Cluster
+  condition: |-
+    resource.addonsConfig.kubernetesDashboard.disabled == false
+  action_type: DENY
+  method_types:
+  - CREATE
+  - UPDATE
+  display_name: Disable Web UI dashboard
+  description: Enforce that GKE clusters does not have Web UI dashboard enabled

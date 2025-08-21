@@ -1,0 +1,13 @@
+custom.${prefix}cloudsqlDisablePublicAuthorizedNetworks:
+  condition: |-
+    resource.settings.ipConfiguration.authorizedNetworks.exists(network, network.value == '0.0.0.0/0')
+  display_name: Require Cloud SQL database instances to not whitelist all public IP
+    addresses
+  description: Ensure That Cloud SQL database instances do not implicitly whitelist
+    all public IP addresses
+  resource_types:
+  - sqladmin.googleapis.com/Instance
+  action_type: DENY
+  method_types:
+  - CREATE
+  - UPDATE
