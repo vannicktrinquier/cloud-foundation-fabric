@@ -1,5 +1,15 @@
 variable "organization_id" {
   description = "The organization ID."
+  type        = string
+}
+
+variable "organization" {
+  description = "Organization details."
+  type = object({
+    id          = number
+    domain      = optional(string)
+    customer_id = optional(string)
+  })
 }
 
 variable "prefix" {
