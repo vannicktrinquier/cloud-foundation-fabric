@@ -1,7 +1,3 @@
-variable "organization_id" {
-  description = "The organization ID."
-  type        = string
-}
 
 variable "organization" {
   description = "Organization details."
@@ -25,4 +21,15 @@ variable "project" {
 variable "billing_project" {
   description = "The billing project ID."
   type        = string
+}
+
+variable "monitoring_project" {
+  description = "The monitoring project ID."
+  type        = string
+}
+
+
+variable "notification_channel" {
+  description = "The notification channel."
+  type        =  string
 }

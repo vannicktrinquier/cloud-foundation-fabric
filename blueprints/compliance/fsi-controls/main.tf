@@ -1,6 +1,6 @@
 module "organization" {
   source          = "../../../modules/organization"
-  organization_id = "organizations/${var.organization_id}"
+  organization_id = "organizations/${var.organization.id}"
 
   factories_config = {
     org_policies                  = "data/org-policies"
@@ -14,6 +14,10 @@ module "organization" {
       }
       org_policy_custom_constraints = {
         prefix = var.prefix
+      }
+      monitoring_alerts = {
+        project              = var.monitoring_project
+        notification_channel = var.notification_channel
       }
     }
   }

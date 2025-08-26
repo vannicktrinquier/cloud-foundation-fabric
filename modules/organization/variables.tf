@@ -34,15 +34,19 @@ variable "factories_config" {
     custom_roles                  = optional(string)
     org_policies                  = optional(string)
     org_policy_custom_constraints = optional(string)
+    scc_custom_modules            = optional(string)
+    monitoring_alerts             = optional(string)
     tags                          = optional(string)
     context = optional(object({
-      iam_principals = optional(map(string), {})
-      org_policies   = optional(map(map(string)), {})
+      iam_principals                = optional(map(string), {})
+      org_policies                  = optional(map(map(string)), {})
       org_policy_custom_constraints = optional(map(string), {})
-      tag_keys       = optional(map(string), {})
-      tag_values     = optional(map(string), {})
+      scc_custom_modules            = optional(map(string), {})
+      monitoring_alerts             = optional(map(string), {})
+      tag_keys                      = optional(map(string), {})
+      tag_values                    = optional(map(string), {})
     }), {})
-    
+
   })
   nullable = false
   default  = {}

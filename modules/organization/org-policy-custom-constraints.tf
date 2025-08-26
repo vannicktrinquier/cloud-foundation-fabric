@@ -38,8 +38,7 @@ locals {
   custom_constraints = {
     for k, v in local._custom_constraints :
     templatestring(k, var.factories_config.context.org_policy_custom_constraints) => merge(v, {
-      # name   = k
-      name  = templatestring(k, var.factories_config.context.org_policy_custom_constraints)
+      name   = templatestring(k, var.factories_config.context.org_policy_custom_constraints)
       parent = var.organization_id
     })
   }
