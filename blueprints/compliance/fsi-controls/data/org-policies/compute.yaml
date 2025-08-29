@@ -16,126 +16,101 @@
 # sample subset of useful organization policies, edit to suit requirements
 # start of document (---) avoids errors if the file only contains comments
 
-# yaml-language-server: $schema=../../schemas/org-policies.schema.json
+# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-compute.disableInternetNetworkEndpointGroup:
-  rules:
-  - enforce: true
-
-compute.disableGuestAttributesAccess:
+compute.managed.disableNestedVirtualization:
   rules:
     - enforce: true
 
-compute.disableNestedVirtualization:
-  rules:
-  - enforce: true
-
-compute.disableSerialPortAccess:
-  rules:
-  - enforce: true
-
-compute.disableVpcExternalIpv6:
-  rules:
-  - enforce: true
-
-compute.requireOsLogin:
-  rules:
-    - enforce: true
-
-compute.restrictLoadBalancerCreationForTypes:
+compute.restrictCloudNATUsage:
   rules:
     - allow:
         values:
-          - in:INTERNAL
+            - "under:projects/${nat.project_1}"
+
+compute.managed.vmCanIpForward:
+  rules:
+    - enforce: true
+
+compute.restrictNonConfidentialComputing:
+  rules:
+    - deny:
+        values:
+            - "compute.googleapis.com"
+            - "container.googleapis.com"
+
+compute.managed.disableGuestAttributesAccess:
+  rules:
+    - enforce: true
 
 compute.skipDefaultNetworkCreation:
   rules:
     - enforce: true
 
-compute.setNewProjectDefaultToZonalDNSOnly:
+gcp.restrictTLSCipherSuites:
   rules:
-  - enforce: true
+    - allow:
+        values:
+            - "in:NIST-800-52-recommended-ciphers"
 
-# only allow GCP images by default
-compute.trustedImageProjects:
-  rules:
-  - allow:
-      values:
-        - "is:projects/centos-cloud"
-        - "is:projects/cos-cloud"
-        - "is:projects/debian-cloud"
-        - "is:projects/fedora-cloud"
-        - "is:projects/fedora-coreos-cloud"
-        - "is:projects/opensuse-cloud"
-        - "is:projects/rhel-cloud"
-        - "is:projects/rhel-sap-cloud"
-        - "is:projects/rocky-linux-cloud"
-        - "is:projects/suse-cloud"
-        - "is:projects/suse-sap-cloud"
-        - "is:projects/ubuntu-os-cloud"
-        - "is:projects/ubuntu-os-pro-cloud"
-        - "is:projects/windows-cloud"
-        - "is:projects/windows-sql-cloud"
-        - "is:projects/confidential-vm-images"
-        - "is:projects/backupdr-images"
-        - "is:projects/deeplearning-platform-release"
-        - "is:projects/serverless-vpc-access-images"
-
-compute.vmExternalIpAccess:
+gcp.restrictTLSVersion:
   rules:
     - deny:
-        all: true
+        values:
+            - "TLS_VERSION_1"
+            - "TLS_VERSION_1_1"
 
-# compute.disableInternetNetworkEndpointGroup:
-#   rules:
-#   - enforce: true
+compute.requireSslPolicy:
+  rules:
+    - allow:
+        values:
+            - "under:organizations/${organization.id}"
 
-# compute.restrictCloudNATUsage:
-#   rules:
-#   - deny:
-#       all: true
+iam.automaticIamGrantsForDefaultServiceAccounts:
+  rules:
+    - enforce: true
 
-# compute.restrictDedicatedInterconnectUsage:
-#   rules:
-#   - deny:
-#       all: true
+compute.managed.requireOsLogin:
+  rules:
+    - enforce: true
 
-# compute.restrictPartnerInterconnectUsage:
-#   rules:
-#   - deny:
-#       all: true
+compute.managed.disableSerialPortAccess:
+  rules:
+    - enforce: true
 
-# compute.managed.restrictProtocolForwardingCreationForTypes:
-#   rules:
-#   - enforce: true
-#     parameters: |
-#       {"allowedSchemes": ["INTERNAL"]}
+compute.managed.disableSerialPortLogging:
+  rules:
+    - enforce: true
 
-# compute.restrictSharedVpcHostProjects:
-#   rules:
-#   - deny:
-#       all: true
+compute.requireShieldedVm:
+  rules:
+    - enforce: true
 
-# compute.restrictSharedVpcSubnetworks:
-#   rules:
-#   - deny:
-#       all: true
+compute.managed.vmExternalIpAccess:
+  rules:
+    - enforce: true
 
-# compute.restrictVpcPeering:
-#   rules:
-#   - deny:
-#       all: true
+compute.trustedImageProjects:
+  rules:
+    - allow:
+        values:
+            - "is:projects/centos-cloud"
+            - "is:projects/cos-cloud"
+            - "is:projects/debian-cloud"
+            - "is:projects/fedora-cloud"
+            - "is:projects/fedora-coreos-cloud"
+            - "is:projects/opensuse-cloud"
+            - "is:projects/rhel-cloud"
+            - "is:projects/rhel-sap-cloud"
+            - "is:projects/rocky-linux-cloud"
+            - "is:projects/suse-cloud"
+            - "is:projects/suse-sap-cloud"
+            - "is:projects/ubuntu-os-cloud"
+            - "is:projects/ubuntu-os-pro-cloud"
+            - "is:projects/windows-cloud"
+            - "is:projects/windows-sql-cloud"
+            - "is:projects/confidential-vm-images"
+            - "is:projects/backupdr-images"
+            - "is:projects/deeplearning-platform-release"
+            - "is:projects/serverless-vpc-access-images"
 
-# compute.restrictVpnPeerIPs:
-#   rules:
-#   - deny:
-#       all: true
-
-# compute.restrictXpnProjectLienRemoval:
-#   rules:
-#   - enforce: true
-
-# compute.vmCanIpForward:
-#   rules:
-#   - deny:
-#       all: true

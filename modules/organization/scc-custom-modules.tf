@@ -49,7 +49,7 @@ resource "google_scc_management_organization_security_health_analytics_custom_mo
   provider = google
 
   for_each     = local.scc_custom_modules
-  organization = replace(var.organization_id,"organizations/","")
+  organization = replace(var.organization_id, "organizations/", "")
   location     = "global"
   display_name = each.value.name
   custom_config {

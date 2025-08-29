@@ -18,39 +18,45 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-iam.managed.disableServiceAccountKeyCreation:
-  rules:
-    - enforce: true
-
-iam.managed.disableServiceAccountKeyUpload:
-  rules:
-    - enforce: true
-
-iam.managed.disableServiceAccountApiKeyCreation:
-  rules:
-    - enforce: true
-
-iam.managed.allowedPolicyMembers:
-  rules:
-    - enforce: true
-      parameters: >- 
-        { "allowedPrincipalSets": ["//cloudresourcemanager.googleapis.com/organizations/${organization.id}"] } 
-
-iam.allowedPolicyMemberDomains:
+compute.restrictDedicatedInterconnectUsage:
   rules:
     - allow:
         values:
-            - "${organization.customer_id}"
+            - "under:organizations/${organization.id}"
 
-iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts:
+compute.restrictLoadBalancerCreationForTypes:
   rules:
-    - enforce: true
+    - allow:
+        values:
+            - "in:INTERNAL"
 
-iam.automaticIamGrantsForDefaultServiceAccounts:
+compute.restrictPartnerInterconnectUsage:
   rules:
-    - enforce: true
+    - allow:
+        values:
+            - "under:organizations/${organization.id}"
 
-iam.disableAuditLoggingExemption:
+compute.restrictSharedVpcHostProjects:
   rules:
-    - enforce: true
+    - allow:
+        values:
+            - "under:organizations/${organization.id}"
+
+compute.restrictVpcPeering:
+  rules:
+    - allow:
+        values:
+            - "under:organizations/${organization.id}"
+
+compute.restrictVpnPeerIPs:
+  rules:
+    - allow:
+        values:
+            - "projects/${vpn.peer_ip_1}"
+
+compute.requireVpcFlowLogs:
+  rules:
+    - allow:
+        values:
+            - "ESSENTIAL"
 

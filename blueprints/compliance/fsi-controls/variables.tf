@@ -13,6 +13,11 @@ variable "prefix" {
   type        = string
 }
 
+variable "folder" {
+  description = "The folder ID."
+  type        = string
+}
+
 variable "project" {
   description = "The project ID."
   type        = string
@@ -31,5 +36,5 @@ variable "monitoring_project" {
 
 variable "notification_channel" {
   description = "The notification channel."
-  type        =  string
+  type        = string
 }

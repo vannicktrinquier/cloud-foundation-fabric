@@ -18,39 +18,21 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-iam.managed.disableServiceAccountKeyCreation:
+ainotebooks.disableFileDownloads:
   rules:
     - enforce: true
 
-iam.managed.disableServiceAccountKeyUpload:
+ainotebooks.disableRootAccess:
   rules:
     - enforce: true
 
-iam.managed.disableServiceAccountApiKeyCreation:
+ainotebooks.restrictPublicIp:
   rules:
     - enforce: true
 
-iam.managed.allowedPolicyMembers:
-  rules:
-    - enforce: true
-      parameters: >- 
-        { "allowedPrincipalSets": ["//cloudresourcemanager.googleapis.com/organizations/${organization.id}"] } 
-
-iam.allowedPolicyMemberDomains:
+ainotebooks.restrictVpcNetworks:
   rules:
     - allow:
         values:
-            - "${organization.customer_id}"
-
-iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts:
-  rules:
-    - enforce: true
-
-iam.automaticIamGrantsForDefaultServiceAccounts:
-  rules:
-    - enforce: true
-
-iam.disableAuditLoggingExemption:
-  rules:
-    - enforce: true
+            - "under:organizations/${organization.id}"
 

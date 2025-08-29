@@ -12,12 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# yaml-language-server: $schema=../../schemas/org-policies.schema.json
+---
+# sample subset of useful organization policies, edit to suit requirements
+# start of document (---) avoids errors if the file only contains comments
 
-gcp.resourceLocations:
+# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
+
+cloudfunctions.allowedIngressSettings:
   rules:
-  - allow:
-      all: true
-#   - allow:
-#       values:
-#       - "in:europe-locations"
+    - allow:
+        values:
+            - "ALLOW_INTERNAL_ONLY"
+
+cloudfunctions.requireVPCConnector:
+  rules:
+    - enforce: true
+
+cloudfunctions.allowedVpcConnectorEgressSettings:
+  rules:
+    - allow:
+        values:
+            - "ALL_TRAFFIC"
+

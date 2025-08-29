@@ -53,7 +53,7 @@ locals {
   monitoring_alerts = {
     for k, v in local._monitoring_alerts :
     templatestring(k, var.factories_config.context.monitoring_alerts) => merge(v, {
-      name   = k
+      name = k
       notification_channels = [
         for nc in v.notification_channels :
         templatestring(nc, var.factories_config.context.monitoring_alerts)

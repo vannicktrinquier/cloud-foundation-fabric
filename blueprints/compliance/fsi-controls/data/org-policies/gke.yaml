@@ -16,16 +16,45 @@
 # sample subset of useful organization policies, edit to suit requirements
 # start of document (---) avoids errors if the file only contains comments
 
-# yaml-language-server: $schema=../../schemas/org-policies.schema.json
+# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-# custom.disableKubeletReadOnlyPort:
-#   rules:
-#     - enforce: true
+container.managed.disableLegacyClientCertificateIssuance:
+  rules:
+    - enforce: true
+
+container.managed.enableBinaryAuthorization:
+  rules:
+    - enforce: true
+
+container.managed.disallowDefaultComputeServiceAccount:
+  rules:
+    - enforce: true
+
+container.managed.enableWorkloadIdentityFederation:
+  rules:
+    - enforce: true
+
+container.managed.enableSecretsEncryption:
+  rules:
+    - enforce: true
+
+container.managed.enableShieldedNodes:
+  rules:
+    - enforce: true
 
 container.managed.enablePrivateNodes:
   rules:
     - enforce: true
 
-# container.managed.enableControlPlaneDNSOnlyAccess:
-#   rules:
-#     - enforce: true
+container.managed.enableNetworkPolicy:
+  rules:
+    - enforce: true
+
+container.managed.enableCloudLogging:
+  rules:
+    - enforce: true
+
+container.managed.enableGoogleGroupsRBAC:
+  rules:
+    - enforce: true
+

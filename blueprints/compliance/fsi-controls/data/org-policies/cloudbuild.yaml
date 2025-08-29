@@ -16,21 +16,16 @@
 # sample subset of useful organization policies, edit to suit requirements
 # start of document (---) avoids errors if the file only contains comments
 
-# yaml-language-server: $schema=../../schemas/org-policies.schema.json
+# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-compute.disableGuestAttributesAccess:
+cloudbuild.allowedIntegrations:
   rules:
-    - enforce: true
+    - deny:
+        all: true
 
-cloudbuild.disableCreateDefaultServiceAccount:
+cloudbuild.allowedWorkerPools:
   rules:
-    - enforce: true
-    
-cloudbuild.useBuildServiceAccount: 
-  rules:
-    - enforce: true
-    
-cloudbuild.useComputeServiceAccount:
-  rules:
-    - enforce: true
-    
+    - allow:
+        values:
+            - "under:organizations/${organization.id}"
+
