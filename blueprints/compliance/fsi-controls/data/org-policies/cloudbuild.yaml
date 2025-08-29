@@ -18,6 +18,10 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
+cloudbuild.disableCreateDefaultServiceAccount:
+  rules:
+    - enforce: true
+
 cloudbuild.allowedIntegrations:
   rules:
     - deny:

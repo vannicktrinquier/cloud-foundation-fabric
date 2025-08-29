@@ -90,6 +90,10 @@ compute.managed.vmExternalIpAccess:
   rules:
     - enforce: true
 
+compute.managed.blockPreviewFeatures:
+  rules:
+    - enforce: true
+
 compute.trustedImageProjects:
   rules:
     - allow:

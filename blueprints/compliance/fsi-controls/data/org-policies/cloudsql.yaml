@@ -18,6 +18,10 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
+sql.restrictAuthorizedNetworks:
+  rules:
+    - enforce: true
+
 sql.restrictPublicIp:
   rules:
     - enforce: true
