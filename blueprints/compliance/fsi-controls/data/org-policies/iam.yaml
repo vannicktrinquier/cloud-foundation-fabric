@@ -46,10 +46,6 @@ iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts:
   rules:
     - enforce: true
 
-iam.automaticIamGrantsForDefaultServiceAccounts:
-  rules:
-    - enforce: true
-
 iam.disableAuditLoggingExemption:
   rules:
     - enforce: true
