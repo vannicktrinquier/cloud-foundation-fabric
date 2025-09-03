@@ -31,7 +31,6 @@ module "organization" {
       exclusions           = attrs.exclusions
     }
   }
-
 }
 
 
