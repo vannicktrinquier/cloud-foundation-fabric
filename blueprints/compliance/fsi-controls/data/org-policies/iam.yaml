@@ -20,11 +20,11 @@
 
 custom.iamAllowedMembers:
   rules:
-    - enforce: false
+    - enforce: true
 
 custom.iamDisableAdminServiceAccount:
   rules:
-    - enforce: false
+    - enforce: true
 
 custom.iamDisableBasicRoles:
   rules:

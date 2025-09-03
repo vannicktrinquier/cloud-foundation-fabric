@@ -70,7 +70,7 @@ iam.automaticIamGrantsForDefaultServiceAccounts:
   rules:
     - enforce: true
 
-compute.managed.requireOsLogin:
+compute.requireOsLogin:
   rules:
     - enforce: true
 
