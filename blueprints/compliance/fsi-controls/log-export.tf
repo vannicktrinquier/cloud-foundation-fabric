@@ -16,12 +16,6 @@
 
 # tfdoc:file:description Audit log project and sink.
 
-locals {
-  log_sink_destinations = merge(
-    module.log-export-logbucket
-  )
-}
-
 module "log-export-project" {
   source = "../../../modules/project"
   name   = var.logging_project
@@ -35,17 +29,4 @@ module "log-export-project" {
     "storage.googleapis.com",
     "stackdriver.googleapis.com"
   ]
-}
-
-module "log-export-logbucket" {
-  source        = "../../../modules/logging-bucket"
-  for_each      = toset([for k, v in var.log_sinks : k])
-  parent_type   = "project"
-  parent        = module.log-export-project.project_id
-  id            = each.key
-  location      = var.location
-  log_analytics = { enable = true }
-  kms_key_name  = module.kms.key_ids.key-sample
-  # org-level logging settings ready before we create any logging buckets
-#   depends_on = [module.organization-logging]
 }

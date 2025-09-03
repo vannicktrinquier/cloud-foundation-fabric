@@ -1,0 +1,28 @@
+firewallRuleChanges:
+  alert_strategy:
+    auto_close: 604800s
+    notification_rate_limit:
+      period: 300s
+  combiner: OR
+  conditions:
+  - condition_matched_log:
+      filter: resource.type="gce_firewall_rule" AND (protoPayload.methodName:"compute.firewalls.patch"
+        OR protoPayload.methodName:"compute.firewalls.insert" OR protoPayload.methodName:"compute.firewalls.delete")
+      label_extractors:
+        firewall_rule_id: EXTRACT(labels.firewall_rule_id)
+        method_name: EXTRACT(protoPayload.methodName)
+        principal: EXTRACT(protoPayload.authenticationInfo.principalEmail)
+        project_id: EXTRACT(labels.project_id)
+    display_name: 'Log match condition: firewall rule changes'
+  display_name: VPC Network Firewall Rule Changes
+  documentation:
+    content: 'Log-based alerting policy in project ${project} detected VPC Network
+      Firewall rule changes.
+
+      This alert helps ensure security by monitoring creation, modification, or deletion
+      of firewall rules. ``` resource.type="gce_firewall_rule" AND (protoPayload.methodName:"compute.firewalls.patch"
+      OR protoPayload.methodName:"compute.firewalls.insert" OR protoPayload.methodName:"compute.firewalls.delete")
+      ```'
+    mime_type: text/markdown
+  notification_channels:
+  - projects/fsi-foundation-logging-d872/notificationChannels/14935710665502908194

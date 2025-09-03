@@ -24,9 +24,9 @@ module "organization" {
 
   logging_sinks = {
     for name, attrs in var.log_sinks : name => {
-      destination          = local.log_sink_destinations[name].id
+      destination          = var.logging_project
       filter               = attrs.filter
-      type                 = "logging"
+      type                 = "project"
       disabled             = attrs.disabled
       exclusions           = attrs.exclusions
     }

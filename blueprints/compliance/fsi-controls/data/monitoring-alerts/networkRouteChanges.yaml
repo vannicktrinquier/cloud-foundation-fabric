@@ -1,0 +1,26 @@
+networkRouteChanges:
+  alert_strategy:
+    auto_close: 604800s
+    notification_rate_limit:
+      period: 300s
+  combiner: OR
+  conditions:
+  - condition_matched_log:
+      filter: "resource.type=\"gce_route\" AND  (\n  protoPayload.methodName:\"compute.routes.insert\"\
+        \ OR \n  protoPayload.methodName:\"compute.routes.delete\"\n)"
+      label_extractors:
+        method_name: EXTRACT(protoPayload.methodName)
+        principal: EXTRACT(protoPayload.authenticationInfo.principalEmail)
+        project_id: EXTRACT(labels.project_id)
+        route_id: EXTRACT(labels.route_id)
+    display_name: 'Log match condition: route changes'
+  display_name: VPC Network Route Changes
+  documentation:
+    content: "Log-based alerting policy in project ${project} detected VPC Network\
+      \ Route changes.\nThis alert helps ensure security by monitoring creation or\
+      \ deletion of network routes. ``` resource.type=\"gce_route\" AND  (\n  protoPayload.methodName:\"\
+      compute.routes.insert\" OR \n  protoPayload.methodName:\"compute.routes.delete\"\
+      \n) ```"
+    mime_type: text/markdown
+  notification_channels:
+  - projects/fsi-foundation-logging-d872/notificationChannels/14935710665502908194

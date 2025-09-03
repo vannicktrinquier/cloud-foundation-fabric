@@ -29,6 +29,7 @@ gcp.restrictServiceUsage:
             - "cloudbuild.googleapis.com"
             - "cloudfunctions.googleapis.com"
             - "cloudkms.googleapis.com"
+            - "clouderrorreporting.googleapis.com"
             - "compute.googleapis.com"
             - "container.googleapis.com"
             - "dataproc.googleapis.com"

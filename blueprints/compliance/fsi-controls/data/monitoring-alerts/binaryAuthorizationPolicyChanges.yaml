@@ -1,0 +1,27 @@
+binaryAuthorizationPolicyChanges:
+  alert_strategy:
+    auto_close: 604800s
+    notification_rate_limit:
+      period: 300s
+  combiner: OR
+  conditions:
+  - condition_matched_log:
+      filter: protoPayload.methodName="google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.UpdatePolicy"
+        AND  protoPayload.serviceName="binaryauthorization.googleapis.com" AND  ("ALWAYS_ALLOW"
+        OR "DRYRUN_AUDIT_LOG_ONLY")
+      label_extractors:
+        method_name: EXTRACT(protoPayload.methodName)
+        principal: EXTRACT(protoPayload.authenticationInfo.principalEmail)
+        project_id: EXTRACT(labels.project_id)
+    display_name: 'Log match condition: Cloud SQL instance configuration changes'
+  display_name: Binary Authorization Policy Changes
+  documentation:
+    content: "Log-based alerting policy in project ${project} detected for a change\
+      \ to Binary Authorization project-singleton policy,  weakening the enforcement\
+      \ or evaluation modes. \nThis alert helps ensure security by monitoring configuration\
+      \ changes to Binary Authorization policies. ``` protoPayload.methodName=\"google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.UpdatePolicy\"\
+      \ AND  protoPayload.serviceName=\"binaryauthorization.googleapis.com\" AND \
+      \ (\"ALWAYS_ALLOW\" OR \"DRYRUN_AUDIT_LOG_ONLY\") ```"
+    mime_type: text/markdown
+  notification_channels:
+  - projects/fsi-foundation-logging-d872/notificationChannels/14935710665502908194

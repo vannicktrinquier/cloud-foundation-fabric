@@ -1,0 +1,25 @@
+cloudsqlInstanceChanges:
+  alert_strategy:
+    auto_close: 604800s
+    notification_rate_limit:
+      period: 300s
+  combiner: OR
+  conditions:
+  - condition_matched_log:
+      filter: protoPayload.methodName="cloudsql.instances.update"
+      label_extractors:
+        database_id: EXTRACT(labels.database_id)
+        method_name: EXTRACT(protoPayload.methodName)
+        principal: EXTRACT(protoPayload.authenticationInfo.principalEmail)
+        project_id: EXTRACT(labels.project_id)
+    display_name: 'Log match condition: Cloud SQL instance configuration changes'
+  display_name: Cloud SQL Instance Configuration Changes
+  documentation:
+    content: 'Log-based alerting policy in project ${project} detected Cloud SQL instance
+      configuration changes.
+
+      This alert helps ensure security by monitoring configuration changes to SQL
+      instances. ``` protoPayload.methodName="cloudsql.instances.update" ```'
+    mime_type: text/markdown
+  notification_channels:
+  - projects/fsi-foundation-logging-d872/notificationChannels/14935710665502908194

@@ -1,0 +1,23 @@
+dnsMalformedQuery:
+  alert_strategy:
+    auto_close: 604800s
+    notification_rate_limit:
+      period: 300s
+  combiner: OR
+  conditions:
+  - condition_matched_log:
+      filter: resource.type="dns_query" AND jsonPayload.responseCode="FORMERR"
+      label_extractors:
+        principal: EXTRACT(protoPayload.authenticationInfo.principalEmail)
+        project_id: EXTRACT(labels.project_id)
+    display_name: 'Log match condition: dns malformed queries'
+  display_name: DNS Malformed Queries
+  documentation:
+    content: "Log-based alerting policy in project ${project} detected where DNS queries\
+      \ are malformed or cannot be processed by the DNS server.\nThis alert helps\
+      \ monitoring the DNS logs for response code \"FORMERR\" when malformed DNS queries\
+      \ are sent to the DNS server. ```\n  resource.type=\"dns_query\" AND jsonPayload.responseCode=\"\
+      FORMERR\"\n```"
+    mime_type: text/markdown
+  notification_channels:
+  - projects/fsi-foundation-logging-d872/notificationChannels/14935710665502908194
