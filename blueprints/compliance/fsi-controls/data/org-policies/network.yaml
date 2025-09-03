@@ -18,6 +18,18 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
+custom.networkDisableTargetHTTPProxy:
+  rules:
+    - enforce: true
+
+custom.networkDisableWeakSSLPolicy:
+  rules:
+    - enforce: true
+
+custom.networkRequireBackendServiceLogging:
+  rules:
+    - enforce: true
+
 compute.restrictDedicatedInterconnectUsage:
   rules:
     - allow:
@@ -54,9 +66,15 @@ compute.restrictVpnPeerIPs:
         values:
             - "projects/${vpn.peer_ip_1}"
 
+custom.networkRequireCustomModeVpc:
+  rules:
+    - enforce: true
+
 compute.requireVpcFlowLogs:
   rules:
     - allow:
         values:
             - "ESSENTIAL"
+            - "LIGHT"
+            - "COMPREHENSIVE"
 

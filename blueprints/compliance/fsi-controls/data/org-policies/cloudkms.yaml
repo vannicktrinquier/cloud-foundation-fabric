@@ -69,3 +69,11 @@ gcp.restrictCmekCryptoKeyProjects:
         values:
             - "projects/${crypto.project_1}"
 
+custom.cloudkmsAllowedRotationPeriod:
+  rules:
+    - enforce: true
+
+custom.dataprocRequireDiskCmekEncryption:
+  rules:
+    - enforce: true
+

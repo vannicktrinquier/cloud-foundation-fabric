@@ -18,11 +18,51 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
+custom.gkeAllowedInitialClusterVersions:
+  rules:
+    - enforce: true
+
+custom.gkeAllowedNodePoolImages:
+  rules:
+    - enforce: true
+
+custom.gkeAllowedReleaseChannels:
+  rules:
+    - enforce: true
+
+custom.gkeDisableAlphaCluster:
+  rules:
+    - enforce: true
+
+custom.gkeDisableKubernetesDashboard:
+  rules:
+    - enforce: true
+
+custom.gkeDisableLegacyAbac:
+  rules:
+    - enforce: true
+
+custom.gkeDisableLegacyMetadataEndpoints:
+  rules:
+    - enforce: true
+
 container.managed.disableLegacyClientCertificateIssuance:
   rules:
     - enforce: true
 
 container.managed.enableBinaryAuthorization:
+  rules:
+    - enforce: true
+
+custom.gkeRequireCOSImage:
+  rules:
+    - enforce: true
+
+custom.gkeRequireDataplaneV2:
+  rules:
+    - enforce: true
+
+custom.gkeRequireGKEMetadataServer:
   rules:
     - enforce: true
 
@@ -38,7 +78,55 @@ container.managed.enableSecretsEncryption:
   rules:
     - enforce: true
 
+custom.gkeRequireIntegrityMonitoring:
+  rules:
+    - enforce: true
+
+custom.gkeRequireIntraNodeVisibility:
+  rules:
+    - enforce: true
+
+custom.gkeRequireMasterAuthorizedNetworks:
+  rules:
+    - enforce: true
+
+custom.gkeRequireMonitoring:
+  rules:
+    - enforce: true
+
+custom.gkeRequireNodePoolAutoRepair:
+  rules:
+    - enforce: true
+
+custom.gkeRequireNodePoolAutoUpgrade:
+  rules:
+    - enforce: true
+
 container.managed.enableShieldedNodes:
+  rules:
+    - enforce: true
+
+custom.gkeRequireNodePoolCMEKEncryption:
+  rules:
+    - enforce: true
+
+custom.gkeRequireNodePoolSandbox:
+  rules:
+    - enforce: true
+
+custom.gkeRequirePrivateEndpoint:
+  rules:
+    - enforce: true
+
+custom.gkeRequireRegionalClusters:
+  rules:
+    - enforce: true
+
+custom.gkeRequireSecureBoot:
+  rules:
+    - enforce: true
+
+custom.gkeRequireVPCNativeCluster:
   rules:
     - enforce: true
 
@@ -55,6 +143,22 @@ container.managed.enableCloudLogging:
     - enforce: true
 
 container.managed.enableGoogleGroupsRBAC:
+  rules:
+    - enforce: true
+
+container.managed.disableABAC:
+  rules:
+    - enforce: true
+
+container.managed.disableInsecureKubeletReadOnlyPort:
+  rules:
+    - enforce: true
+
+container.managed.disableRBACSystemBindings:
+  rules:
+    - enforce: true
+
+container.managed.enableSecurityBulletinNotifications:
   rules:
     - enforce: true
 

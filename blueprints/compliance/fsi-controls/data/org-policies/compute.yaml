@@ -118,3 +118,7 @@ compute.trustedImageProjects:
             - "is:projects/deeplearning-platform-release"
             - "is:projects/serverless-vpc-access-images"
 
+custom.networkRequireSubnetPrivateGoogleAccess:
+  rules:
+    - enforce: true
+

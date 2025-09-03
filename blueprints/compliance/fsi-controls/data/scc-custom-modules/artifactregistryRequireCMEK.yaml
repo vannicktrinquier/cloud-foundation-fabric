@@ -1,9 +1,9 @@
 artifactregistryRequireCMEK:
-  severity: HIGH
   description: Detect if Artifact Registry repositories are not encrypted using CMEK
+  predicate:
+    expression: (!has(resource.kmsKeyName))
   recommendation: Ensure the Artifact Registry repositoriesa are encrypted using CMEK
   resource_selector:
     resource_types:
     - artifactregistry.googleapis.com/Repository
-  predicate:
-    expression: (!has(resource.kmsKeyName))
+  severity: HIGH

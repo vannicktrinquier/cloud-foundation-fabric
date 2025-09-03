@@ -16,17 +16,28 @@ module "organization" {
         prefix = var.prefix
       }
       monitoring_alerts = {
-        project              = var.monitoring_project
+        project              = var.logging_project
         notification_channel = var.notification_channel
       }
     }
   }
+
+  logging_sinks = {
+    for name, attrs in var.log_sinks : name => {
+      destination          = local.log_sink_destinations[name].id
+      filter               = attrs.filter
+      type                 = "logging"
+      disabled             = attrs.disabled
+      exclusions           = attrs.exclusions
+    }
+  }
+
 }
 
 
 module "folder" {
   source = "../../../modules/folder"
-  parent = "folders/${var.folder}"
+  parent = "organizations/${var.organization.id}"
 
   name = "FSI Foundation"
 
@@ -37,7 +48,7 @@ module "folder" {
       org_policies = {
         organization = var.organization
         crypto = {
-          project_1 = "dbs-validator-kcc-29ae"
+          project_1 = var.security_project
         }
         vpn = {
           peer_ip_1 = "1.1.1.1"

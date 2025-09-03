@@ -18,7 +18,43 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
+custom.cloudsqlDisablePublicAuthorizedNetworks:
+  rules:
+    - enforce: true
+
 sql.restrictAuthorizedNetworks:
+  rules:
+    - enforce: true
+
+custom.cloudsqlEnforcePasswordComplexity:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireAutomatedBackup:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireMySQLDatabaseFlags:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequirePointInTimeRecovery:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequirePostgreSQLDatabaseFlags:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireRootPassword:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireSQLServerDatabaseFlags:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireSSLConnection:
   rules:
     - enforce: true
 

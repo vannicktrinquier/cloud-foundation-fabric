@@ -1,6 +1,6 @@
 custom.${prefix}iamAllowedMembers:
   condition: |-
-    resource.bindings.exists(binding, binding.members.exists(member, !MemberSubjectEndsWith(member, ["@google.com", ".gserviceaccount.com"])))
+    resource.bindings.exists(binding, binding.members.exists(member, !MemberSubjectEndsWith(member, ["@vannick.altostrat.com","@google.com", ".gserviceaccount.com"])))
   description: Ensure no binding are done with members outside the organization domain
   resource_types:
   - iam.googleapis.com/AllowPolicy

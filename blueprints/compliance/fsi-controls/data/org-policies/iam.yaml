@@ -18,6 +18,22 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
+custom.iamAllowedMembers:
+  rules:
+    - enforce: false
+
+custom.iamDisableAdminServiceAccount:
+  rules:
+    - enforce: false
+
+custom.iamDisableBasicRoles:
+  rules:
+    - enforce: true
+
+custom.iamDisableProjectServiceAccountImpersonationRoles:
+  rules:
+    - enforce: true
+
 iam.managed.disableServiceAccountKeyCreation:
   rules:
     - enforce: true
@@ -34,7 +50,7 @@ iam.managed.allowedPolicyMembers:
   rules:
     - enforce: true
       parameters: >- 
-        { "allowedPrincipalSets": ["//cloudresourcemanager.googleapis.com/organizations/${organization.id}"] } 
+        { "allowedPrincipalSets": ["//cloudresourcemanager.googleapis.com/organizations/${organization.id}"] }
 
 iam.allowedPolicyMemberDomains:
   rules:

@@ -18,22 +18,15 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
+custom.dnsAllowedSigningAlgorithms:
   rules:
     - enforce: true
 
-cloudbuild.allowedIntegrations:
+custom.dnsRequireManageZoneDNSSEC:
   rules:
-    - deny:
-        all: true
+    - enforce: true
 
-cloudbuild.allowedWorkerPools:
-  rules:
-    - allow:
-        values:
-            - "under:organizations/${organization.id}"
-
-custom.cloudbuildDisableWorkerPoolExternalIP:
+custom.dnsRequirePolicyLogging:
   rules:
     - enforce: true
 
