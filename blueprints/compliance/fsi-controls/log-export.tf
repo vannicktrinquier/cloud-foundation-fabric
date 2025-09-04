@@ -33,7 +33,6 @@ module "log-export-project" {
   # See https://discuss.google.dev/t/managing-multiple-google-cloud-projects-how-to-centralize-admin-activity-logs/169529 for explanation
   logging_sinks = {
     "activity-logs" : {
-      # destination = "projects/${var.logging_project}/locations/global/buckets/_Default"
       destination = module.logging-bucket.id
       iam         = false
       filter      = <<-FILTER
@@ -43,9 +42,6 @@ module "log-export-project" {
           log_id("cloudaudit.googleapis.com/access_transparency")
           FILTER
       type        = "logging"
-      # exclusions = {
-      #   project-logging-audit = "logName:projects/${var.logging_project}/logs"
-      # }
     }
   }
 
