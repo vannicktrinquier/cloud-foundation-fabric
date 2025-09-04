@@ -47,7 +47,7 @@ gcp.restrictNonCmekServices:
             - "firestore.googleapis.com"
             - "gkebackup.googleapis.com"
             - "integrations.googleapis.com"
-            # - "logging.googleapis.com"
+            - "logging.googleapis.com"
             - "looker.googleapis.com"
             - "notebooks.googleapis.com"
             - "pubsub.googleapis.com"
