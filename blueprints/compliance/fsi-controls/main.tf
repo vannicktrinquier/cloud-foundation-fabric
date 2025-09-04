@@ -3,10 +3,8 @@ module "organization" {
   organization_id = "organizations/${var.organization.id}"
 
   factories_config = {
-    # org_policies                  = "data/org-policies"
     org_policy_custom_constraints = "data/custom-constraints"
     scc_custom_modules            = "data/scc-custom-modules"
-    monitoring_alerts             = "data/monitoring-alerts"
 
     context = {
       org_policies = {
@@ -22,15 +20,16 @@ module "organization" {
     }
   }
 
-  logging_sinks = {
+  logging_sinks = merge({
     for name, attrs in var.log_sinks : name => {
-      destination          = var.logging_project
-      filter               = attrs.filter
-      type                 = "project"
-      disabled             = attrs.disabled
-      exclusions           = attrs.exclusions
+      destination = var.logging_project
+      filter      = attrs.filter
+      type        = "project"
+      disabled    = attrs.disabled
+      exclusions  = attrs.exclusions
     }
-  }
+    },
+  )
 }
 
 
@@ -39,7 +38,6 @@ module "folder" {
   parent = "organizations/${var.organization.id}"
 
   name = "FSI Foundation"
-
   factories_config = {
     org_policies = "data/org-policies"
 
