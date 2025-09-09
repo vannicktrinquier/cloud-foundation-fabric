@@ -1,10 +1,10 @@
 custom.networkRequireCustomModeVpc:
-  resource_types:
-  - compute.googleapis.com/Network
+  action_type: DENY
   condition: |-
     resource.autoCreateSubnetworks == true
-  action_type: DENY
+  description: Enforce that the subnets creation is using custom mode for a VPC network
+  display_name: Require custom mode VPC network
   method_types:
   - CREATE
-  display_name: Require custom mode VPC network
-  description: Enforce that the subnets creation is using custom mode for a VPC network
+  resource_types:
+  - compute.googleapis.com/Network

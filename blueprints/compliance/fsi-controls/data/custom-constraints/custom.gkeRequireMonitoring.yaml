@@ -1,11 +1,11 @@
 custom.gkeRequireMonitoring:
+  action_type: DENY
   condition: |-
     resource.monitoringService != 'monitoring.googleapis.com/kubernetes'
-  display_name: Enable monitoring
   description: Enforce that GKE clusters monitoring is enabled
-  resource_types:
-  - container.googleapis.com/Cluster
-  action_type: DENY
+  display_name: Enable monitoring
   method_types:
   - CREATE
   - UPDATE
+  resource_types:
+  - container.googleapis.com/Cluster

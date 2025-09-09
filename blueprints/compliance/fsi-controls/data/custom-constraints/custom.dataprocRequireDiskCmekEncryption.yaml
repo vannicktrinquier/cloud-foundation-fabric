@@ -1,12 +1,12 @@
 custom.dataprocRequireDiskCmekEncryption:
-  resource_types:
-  - dataproc.googleapis.com/Cluster
+  action_type: DENY
   condition: |-
     has(resource.config.encryptionConfig.gcePdKmsKeyName) == false
-  action_type: DENY
+  description: Enforce that the Dataproc cluster is created with the encryption key
+    using a customer-managed key stored in Cloud KMS
+  display_name: Enable Dataproc CMEK encryption
   method_types:
   - CREATE
   - UPDATE
-  display_name: Enable Dataproc CMEK encryption
-  description: Enforce that the Dataproc cluster is created with the encryption key
-    using a customer-managed key stored in Cloud KMS
+  resource_types:
+  - dataproc.googleapis.com/Cluster

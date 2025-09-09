@@ -1,12 +1,12 @@
 custom.gkeRequirePrivateEndpoint:
-  resource_types:
-  - container.googleapis.com/Cluster
+  action_type: DENY
   condition: |-
     resource.privateClusterConfig.enablePrivateEndpoint == false
-  action_type: DENY
+  description: Enforce that GKE clusters are created as private clusters with public
+    endpoint disabled
+  display_name: Disable public endpoints
   method_types:
   - CREATE
   - UPDATE
-  display_name: Disable public endpoints
-  description: Enforce that GKE clusters are created as private clusters with public
-    endpoint disabled
+  resource_types:
+  - container.googleapis.com/Cluster

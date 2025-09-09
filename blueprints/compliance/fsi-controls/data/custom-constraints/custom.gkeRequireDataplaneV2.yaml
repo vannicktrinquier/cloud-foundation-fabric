@@ -1,11 +1,11 @@
 custom.gkeRequireDataplaneV2:
-  resource_types:
-  - container.googleapis.com/Cluster
+  action_type: DENY
   condition: |-
     resource.networkConfig.datapathProvider != 'ADVANCED_DATAPATH'
-  action_type: DENY
+  description: Enforce that the GKE clusters is configured to use dataplane v2
+  display_name: Require dataplane v2
   method_types:
   - CREATE
   - UPDATE
-  display_name: Require dataplane v2
-  description: Enforce that the GKE clusters is configured to use dataplane v2
+  resource_types:
+  - container.googleapis.com/Cluster
