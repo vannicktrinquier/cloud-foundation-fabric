@@ -1,4 +1,4 @@
-custom.${prefix}networkRequireBackendServiceLogging:
+custom.networkRequireBackendServiceLogging:
   resource_types:
   - compute.googleapis.com/BackendService
   condition: |-

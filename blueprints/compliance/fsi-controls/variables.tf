@@ -9,17 +9,19 @@ variable "organization" {
 }
 
 variable "folder" {
-  description = "The folder ID."
+  description = "The folder ID where to apply the controls."
   type        = string
+  default     = null
 }
 
-variable "logging_project" {
-  description = "The logging project ID."
+variable "project" {
+  description = "The project ID where to apply the controls."
   type        = string
+  default     = null
 }
 
 variable "security_project" {
-  description = "The logging project ID."
+  description = "The security project ID where to manage encryption keys."
   type        = string
 }
 variable "billing_project" {
@@ -32,17 +34,13 @@ variable "location" {
   type        = string
 }
 
-variable "prefix" {
-  description = "Prefix used for organization policy constraint."
-  type        = string
-}
-
 variable "billing_account" {
   description = "The billing account."
   type        = string
 }
-variable "notification_channel" {
-  description = "The notification channel."
+
+variable "logging_project" {
+  description = "The logging project ID where to create log metrics and alerts."
   type        = string
 }
 

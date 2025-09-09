@@ -1,4 +1,4 @@
-custom.${prefix}cloudsqlRequireSQLServerDatabaseFlags:
+custom.cloudsqlRequireSQLServerDatabaseFlags:
   condition: |-
     resource.databaseVersion.startsWith('SQLSERVER') && (
       resource.settings.databaseFlags.exists(flag, flag.name == 'external scripts enabled' && flag.value == 'on') ||

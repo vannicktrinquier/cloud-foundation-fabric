@@ -1,4 +1,4 @@
-custom.${prefix}cloudkmsAllowedRotationPeriod:
+custom.cloudkmsAllowedRotationPeriod:
   condition: |-
     has(resource.rotationPeriod) && resource.rotationPeriod > duration("31536000s")
   description: Ensure the rotation period for Cloud KMS keys is configured correctly

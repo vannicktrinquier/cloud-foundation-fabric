@@ -10,13 +10,8 @@ module "organization" {
       org_policies = {
         organization = var.organization
       }
-      org_policy_custom_constraints = {
-        prefix = var.prefix
-      }
-      monitoring_alerts = {
-        project              = var.logging_project
-        notification_channel = var.notification_channel
-      }
+      org_policy_custom_constraints = {}
+      monitoring_alerts             = {}
     }
   }
 
@@ -31,7 +26,6 @@ module "organization" {
     },
   )
 }
-
 
 module "folder" {
   source = "../../../modules/folder"

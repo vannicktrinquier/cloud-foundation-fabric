@@ -1,4 +1,4 @@
-custom.${prefix}gkeDisableLegacyMetadataEndpoints:
+custom.gkeDisableLegacyMetadataEndpoints:
   condition: |-
     ('disable-legacy-endpoints' in resource.config.metadata && resource.config.metadata['disable-legacy-endpoints'] == 'false')
   display_name: Disable legacy metadata endpoints

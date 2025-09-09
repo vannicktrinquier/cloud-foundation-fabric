@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireDataplaneV2:
+custom.gkeRequireDataplaneV2:
   resource_types:
   - container.googleapis.com/Cluster
   condition: |-

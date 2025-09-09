@@ -1,4 +1,4 @@
-custom.${prefix}dnsRequirePolicyLogging:
+custom.dnsRequirePolicyLogging:
   resource_types:
   - dns.googleapis.com/Policy
   condition: |-

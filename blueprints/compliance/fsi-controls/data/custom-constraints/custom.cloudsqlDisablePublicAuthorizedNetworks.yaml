@@ -1,4 +1,4 @@
-custom.${prefix}cloudsqlDisablePublicAuthorizedNetworks:
+custom.cloudsqlDisablePublicAuthorizedNetworks:
   condition: |-
     resource.settings.ipConfiguration.authorizedNetworks.exists(network, network.value == '0.0.0.0/0')
   display_name: Require Cloud SQL database instances to not whitelist all public IP

@@ -1,4 +1,4 @@
-custom.${prefix}gkeAllowedNodePoolImages:
+custom.gkeAllowedNodePoolImages:
   resource_types:
   - container.googleapis.com/NodePool
   condition: |-

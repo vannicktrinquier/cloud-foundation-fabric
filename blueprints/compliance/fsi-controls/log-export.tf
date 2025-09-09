@@ -48,15 +48,14 @@ module "log-export-project" {
   factories_config = {
     observability = "data/observability"
   }
-
 }
 
 
 module "logging-bucket" {
-  source      = "../../../modules/logging-bucket"
+  source = "../../../modules/logging-bucket"
 
   parent_type = "project"
-  location = var.location
+  location    = var.location
   parent      = var.logging_project
   id          = "org-logging-bucket"
 }

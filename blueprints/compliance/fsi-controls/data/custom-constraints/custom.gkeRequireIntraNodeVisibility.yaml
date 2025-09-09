@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireIntraNodeVisibility:
+custom.gkeRequireIntraNodeVisibility:
   resource_types:
   - container.googleapis.com/Cluster
   condition: |-

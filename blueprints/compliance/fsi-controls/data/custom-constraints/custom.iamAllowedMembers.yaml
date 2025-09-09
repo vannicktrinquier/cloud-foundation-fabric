@@ -1,4 +1,4 @@
-custom.${prefix}iamAllowedMembers:
+custom.iamAllowedMembers:
   condition: |-
     resource.bindings.exists(binding, binding.members.exists(member, !MemberSubjectEndsWith(member, ["@vannick.altostrat.com","@google.com", ".gserviceaccount.com"])))
   description: Ensure no binding are done with members outside the organization domain

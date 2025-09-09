@@ -1,4 +1,4 @@
-custom.${prefix}gkeDisableAlphaCluster:
+custom.gkeDisableAlphaCluster:
   resource_types:
   - container.googleapis.com/Cluster
   condition: |-

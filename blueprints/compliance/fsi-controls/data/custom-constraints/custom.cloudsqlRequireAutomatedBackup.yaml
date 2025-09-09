@@ -1,4 +1,4 @@
-custom.${prefix}cloudsqlRequireAutomatedBackup:
+custom.cloudsqlRequireAutomatedBackup:
   condition: |-
     resource.settings.backupConfiguration.enabled != true
   display_name: Require Cloud SQL instances to have automated backup enabled

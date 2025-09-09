@@ -1,4 +1,4 @@
-custom.${prefix}dataprocRequireDiskCmekEncryption:
+custom.dataprocRequireDiskCmekEncryption:
   resource_types:
   - dataproc.googleapis.com/Cluster
   condition: |-

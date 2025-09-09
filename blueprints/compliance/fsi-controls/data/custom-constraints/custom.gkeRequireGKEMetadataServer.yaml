@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireGKEMetadataServer:
+custom.gkeRequireGKEMetadataServer:
   condition: |-
     resource.config.workloadMetadataConfig.mode != 'GKE_METADATA'
   display_name: Require GKE metadata server

@@ -1,4 +1,4 @@
-custom.${prefix}cloudsqlRequirePointInTimeRecovery:
+custom.cloudsqlRequirePointInTimeRecovery:
   condition: |-
     (resource.databaseVersion.contains("POSTGRES") || resource.databaseVersion.contains("SQLSERVER")) && resource.settings.backupConfiguration.pointInTimeRecoveryEnabled == false
   display_name: Require Cloud SQL instances to enable point in time recovery

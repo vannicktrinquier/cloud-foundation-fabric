@@ -1,4 +1,4 @@
-custom.${prefix}firewallRestrictRdpPolicyRule:
+custom.firewallRestrictRdpPolicyRule:
   resource_types:
   - compute.googleapis.com/FirewallPolicy
   condition: |-

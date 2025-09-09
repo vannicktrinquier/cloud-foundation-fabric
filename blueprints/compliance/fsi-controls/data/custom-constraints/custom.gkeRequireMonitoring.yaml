@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireMonitoring:
+custom.gkeRequireMonitoring:
   condition: |-
     resource.monitoringService != 'monitoring.googleapis.com/kubernetes'
   display_name: Enable monitoring

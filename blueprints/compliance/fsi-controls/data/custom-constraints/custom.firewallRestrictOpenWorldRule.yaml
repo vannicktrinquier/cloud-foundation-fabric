@@ -1,4 +1,4 @@
-custom.${prefix}firewallRestrictOpenWorldRule:
+custom.firewallRestrictOpenWorldRule:
   resource_types:
   - compute.googleapis.com/Firewall
   condition: |-

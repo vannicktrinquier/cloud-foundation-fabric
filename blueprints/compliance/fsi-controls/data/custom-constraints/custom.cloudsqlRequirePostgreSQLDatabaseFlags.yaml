@@ -1,4 +1,4 @@
-custom.${prefix}cloudsqlRequirePostgreSQLDatabaseFlags:
+custom.cloudsqlRequirePostgreSQLDatabaseFlags:
   condition: |-
     resource.databaseVersion.startsWith('POSTGRES') && (
       !resource.settings.databaseFlags.exists(flag, flag.name == 'log_connections' && flag.value == 'on') ||

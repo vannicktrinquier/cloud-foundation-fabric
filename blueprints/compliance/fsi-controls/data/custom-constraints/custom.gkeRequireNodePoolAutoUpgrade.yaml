@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireNodePoolAutoUpgrade:
+custom.gkeRequireNodePoolAutoUpgrade:
   condition: |-
     resource.management.autoUpgrade == false
   display_name: Enable node auto-upgrade

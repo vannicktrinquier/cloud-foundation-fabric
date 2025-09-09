@@ -1,4 +1,4 @@
-custom.${prefix}cloudrunDisableEnvironmentVariablePattern:
+custom.cloudrunDisableEnvironmentVariablePattern:
   condition: |-
     resource.spec.template.spec.containers.exists(container, container.env.exists(env, ["[sS][eE][cC][rR][eE][tT]", "[kK][eE][yY]", "[pP][aA][sS][sS][wW][oO][rR][dD]", "[tT][oO][kK][eE][nN]"].exists(pattern, env.name.matches(pattern))))
   description: Enforce that certain patterns are not used in environment variables

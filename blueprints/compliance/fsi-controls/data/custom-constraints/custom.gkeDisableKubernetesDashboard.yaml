@@ -1,4 +1,4 @@
-custom.${prefix}gkeDisableKubernetesDashboard:
+custom.gkeDisableKubernetesDashboard:
   resource_types:
   - container.googleapis.com/Cluster
   condition: |-

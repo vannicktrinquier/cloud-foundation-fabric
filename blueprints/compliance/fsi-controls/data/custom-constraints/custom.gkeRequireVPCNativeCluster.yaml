@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireVPCNativeCluster:
+custom.gkeRequireVPCNativeCluster:
   resource_types:
   - container.googleapis.com/Cluster
   condition: |-

@@ -1,4 +1,4 @@
-custom.${prefix}dnsRequireManageZoneDNSSEC:
+custom.dnsRequireManageZoneDNSSEC:
   resource_types:
   - dns.googleapis.com/ManagedZone
   condition: |-

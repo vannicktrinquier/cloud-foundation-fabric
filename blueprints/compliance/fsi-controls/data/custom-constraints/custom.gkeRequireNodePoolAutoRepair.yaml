@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireNodePoolAutoRepair:
+custom.gkeRequireNodePoolAutoRepair:
   condition: |-
     resource.management.autoRepair == false
   display_name: Enable node auto-repair

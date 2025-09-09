@@ -1,4 +1,4 @@
-custom.${prefix}iamDisablePublicBindings:
+custom.iamDisablePublicBindings:
   resource_types:
   - iam.googleapis.com/AllowPolicy
   method_types:

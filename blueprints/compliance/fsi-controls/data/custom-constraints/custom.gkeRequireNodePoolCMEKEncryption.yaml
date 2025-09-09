@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireNodePoolCMEKEncryption:
+custom.gkeRequireNodePoolCMEKEncryption:
   condition: |-
     has(resource.config.bootDiskKmsKey) == false
   display_name: Require NodePool CMEK Encryption

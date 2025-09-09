@@ -1,4 +1,4 @@
-custom.${prefix}gkeRequireNodePoolSandbox:
+custom.gkeRequireNodePoolSandbox:
   resource_types:
   - container.googleapis.com/NodePool
   condition: |-

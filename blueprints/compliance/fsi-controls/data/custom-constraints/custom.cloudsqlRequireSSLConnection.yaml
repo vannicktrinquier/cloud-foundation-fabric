@@ -1,4 +1,4 @@
-custom.${prefix}cloudsqlRequireSSLConnection:
+custom.cloudsqlRequireSSLConnection:
   condition: |-
     resource.settings.ipConfiguration.sslMode in ['ENCRYPTED_ONLY', 'TRUSTED_CLIENT_CERTIFICATE_REQUIRED'] == false
   display_name: Require Cloud SQL instances to allow only connections that are encrypted

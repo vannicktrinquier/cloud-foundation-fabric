@@ -1,4 +1,4 @@
-custom.${prefix}networkDisableWeakSSLPolicy:
+custom.networkDisableWeakSSLPolicy:
   condition: |-
     (resource.profile == "COMPATIBLE") || (resource.profile == "CUSTOM" &&
       resource.customFeatures.exists(feature, feature in [
