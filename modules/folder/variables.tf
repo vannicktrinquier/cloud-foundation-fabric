@@ -83,9 +83,11 @@ variable "deletion_protection" {
 variable "factories_config" {
   description = "Paths to data files and folders that enable factory functionality."
   type = object({
-    org_policies = optional(string)
+    org_policies       = optional(string)
+    scc_custom_modules = optional(string)
     context = optional(object({
-      org_policies = optional(map(map(string)), {})
+      org_policies       = optional(map(map(string)), {})
+      scc_custom_modules = optional(map(string), {})
     }), {})
   })
   nullable = false
@@ -161,4 +163,22 @@ variable "tag_bindings" {
   description = "Tag bindings for this folder, in key => tag value id format."
   type        = map(string)
   default     = null
+}
+
+variable "scc_custom_modules" {
+  description = "SCC custom modules keyed by module name."
+  type = map(object({
+    description    = optional(string)
+    severity       = string
+    recommendation = string
+    predicate = object({
+      expression = string
+    })
+    resource_selector = object({
+      resource_types = list(string)
+    })
+    enablement_state = optional(string, "ENABLED")
+  }))
+  default  = {}
+  nullable = false
 }

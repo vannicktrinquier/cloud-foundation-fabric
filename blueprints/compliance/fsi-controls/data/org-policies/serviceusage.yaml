@@ -44,6 +44,7 @@ gcp.restrictServiceUsage:
             - "run.googleapis.com"
             - "secretmanager.googleapis.com"
             - "securitycenter.googleapis.com"
+            - "securitycentermanagement.googleapis.com"
             - "securesourcemanager.googleapis.com"
             - "spanner.googleapis.com"
             - "sqladmin.googleapis.com"

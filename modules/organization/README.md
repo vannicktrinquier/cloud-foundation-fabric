@@ -426,7 +426,7 @@ includedPermissions:
 
 ## Custom Security Health Analytics Modules
 
-[Security Health Analytics custom modules](https://cloud.google.com/security-command-center/docs/how-to-create-custom-modules) can be defined via the `scc_custom_modules` variable:
+[Security Health Analytics custom modules](https://cloud.google.com/security-command-center/docs/custom-modules-sha-create) can be defined via the `scc_custom_modules` variable:
 
 ```hcl
 module "org" {
@@ -446,7 +446,6 @@ module "org" {
     }
   }
 }
-# tftest modules=1 resources=1 inventory=scc-custom-modules.yaml
 ```
 
 ### Custom Security Health Analytics Modules Factory

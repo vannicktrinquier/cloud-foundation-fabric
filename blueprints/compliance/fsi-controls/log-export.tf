@@ -44,9 +44,23 @@ module "log-export-project" {
       type        = "logging"
     }
   }
-
   factories_config = {
     observability = "data/observability"
+    scc_custom_modules            = "data/scc-custom-modules"
+  }
+
+  scc_custom_modules = {
+    kmsKeyRotationPeriod = {
+      description    = "The rotation period of the identified cryptokey resource exceeds 30 days."
+      recommendation = "Set the rotation period to at most 30 days."
+      severity       = "MEDIUM"
+      predicate = {
+        expression = "resource.rotationPeriod > duration(\"2592000s\")"
+      }
+      resource_selector = {
+        resource_types = ["cloudkms.googleapis.com/CryptoKey"]
+      }
+    }
   }
 }
 

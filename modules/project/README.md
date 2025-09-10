@@ -20,6 +20,8 @@ This module implements the creation and management of one GCP project including 
 - [Data Access Logs](#data-access-logs)
 - [Log Scopes](#log-scopes)
 - [Cloud KMS Encryption Keys](#cloud-kms-encryption-keys)
+- [SCC Custom Security Health Analytics Modules](#custom-security-health-analytics-modules)
+  - [SCC Custom Security Health Analytics Modules Factory](#custom-security-health-analytics-modules-factory)
 - [Tags](#tags)
   - [Tags Factory](#tags-factory)
 - [Tag Bindings](#tag-bindings)
@@ -891,7 +893,65 @@ module "project" {
 }
 ```
 
+## Custom Security Health Analytics Modules
+
+[Security Health Analytics custom modules](https://cloud.google.com/security-command-center/docs/custom-modules-sha-create) can be defined via the `scc_custom_modules` variable:
+
+```hcl
+module "project" {
+  source          = "./fabric/modules/project"
+  billing_account = var.billing_account_id
+  name            = "project"
+  prefix          = var.prefix
+  parent          = var.folder_id
+  scc_custom_modules = {
+    kmsKeyRotationPeriod = {
+      description    = "The rotation period of the identified cryptokey resource exceeds 30 days."
+      recommendation = "Set the rotation period to at most 30 days."
+      severity       = "MEDIUM"
+      predicate = {
+        expression = "resource.rotationPeriod > duration(\"2592000s\")"
+      }
+      resource_selector = {
+        resource_types = ["cloudkms.googleapis.com/CryptoKey"]
+      }
+    }
+  }
+}
+```
+
+### Custom Security Health Analytics Modules Factory
+
+Custom modules can also be specified via a factory. Each file is mapped to a custom module, where the module name defaults to the file name.
+
+Custom modules defined via the variable are merged with those coming from the factory, and override them in case of duplicate names.
+
+```hcl
+module "project" {
+  source          = "./fabric/modules/project"
+  billing_account = var.billing_account_id
+  name            = "project"
+  prefix          = var.prefix
+  parent          = var.folder_id
+  factories_config = {
+    scc_custom_modules = "data/scc_custom_modules"
+  }
+}
+```
+
+```yaml
+description: "The rotation period of the identified cryptokey resource exceeds 30 days."
+recommendation: "Set the rotation period to at most 30 days."
+severity: "MEDIUM"
+predicate:
+  expression: "resource.rotationPeriod > duration(\"2592000s\")"
+resource_selector:
+  resource_types:
+  - "cloudkms.googleapis.com/CryptoKey"
+```
+```
 ## Tags
+```
 
 Refer to the [Creating and managing tags](https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing) documentation for details on usage.
 
@@ -1714,12 +1774,14 @@ alerts:
 | [organization-policies.tf](./organization-policies.tf) | Project-level organization policies. | <code>google_org_policy_policy</code> |
 | [outputs.tf](./outputs.tf) | Module outputs. |  |
 | [quotas.tf](./quotas.tf) | None | <code>google_cloud_quotas_quota_preference</code> |
+| [scc-custom-modules.tf](./scc-custom-modules.tf) | Manages Security Command Center custom modules. | <code>google_scc_management_project_security_health_analytics_custom_module</code> |
 | [service-agents.tf](./service-agents.tf) | Service agents supporting resources. | <code>google_project_default_service_accounts</code> · <code>google_project_iam_member</code> · <code>google_project_service_identity</code> |
 | [shared-vpc.tf](./shared-vpc.tf) | Shared VPC project-level configuration. | <code>google_compute_shared_vpc_host_project</code> · <code>google_compute_shared_vpc_service_project</code> · <code>google_compute_subnetwork_iam_member</code> · <code>google_project_iam_member</code> |
 | [tags.tf](./tags.tf) | Manages GCP Secure Tags, keys, values, and IAM. | <code>google_tags_tag_binding</code> · <code>google_tags_tag_key</code> · <code>google_tags_tag_key_iam_binding</code> · <code>google_tags_tag_key_iam_member</code> · <code>google_tags_tag_value</code> · <code>google_tags_tag_value_iam_binding</code> · <code>google_tags_tag_value_iam_member</code> |
 | [variables-iam.tf](./variables-iam.tf) | None |  |
 | [variables-observability.tf](./variables-observability.tf) | None |  |
 | [variables-quotas.tf](./variables-quotas.tf) | None |  |
+| [variables-scc.tf](./variables-scc.tf) | None |  |
 | [variables-tags.tf](./variables-tags.tf) | None |  |
 | [variables.tf](./variables.tf) | Module variables. |  |
 | [versions.tf](./versions.tf) | Version pins. |  |
@@ -1765,6 +1827,18 @@ alerts:
 | [service_config](variables.tf#L202) | Configure service API activation. | <code title="object&#40;&#123;&#10;  disable_on_destroy         &#61; bool&#10;  disable_dependent_services &#61; bool&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code title="&#123;&#10;  disable_on_destroy         &#61; false&#10;  disable_dependent_services &#61; false&#10;&#125;">&#123;&#8230;&#125;</code> |
 | [service_encryption_key_ids](variables.tf#L214) | Service Agents to be granted encryption/decryption permissions over Cloud KMS encryption keys. Format {SERVICE_AGENT => [KEY_ID]}. | <code>map&#40;list&#40;string&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [services](variables.tf#L221) | Service APIs to enable. | <code>list&#40;string&#41;</code> |  | <code>&#91;&#93;</code> |
+| [scc_custom_modules](variables-scc.tf#L15) | SCC custom modules keyed by module name. | <code title="map(object({
+  description    = optional(string)
+  severity       = string
+  recommendation = string
+  predicate = object({
+    expression = string
+  })
+  resource_selector = object({
+    resource_types = list(string)
+  })
+  enablement_state = optional(string, "ENABLED")
+}))">map(object({…}))</code> |  | <code>{}</code> |
 | [shared_vpc_host_config](variables.tf#L227) | Configures this project as a Shared VPC host project (mutually exclusive with shared_vpc_service_project). | <code title="object&#40;&#123;&#10;  enabled          &#61; bool&#10;  service_projects &#61; optional&#40;list&#40;string&#41;, &#91;&#93;&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>null</code> |
 | [shared_vpc_service_config](variables.tf#L237) | Configures this project as a Shared VPC service project (mutually exclusive with shared_vpc_host_config). | <code title="object&#40;&#123;&#10;  host_project &#61; string&#10;  iam_bindings_additive &#61; optional&#40;map&#40;object&#40;&#123;&#10;    member &#61; string&#10;    role   &#61; string&#10;    condition &#61; optional&#40;object&#40;&#123;&#10;      expression  &#61; string&#10;      title       &#61; string&#10;      description &#61; optional&#40;string&#41;&#10;    &#125;&#41;&#41;&#10;  &#125;&#41;&#41;, &#123;&#125;&#41;&#10;  network_users            &#61; optional&#40;list&#40;string&#41;, &#91;&#93;&#41;&#10;  service_agent_iam        &#61; optional&#40;map&#40;list&#40;string&#41;&#41;, &#123;&#125;&#41;&#10;  service_agent_subnet_iam &#61; optional&#40;map&#40;list&#40;string&#41;&#41;, &#123;&#125;&#41;&#10;  service_iam_grants       &#61; optional&#40;list&#40;string&#41;, &#91;&#93;&#41;&#10;  network_subnet_users     &#61; optional&#40;map&#40;list&#40;string&#41;&#41;, &#123;&#125;&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code title="&#123;&#10;  host_project &#61; null&#10;&#125;">&#123;&#8230;&#125;</code> |
 | [skip_delete](variables.tf#L274) | Deprecated. Use deletion_policy. | <code>bool</code> |  | <code>null</code> |
