@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2022 Google LLC
  *
@@ -24,17 +23,17 @@ locals {
   _scc_custom_modules_factory_data = {
     for k, v in local._scc_custom_modules_factory_data_raw :
     k => {
-      name             = k
-      description      = try(v.description, null)
-      severity         = v.severity
-      recommendation   = v.recommendation
-      resource_types   = v.resource_selector.resource_types
-      expression       = v.predicate.expression
-      enablement_state = try(v.enablement_state, "ENABLED")
+      description       = try(v.description, null)
+      severity          = v.severity
+      recommendation    = v.recommendation
+      predicate         = v.predicate
+      resource_selector = v.resource_selector
+      enablement_state  = try(v.enablement_state, "ENABLED")
     }
   }
   _scc_custom_modules = merge(
     local._scc_custom_modules_factory_data,
+    var.scc_custom_modules
   )
   scc_custom_modules = {
     for k, v in local._scc_custom_modules :
@@ -54,10 +53,10 @@ resource "google_scc_management_organization_security_health_analytics_custom_mo
   display_name = each.value.name
   custom_config {
     predicate {
-      expression = each.value.expression
+      expression = each.value.predicate.expression
     }
     resource_selector {
-      resource_types = each.value.resource_types
+      resource_types = each.value.resource_selector.resource_types
     }
     description    = each.value.description
     recommendation = each.value.recommendation

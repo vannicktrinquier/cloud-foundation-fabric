@@ -5,13 +5,26 @@ module "organization" {
   factories_config = {
     org_policy_custom_constraints = "data/custom-constraints"
     scc_custom_modules            = "data/scc-custom-modules"
-
     context = {
       org_policies = {
         organization = var.organization
       }
       org_policy_custom_constraints = {}
       monitoring_alerts             = {}
+    }
+  }
+
+  scc_custom_modules = {
+    kmsKeyRotationPeriod = {
+      description    = "The rotation period of the identified cryptokey resource exceeds 30 days."
+      recommendation = "Set the rotation period to at most 30 days."
+      severity       = "MEDIUM"
+      predicate = {
+        expression = "resource.rotationPeriod > duration(\"2592000s\")"
+      }
+      resource_selector = {
+        resource_types = ["cloudkms.googleapis.com/CryptoKey"]
+      }
     }
   }
 
