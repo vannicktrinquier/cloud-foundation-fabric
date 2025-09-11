@@ -1,4 +1,4 @@
-# Copyright 2023 Google LLC
+# Copyright 2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,37 +13,48 @@
 # limitations under the License.
 
 values:
-  module.secret-manager.google_secret_manager_secret.default["test-auto"]:
+  module.secret-manager.google_secret_manager_secret.default["test"]:
+    annotations: null
+    deletion_protection: false
+    effective_labels:
+      goog-terraform-provisioned: 'true'
+    labels: null
     project: project-id
     replication:
     - auto:
       - customer_managed_encryption: []
       user_managed: []
-    secret_id: test-auto
-  module.secret-manager.google_secret_manager_secret.default["test-manual"]:
-    project: project-id
-    replication:
-    - auto: []
-      user_managed:
-      - replicas:
-        - customer_managed_encryption: []
-          location: europe-west8
-        - customer_managed_encryption: []
-          location: europe-west9
-    secret_id: test-manual
-  module.secret-manager.google_secret_manager_secret_iam_binding.default["test-auto.roles/secretmanager.secretAccessor"]:
+    rotation: []
+    secret_id: test
+    tags: null
+    terraform_labels:
+      goog-terraform-provisioned: 'true'
+    timeouts: null
+    topics: []
+    ttl: null
+    version_aliases: null
+    version_destroy_ttl: null
+  module.secret-manager.google_secret_manager_secret_iam_binding.authoritative["test.roles/secretmanager.admin"]:
     condition: []
     members:
-    - group:organization-admins@example.org
-    role: roles/secretmanager.secretAccessor
-  module.secret-manager.google_secret_manager_secret_iam_binding.default["test-manual.roles/secretmanager.secretAccessor"]:
-    condition: []
+    - user:test-0@example.com
+    role: roles/secretmanager.admin
+  module.secret-manager.google_secret_manager_secret_iam_binding.bindings["test-test"]:
+    condition:
+    - description: null
+      expression: resource.matchTag('1234567890/environment', 'test')
+      title: Test.
     members:
-    - group:organization-admins@example.org
+    - user:test-1@example.com
     role: roles/secretmanager.secretAccessor
+  module.secret-manager.google_secret_manager_secret_iam_member.members["test-test"]:
+    condition: []
+    member: user:test-2@example.com
+    role: roles/secretmanager.viewer
 
 counts:
-  google_secret_manager_secret: 2
+  google_secret_manager_secret: 1
   google_secret_manager_secret_iam_binding: 2
-
-outputs: {}
+  google_secret_manager_secret_iam_member: 1
+  modules: 1
+  resources: 4

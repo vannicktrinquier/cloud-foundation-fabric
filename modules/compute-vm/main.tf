@@ -158,6 +158,7 @@ resource "google_compute_instance" "default" {
   enable_display            = var.enable_display
   labels                    = var.labels
   metadata                  = var.metadata
+  metadata_startup_script   = var.metadata_startup_script
   resource_policies         = local.ischedule_attach
 
   dynamic "advanced_machine_features" {
@@ -230,6 +231,8 @@ resource "google_compute_instance" "default" {
         var.boot_disk.initialize_params == null
         ||
         var.boot_disk.use_independent_disk
+        ||
+        var.boot_disk.source != null
         ? []
         : [""]
       )
