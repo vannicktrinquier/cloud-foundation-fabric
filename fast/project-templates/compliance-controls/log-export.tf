@@ -45,8 +45,8 @@ module "log-export-project" {
     }
   }
   factories_config = {
-    observability = "data/observability"
-    scc_custom_modules            = "data/scc-custom-modules"
+    observability      = "data/observability"
+    scc_custom_modules = "data/scc-custom-modules"
   }
 
   scc_custom_modules = {
@@ -71,6 +71,6 @@ module "logging-bucket" {
   parent_type = "project"
   location    = var.location
   parent      = var.logging_project
-  id          = "org-logging-bucket"
+  name        = "org-logging-bucket"
 }
 

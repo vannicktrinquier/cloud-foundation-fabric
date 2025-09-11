@@ -1,3 +1,22 @@
+locals {
+  ctx_condition_vars = {
+    organization = {
+      id          = var.organization.id
+      customer_id = var.organization.customer_id
+      domain      = var.organization.domain
+    }
+    crypto = {
+      project_1 = var.security_project
+    }
+    vpn = {
+      peer_ip_1 = "1.1.1.1"
+    }
+    nat = {
+      project_1 = "dbs-validator-kcc-29ae"
+    }
+  }
+}
+
 module "organization" {
   source          = "../../../modules/organization"
   organization_id = "organizations/${var.organization.id}"
@@ -5,13 +24,10 @@ module "organization" {
   factories_config = {
     org_policy_custom_constraints = "data/custom-constraints"
     scc_custom_modules            = "data/scc-custom-modules"
-    context = {
-      org_policies = {
-        organization = var.organization
-      }
-      org_policy_custom_constraints = {}
-      monitoring_alerts             = {}
-    }
+  }
+
+  context = {
+    condition_vars = local.ctx_condition_vars
   }
 
   scc_custom_modules = {
@@ -36,8 +52,7 @@ module "organization" {
       disabled    = attrs.disabled
       exclusions  = attrs.exclusions
     }
-    },
-  )
+  },)
 }
 
 module "folder" {
@@ -46,25 +61,13 @@ module "folder" {
 
   name = "FSI Foundation"
   factories_config = {
-    org_policies = "data/org-policies"
-    scc_custom_modules            = "data/scc-custom-modules"
-
-    context = {
-      org_policies = {
-        organization = var.organization
-        crypto = {
-          project_1 = var.security_project
-        }
-        vpn = {
-          peer_ip_1 = "1.1.1.1"
-        }
-        nat = {
-          project_1 = "dbs-validator-kcc-29ae"
-        }
-      }
-    }
+    org_policies       = "data/org-policies"
+    scc_custom_modules = "data/scc-custom-modules"
   }
 
+  context = {
+    condition_vars = local.ctx_condition_vars
+  }
   scc_custom_modules = {
     kmsKeyRotationPeriod = {
       description    = "The rotation period of the identified cryptokey resource exceeds 30 days."

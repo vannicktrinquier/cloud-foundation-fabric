@@ -37,8 +37,8 @@ locals {
   )
   scc_custom_modules = {
     for k, v in local._scc_custom_modules :
-    templatestring(k, var.factories_config.context.scc_custom_modules) => merge(v, {
-      name   = templatestring(k, var.factories_config.context.scc_custom_modules)
+    k => merge(v, {
+      name   = k
       parent = "projects/${local.project.project_id}"
     })
   }

@@ -37,11 +37,12 @@ locals {
   )
   scc_custom_modules = {
     for k, v in local._scc_custom_modules :
-    templatestring(k, var.factories_config.context.scc_custom_modules) => merge(v, {
-      name   = templatestring(k, var.factories_config.context.scc_custom_modules)
+    k => merge(v, {
+      name   = k
       parent = local.folder_id
     })
   }
+
 }
 
 resource "google_scc_management_folder_security_health_analytics_custom_module" "scc_folder_custom_module" {
