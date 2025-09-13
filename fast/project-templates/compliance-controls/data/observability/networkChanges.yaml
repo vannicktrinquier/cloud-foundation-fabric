@@ -31,10 +31,10 @@ alerts:
         \n) ```"
       mime_type: text/markdown
     notification_channels:
-    - projects/fsi-foundation-logging-d872/notificationChannels/14935710665502908194
+    - alert-channel
 logging_metrics:
   networkChanges:
-    bucket_name: projects/fsi-foundation-logging-d872/locations/asia-southeast1/buckets/org-logging-bucket
+    bucket_name: org-bucket
     description: VPC Network Changes
     filter: "resource.type=\"gce_network\" AND (\n  protoPayload.methodName:\"compute.networks.insert\"\
       \ OR\n  protoPayload.methodName:\"compute.networks.patch\" OR\n  protoPayload.methodName:\"\

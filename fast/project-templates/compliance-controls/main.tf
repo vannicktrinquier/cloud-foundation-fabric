@@ -44,15 +44,15 @@ module "organization" {
     }
   }
 
-  logging_sinks = merge({
+  logging_sinks = var.logging_project == null ? {} : merge({
     for name, attrs in var.log_sinks : name => {
-      destination = var.logging_project
+      destination = module.log-export-project[0].project_id
       filter      = attrs.filter
       type        = "project"
       disabled    = attrs.disabled
       exclusions  = attrs.exclusions
     }
-  },)
+  }, )
 }
 
 module "folder" {

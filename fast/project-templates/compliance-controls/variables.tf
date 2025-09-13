@@ -42,6 +42,7 @@ variable "billing_account" {
 variable "logging_project" {
   description = "The logging project ID where to create log metrics and alerts."
   type        = string
+  default     = null
 }
 
 variable "log_sinks" {

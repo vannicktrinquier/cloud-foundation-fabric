@@ -69,7 +69,12 @@ resource "google_logging_metric" "metrics" {
   filter           = each.value.filter
   description      = each.value.description
   disabled         = each.value.disabled
-  bucket_name      = each.value.bucket_name
+  bucket_name = try(
+      # first try to check the context
+      var.context.logging_bucket_names[each.value.bucket_name],
+      # if nothing else, use the provided channel as is
+       each.value.bucket_name
+    )
   value_extractor  = each.value.value_extractor
   label_extractors = each.value.label_extractors
 

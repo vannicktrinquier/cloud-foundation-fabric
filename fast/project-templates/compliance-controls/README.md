@@ -4,19 +4,9 @@ This blueprint provides a set of controls for Financial Services institutions.
 
 ![Diagram](diagram.png)
 
-## Examples
+## Prerequisites
 
-### Basic Example
 
-```hcl
-module "fsi-controls" {
-  source = "./fabric/blueprints/compliance/fsi-controls"
-  # ...
-}
-```
-
-<!-- TFDOC OPTS files:1 show_extra:1 -->
-<!-- BEGIN TFDOC -->
 ## Files
 
 | name | description | modules | resources |
@@ -28,15 +18,23 @@ module "fsi-controls" {
 | [provider.tf](./provider.tf) | None |  |  |
 | [variables.tf](./variables.tf) | Module variables. |  |  |
 
+## Variable Configuration
+
+
 ## Variables
 
-| name | description | type | required | default | producer |
-|---|---|:---:|:---:|:---:|:---:|
-| | | | | | |
+| name | description | type | required | default |
+|---|---|:---:|:---:|:---:|
+
 
 ## Outputs
 
-| name | description | sensitive | consumers |
-|---|---|:---:|---|
-| | | | |
-<!-- END TFDOC -->
+| name | description | sensitive |
+|---|---|:---:|
+
+
+## Test
+
+```hcl
+# tftest skip
+```

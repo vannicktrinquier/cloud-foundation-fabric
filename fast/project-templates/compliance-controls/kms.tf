@@ -1,4 +1,3 @@
-
 module "security-project" {
   source          = "../../../modules/project"
   name            = var.security_project
@@ -13,7 +12,6 @@ module "security-project" {
   ]
 }
 
-
 module "kms" {
   source     = "../../../modules/kms"
   project_id = module.security-project.project_id
@@ -22,10 +20,6 @@ module "kms" {
     name     = "security-key-ring"
   }
   keys = {
-    key-sample = {
-      iam_additive = {
-        "roles/cloudkms.cryptoKeyEncrypterDecrypter" = ["serviceAccount:service-52290659405@gcp-sa-logging.iam.gserviceaccount.com"]
-      }
-    }
+    key-sample = {}
   }
 }
