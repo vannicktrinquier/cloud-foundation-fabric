@@ -33,3 +33,8 @@ output "security_project_id" {
   description = "Security project id"
   value       = module.security-project.project_id
 }
+
+output "kms_key" {
+  description = "KMS key created"
+  value       = module.kms.key_ids["key-sample"]
+}
