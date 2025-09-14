@@ -53,7 +53,6 @@ module "logging-project" {
     "pubsub.googleapis.com"           = [module.kms.key_ids["key-sample"]]
   }
 
-  # See https://discuss.google.dev/t/managing-multiple-google-cloud-projects-how-to-centralize-admin-activity-logs/169529 for explanation
   logging_sinks = {
     "activity-logs" : {
       destination = module.logging-bucket.id
@@ -91,23 +90,32 @@ module "logging-bucket" {
   depends_on = [google_kms_crypto_key_iam_member.service_agent_cmek]
 }
 
-data "google_logging_project_cmek_settings" "logging_cmek_settings" {
-  project = module.logging-project.project_id
-
-  depends_on = [google_project_service_identity.logging_agent]
-}
-
 resource "google_project_service_identity" "logging_agent" {
   provider = google-beta
   project  = module.logging-project.project_id
   service  = "logging.googleapis.com"
 }
 
+data "google_logging_project_cmek_settings" "logging_cmek_settings" {
+  project = module.logging-project.project_id
+
+  depends_on = [google_project_service_identity.logging_agent]
+}
+
+resource "time_sleep" "wait_for_sa_propagation" {
+  create_duration = "30s"
+
+  depends_on = [
+    data.google_logging_project_cmek_settings.logging_cmek_settings
+  ]
+}
+
 resource "google_kms_crypto_key_iam_member" "service_agent_cmek" {
   crypto_key_id = module.kms.key_ids["key-sample"]
   member        = "serviceAccount:service-${module.logging-project.number}@gcp-sa-logging.iam.gserviceaccount.com"
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
-  depends_on    = [google_project_service_identity.logging_agent]
+
+  depends_on    = [google_project_service_identity.logging_agent, time_sleep.wait_for_sa_propagation]
 }
 
 

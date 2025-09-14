@@ -61,15 +61,15 @@ module "organization" {
     }
   }
 
-  # logging_sinks = var.logging_project == null ? {} : merge({
-  #   for name, attrs in var.log_sinks : name => {
-  #     destination = module.logging-project.project_id
-  #     filter      = attrs.filter
-  #     type        = "project"
-  #     disabled    = attrs.disabled
-  #     exclusions  = attrs.exclusions
-  #   }
-  # }, )
+  logging_sinks = merge({
+    for name, attrs in var.log_sinks : name => {
+      destination = module.logging-project.project_id
+      filter      = attrs.filter
+      type        = "project"
+      disabled    = attrs.disabled
+      exclusions  = attrs.exclusions
+    }
+  }, )
 }
 
 module "folder" {
