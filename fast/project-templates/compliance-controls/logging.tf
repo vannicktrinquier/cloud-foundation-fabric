@@ -19,7 +19,7 @@
 module "logging-project" {
   source          = "../../../modules/project"
   name            = var.logging_project.name
-  parent          = "folders/${var.folder}"
+  parent          = var.logging_project.parent
   billing_account = var.billing_account
 
   project_reuse = var.logging_project.project_reuse == true ? {
@@ -115,7 +115,7 @@ resource "google_kms_crypto_key_iam_member" "service_agent_cmek" {
   member        = "serviceAccount:service-${module.logging-project.number}@gcp-sa-logging.iam.gserviceaccount.com"
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
 
-  depends_on    = [google_project_service_identity.logging_agent, time_sleep.wait_for_sa_propagation]
+  depends_on = [google_project_service_identity.logging_agent, time_sleep.wait_for_sa_propagation]
 }
 
 

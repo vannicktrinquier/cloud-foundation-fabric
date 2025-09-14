@@ -8,26 +8,6 @@ variable "organization" {
   })
 }
 
-variable "folder" {
-  description = "The folder ID where to apply the controls."
-  type        = string
-  default     = null
-}
-
-variable "project" {
-  description = "The project ID where to apply the controls."
-  type        = string
-  default     = null
-}
-
-variable "security_project" {
-  description = "The security project ID where to manage encryption keys."
-  type = object({
-    name          = string
-    number        = optional(number)
-    project_reuse = optional(bool, false)
-  })
-}
 variable "billing_project" {
   description = "The billing project ID."
   type        = string
@@ -43,9 +23,51 @@ variable "billing_account" {
   type        = string
 }
 
+variable "target_organization" {
+  description = "Set to true to apply controls at the organization level."
+  type        = bool
+  default     = false
+}
+
+variable "target_folders" {
+  description = "A list of folder IDs to apply controls to."
+  type        = list(string)
+  default     = []
+}
+
+variable "target_projects" {
+  description = "A list of project IDs to apply controls to."
+  type = list(object({
+    name   = string
+    number = number
+  }))
+  default = []
+}
+
+locals {
+  target_validation = var.target_organization ? 1 : 0 + length(var.target_folders) > 0 ? 1 : 0 + length(var.target_projects) > 0 ? 1 : 0
+}
+
+resource "null_resource" "validation" {
+  count = local.target_validation > 1 ? 1 : 0
+  provisioner "local-exec" {
+    command = "echo 'Error: Only one of target_organization, target_folders, or target_projects can be used.' && exit 1"
+  }
+}
+
+variable "security_project" {
+  description = "The security project ID where to manage encryption keys."
+  type = object({
+    parent        = string
+    name          = string
+    number        = optional(number)
+    project_reuse = optional(bool, false)
+  })
+}
 variable "logging_project" {
   description = "The logging project ID where to create log metrics and alerts."
   type = object({
+    parent        = string
     name          = string
     number        = optional(number)
     project_reuse = optional(bool, false)
@@ -72,24 +94,5 @@ variable "log_sinks" {
         gke-audit = "protoPayload.serviceName=\"k8s.io\""
       }
     }
-    # iam = {
-    #   filter = <<-FILTER
-    #     protoPayload.serviceName="iamcredentials.googleapis.com" OR
-    #     protoPayload.serviceName="iam.googleapis.com" OR
-    #     protoPayload.serviceName="sts.googleapis.com"
-    #   FILTER
-    # }
-    # vpc-sc = {
-    #   filter = <<-FILTER
-    #     protoPayload.metadata.@type="type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata"
-    #   FILTER
-    # }
-    # workspace-audit-logs = {
-    #   filter = <<-FILTER
-    #     protoPayload.serviceName="admin.googleapis.com" OR
-    #     protoPayload.serviceName="cloudidentity.googleapis.com" OR
-    #     protoPayload.serviceName="login.googleapis.com"
-    #   FILTER
-    # }
   }
 }

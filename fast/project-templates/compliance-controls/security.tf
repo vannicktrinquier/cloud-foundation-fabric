@@ -16,7 +16,7 @@
 module "security-project" {
   source          = "../../../modules/project"
   name            = var.security_project.name
-  parent          = "folders/${var.folder}"
+  parent          = var.security_project.parent
   billing_account = var.billing_account
 
   project_reuse = var.security_project.project_reuse == true ? {

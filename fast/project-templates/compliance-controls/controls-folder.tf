@@ -14,34 +14,31 @@
  * limitations under the License.
  */
 
+module "target_folders" {
+  for_each      = { for f in var.target_folders : f => f }
+  source        = "../../../modules/folder"
+  folder_create = false
 
-locals {
-  ctx_condition_vars = {
-    organization = {
-      id          = var.organization.id
-      customer_id = var.organization.customer_id
-      domain      = var.organization.domain
-    }
-    crypto = {
-      project_1 = var.security_project.name
-    }
-    vpn = {
-      peer_ip_1 = "1.1.1.1"
-    }
-    nat = {
-      project_1 = "dbs-validator-kcc-29ae"
-    }
-  }
-}
-
-module "organization" {
-  source          = "../../../modules/organization"
-  organization_id = "organizations/${var.organization.id}"
+  name = each.key
+  id   = "folders/${each.key}"
   factories_config = {
-    org_policy_custom_constraints = "data/custom-constraints"
+    org_policies       = "data/org-policies"
+    scc_custom_modules = "data/scc-custom-modules"
   }
 
   context = {
     condition_vars = local.ctx_condition_vars
   }
+
+  logging_sinks = merge({
+    for name, attrs in var.log_sinks : name => {
+      destination = module.logging-project.project_id
+      filter      = attrs.filter
+      type        = "project"
+      disabled    = attrs.disabled
+      exclusions  = attrs.exclusions
+    }
+  }, )
+
+  depends_on = [module.organization]
 }
