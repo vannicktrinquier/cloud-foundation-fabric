@@ -6,6 +6,8 @@ This blueprint provides a set of controls for Financial Services institutions.
 
 ## Prerequisites
 
+See https://discuss.google.dev/t/managing-multiple-google-cloud-projects-how-to-centralize-admin-activity-logs/169529 for explanation
+
 
 ## Files
 

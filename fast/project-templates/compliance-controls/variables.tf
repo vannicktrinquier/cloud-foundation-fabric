@@ -22,7 +22,11 @@ variable "project" {
 
 variable "security_project" {
   description = "The security project ID where to manage encryption keys."
-  type        = string
+  type = object({
+    name          = string
+    number        = optional(number)
+    project_reuse = optional(bool, false)
+  })
 }
 variable "billing_project" {
   description = "The billing project ID."
@@ -41,8 +45,11 @@ variable "billing_account" {
 
 variable "logging_project" {
   description = "The logging project ID where to create log metrics and alerts."
-  type        = string
-  default     = null
+  type = object({
+    name          = string
+    number        = optional(number)
+    project_reuse = optional(bool, false)
+  })
 }
 
 variable "log_sinks" {
