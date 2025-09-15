@@ -35,7 +35,6 @@ locals {
     local._custom_constraints_factory_data,
     var.org_policy_custom_constraints
   )
-  
   custom_constraints = {
     for k, v in local._custom_constraints :
     k => merge(v, {
