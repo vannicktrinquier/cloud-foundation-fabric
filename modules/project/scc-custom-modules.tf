@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
- # tfdoc:file:description Project-level Custom modules with Security Health Analytics.
+# tfdoc:file:description Project-level Custom modules with Security Health Analytics.
 
 locals {
   _scc_custom_modules_factory_path = pathexpand(coalesce(var.factories_config.scc_custom_modules, "-"))
@@ -50,7 +50,7 @@ resource "google_scc_management_project_security_health_analytics_custom_module"
   provider = google
 
   for_each     = local.scc_custom_modules
-  project = local.project.project_id
+  project      = local.project.project_id
   location     = "global"
   display_name = each.value.name
   custom_config {

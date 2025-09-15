@@ -285,5 +285,5 @@ resource "google_monitoring_alert_policy" "alerts" {
     }
   }
 
-  depends_on = [ google_logging_metric.metrics ]
+  depends_on = [google_logging_metric.metrics]
 }
