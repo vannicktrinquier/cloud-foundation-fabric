@@ -173,12 +173,6 @@ variable "parent" {
   }
 }
 
-variable "tag_bindings" {
-  description = "Tag bindings for this folder, in key => tag value id format."
-  type        = map(string)
-  default     = null
-}
-
 variable "scc_custom_modules" {
   description = "SCC custom modules keyed by module name."
   type = map(object({
@@ -195,4 +189,10 @@ variable "scc_custom_modules" {
   }))
   default  = {}
   nullable = false
+}
+
+variable "tag_bindings" {
+  description = "Tag bindings for this folder, in key => tag value id format."
+  type        = map(string)
+  default     = null
 }
