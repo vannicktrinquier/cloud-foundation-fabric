@@ -380,11 +380,11 @@ module "folder" {
 
 ```hcl
 module "folder" {
-  source          = "./fabric/modules/folder"
+  source = "./fabric/modules/folder"
   parent = var.folder_id
   name   = "Folder name"
   scc_custom_modules = {
-    kmsKeyRotationPeriod = {
+    cloudkmKeyRotationPeriod = {
       description    = "The rotation period of the identified cryptokey resource exceeds 30 days."
       recommendation = "Set the rotation period to at most 30 days."
       severity       = "MEDIUM"
@@ -397,6 +397,7 @@ module "folder" {
     }
   }
 }
+# tftest modules=1 resources=2 inventory=custom-modules-sha.yaml
 ```
 ### Custom Security Health Analytics Modules Factory
 
@@ -406,24 +407,27 @@ Custom modules defined via the variable are merged with those coming from the fa
 
 ```hcl
 module "folder" {
-  source          = "./fabric/modules/folder"
+  source = "./fabric/modules/folder"
   parent = var.folder_id
   name   = "Folder name"
   factories_config = {
     scc_custom_modules = "data/scc_custom_modules"
   }
 }
+# tftest modules=1 resources=2 files=custom-module-sha-1 inventory=custom-modules-sha.yaml
 ```
 
 ```yaml
-description: "The rotation period of the identified cryptokey resource exceeds 30 days."
-recommendation: "Set the rotation period to at most 30 days."
-severity: "MEDIUM"
-predicate:
-  expression: "resource.rotationPeriod > duration(\"2592000s\")"
-resource_selector:
-  resource_types:
-  - "cloudkms.googleapis.com/CryptoKey"
+# tftest-file id=custom-module-sha-1 path=data/scc_custom_modules/cloudkmKeyRotationPeriod.yaml
+cloudkmKeyRotationPeriod:
+  description: "The rotation period of the identified cryptokey resource exceeds 30 days."
+  recommendation: "Set the rotation period to at most 30 days."
+  severity: "MEDIUM"
+  predicate:
+    expression: "resource.rotationPeriod > duration(\"2592000s\")"
+  resource_selector:
+    resource_types:
+    - "cloudkms.googleapis.com/CryptoKey"
 ```
 
 ## Tags
@@ -483,7 +487,7 @@ module "folder" {
 | [contacts](variables.tf#L70) | List of essential contacts for this resource. Must be in the form EMAIL -> [NOTIFICATION_TYPES]. Valid notification types are ALL, SUSPENSION, SECURITY, TECHNICAL, BILLING, LEGAL, PRODUCT_UPDATES. | <code>map&#40;list&#40;string&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [context](variables.tf#L78) | Context-specific interpolations. | <code title="object&#40;&#123;&#10;  condition_vars &#61; optional&#40;map&#40;map&#40;string&#41;&#41;, &#123;&#125;&#41;&#10;  custom_roles   &#61; optional&#40;map&#40;string&#41;, &#123;&#125;&#41;&#10;  folder_ids     &#61; optional&#40;map&#40;string&#41;, &#123;&#125;&#41;&#10;  iam_principals &#61; optional&#40;map&#40;string&#41;, &#123;&#125;&#41;&#10;  tag_values     &#61; optional&#40;map&#40;string&#41;, &#123;&#125;&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [deletion_protection](variables.tf#L91) | Deletion protection setting for this folder. | <code>bool</code> |  | <code>false</code> |
-| [factories_config](variables.tf#L97) | Paths to data files and folders that enable factory functionality. | <code title="object&#40;&#123;&#10;  org_policies &#61; optional&#40;string&#41;&#10;  scc_custom_modules &#61; optional&#40;string&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>&#123;&#125;</code> |
+| [factories_config](variables.tf#L97) | Paths to data files and folders that enable factory functionality. | <code title="object&#40;&#123;&#10;  org_policies       &#61; optional&#40;string&#41;&#10;  scc_custom_modules &#61; optional&#40;string&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [firewall_policy](variables.tf#L107) | Hierarchical firewall policy to associate to this folder. | <code title="object&#40;&#123;&#10;  name   &#61; string&#10;  policy &#61; string&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>null</code> |
 | [folder_create](variables.tf#L116) | Create folder. When set to false, uses id to reference an existing folder. | <code>bool</code> |  | <code>true</code> |
 | [iam](variables-iam.tf#L17) | IAM bindings in {ROLE => [MEMBERS]} format. | <code>map&#40;list&#40;string&#41;&#41;</code> |  | <code>&#123;&#125;</code> |

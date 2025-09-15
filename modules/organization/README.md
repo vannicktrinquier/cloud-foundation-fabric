@@ -441,7 +441,7 @@ module "org" {
   source          = "./fabric/modules/organization"
   organization_id = var.organization_id
   scc_custom_modules = {
-    kmsKeyRotationPeriod = {
+    cloudkmKeyRotationPeriod = {
       description    = "The rotation period of the identified cryptokey resource exceeds 30 days."
       recommendation = "Set the rotation period to at most 30 days."
       severity       = "MEDIUM"
@@ -454,6 +454,7 @@ module "org" {
     }
   }
 }
+# tftest modules=1 resources=1 inventory=custom-modules-sha.yaml
 ```
 
 ### Custom Security Health Analytics Modules Factory
@@ -470,17 +471,20 @@ module "org" {
     scc_custom_modules = "data/scc_custom_modules"
   }
 }
+# tftest modules=1 resources=1 files=custom-module-sha-1 inventory=custom-modules-sha.yaml
 ```
 
 ```yaml
-description: "The rotation period of the identified cryptokey resource exceeds 30 days."
-recommendation: "Set the rotation period to at most 30 days."
-severity: "MEDIUM"
-predicate:
-  expression: "resource.rotationPeriod > duration(\"2592000s\")"
-resource_selector:
-  resource_types:
-  - "cloudkms.googleapis.com/CryptoKey"
+# tftest-file id=custom-module-sha-1 path=data/scc_custom_modules/cloudkmKeyRotationPeriod.yaml
+cloudkmKeyRotationPeriod:
+  description: "The rotation period of the identified cryptokey resource exceeds 30 days."
+  recommendation: "Set the rotation period to at most 30 days."
+  severity: "MEDIUM"
+  predicate:
+    expression: "resource.rotationPeriod > duration(\"2592000s\")"
+  resource_selector:
+    resource_types:
+    - "cloudkms.googleapis.com/CryptoKey"
 ```
 
 ## Tags
