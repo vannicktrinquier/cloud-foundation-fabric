@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+# tfdoc:file:description Folder-level Custom modules with Security Health Analytics.
+
 locals {
   _scc_custom_modules_factory_path = pathexpand(coalesce(var.factories_config.scc_custom_modules, "-"))
   _scc_custom_modules_factory_data_raw = merge([

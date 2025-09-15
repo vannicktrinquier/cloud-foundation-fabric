@@ -468,7 +468,7 @@ module "folder" {
 | [main.tf](./main.tf) | Module-level locals and resources. | <code>google_assured_workloads_workload</code> · <code>google_compute_firewall_policy_association</code> · <code>google_essential_contacts_contact</code> · <code>google_folder</code> |
 | [organization-policies.tf](./organization-policies.tf) | Folder-level organization policies. | <code>google_org_policy_policy</code> |
 | [outputs.tf](./outputs.tf) | Module outputs. |  |
-| [scc-custom-modules.tf](./scc-custom-modules.tf) | None | <code>google_scc_management_folder_security_health_analytics_custom_module</code> |
+| [scc-custom-modules.tf](./scc-custom-modules.tf) | Folder-level Custom modules with Security Health Analytics. | <code>google_scc_management_folder_security_health_analytics_custom_module</code> |
 | [tags.tf](./tags.tf) | None | <code>google_tags_tag_binding</code> |
 | [variables-iam.tf](./variables-iam.tf) | None |  |
 | [variables-logging.tf](./variables-logging.tf) | None |  |
