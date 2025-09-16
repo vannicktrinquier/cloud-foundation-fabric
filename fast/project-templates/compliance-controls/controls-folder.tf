@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-module "target_folders" {
+module "controls-folder" {
   for_each      = { for f in var.target_folders : f => f }
   source        = "../../../modules/folder"
   folder_create = false

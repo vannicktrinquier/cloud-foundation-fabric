@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-module "control-organization" {
+module "controls-organization" {
   source          = "../../../modules/organization"
   organization_id = "organizations/${var.organization.id}"
 

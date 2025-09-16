@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-module "target-projects" {
+module "controls-project" {
   for_each = { for p in var.target_projects : p.name => p }
   source   = "../../../modules/project"
 

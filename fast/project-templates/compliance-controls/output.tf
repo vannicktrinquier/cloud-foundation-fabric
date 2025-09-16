@@ -48,13 +48,13 @@ output "organization_policies_ids" {
   description = "Map of organization policies with parent as key and list of ids as value"
   value = merge(
     var.target_organization ? {
-      "organizations/${var.organization.id}" = module.control-organization.organization_policies_ids
+      "organizations/${var.organization.id}" = module.controls-organization.organization_policies_ids
     } : {},
     {
-      for f in var.target_folders : "folders/${f}" => module.target_folders[f].organization_policies_ids
+      for f in var.target_folders : "folders/${f}" => module.controls-folder[f].organization_policies_ids
     },
     {
-      for p in var.target_projects : "projects/${p.name}" => module.target-projects[p.name].organization_policies_ids
+      for p in var.target_projects : "projects/${p.name}" => module.controls-project[p.name].organization_policies_ids
     }
   )
 }
@@ -63,13 +63,13 @@ output "scc_custom_sha_modules_ids" {
   description = "Map of SCC custom security health analytics modules with parent as key and list of ids as value"
   value = merge(
     var.target_organization ? {
-      "organizations/${var.organization.id}" = module.control-organization.scc_custom_sha_modules_ids
+      "organizations/${var.organization.id}" = module.controls-organization.scc_custom_sha_modules_ids
     } : {},
     {
-      for f in var.target_folders : "folders/${f}" => module.target_folders[f].scc_custom_sha_modules_ids
+      for f in var.target_folders : "folders/${f}" => module.controls-folder[f].scc_custom_sha_modules_ids
     },
     {
-      for p in var.target_projects : "projects/${p.name}" => module.target-projects[p.name].scc_custom_sha_modules_ids
+      for p in var.target_projects : "projects/${p.name}" => module.controls-project[p.name].scc_custom_sha_modules_ids
     }
   )
 }
