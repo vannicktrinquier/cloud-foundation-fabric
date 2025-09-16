@@ -49,32 +49,22 @@ logging_project = {
   name   = "your-logging-project-id"
 }
 ```
-
+<!-- BEGIN TFDOC -->
 ## Variables
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| `billing_account` | The billing account. | `string` | n/a | yes |
-| `billing_project` | The billing project ID. | `string` | n/a | yes |
-| `location` | The location. | `string` | n/a | yes |
-| `log_sinks` | Org-level log sinks, in name => {type, filter} format. | `<pre>map(object({<br>    filter     = string<br>    disabled   = optional(bool, false)<br>    exclusions = optional(map(string), {})<br>  }))</pre>` | `{ audit-logs = { filter = <<-FILTER log_id("cloudaudit.googleapis.com/activity") OR log_id("cloudaudit.googleapis.com/system_event") OR log_id("cloudaudit.googleapis.com/policy") OR log_id("cloudaudit.googleapis.com/access_transparency") FILTER exclusions = { gke-audit = "protoPayload.serviceName="k8s.io"" } } }` | no |
-| `logging_project` | The logging project ID where to create log metrics and alerts. | `<pre>object({<br>    parent        = string<br>    name          = string<br>    number        = optional(number)<br>    project_reuse = optional(bool, false)<br>  })</pre>` | n/a | yes |
-| `organization` | Organization details. | `<pre>object({<br>    id          = number<br>    domain      = optional(string)<br>    customer_id = optional(string)<br>  })</pre>` | n/a | yes |
-| `security_project` | The security project ID where to manage encryption keys. | `<pre>object({<br>    parent        = string<br>    name          = string<br>    number        = optional(number)<br>    project_reuse = optional(bool, false)<br>  })</pre>` | n/a | yes |
-| `target_folders` | A list of folder IDs to apply controls to. | `list(string)` | `[]` | no |
-| `target_organization` | Set to true to apply controls at the organization level. | `bool` | `false` | no |
-| `target_projects` | A list of project IDs to apply controls to. | `<pre>list(object({<br>    name   = string<br>    number = number<br>  }))</pre>` | `[]` | no |
-
-## Outputs
-
-| Name | Description |
-|------|-------------|
-| `kms_key` | KMS key created |
-| `logging_project_id` | Logging project id |
-| `notification_channel` | Notification channel created |
-| `pubsub_topic` | Pub/Sub topic for monitoring alerts |
-| `security_project_id` | Security project id |
-
+| name | description | type | required | default |
+|---|---|:---:|:---:|:---:|
+| [billing_account](variables.tf#L21) | The billing account. | <code>string</code> | ✓ |  |
+| [billing_project](variables.tf#L11) | The billing project ID. | <code>string</code> | ✓ |  |
+| [location](variables.tf#L16) | The location. | <code>string</code> | ✓ |  |
+| [logging_project](variables.tf#L67) | The logging project ID where to create log metrics and alerts. | <code title="object&#40;&#123;&#10;  parent        &#61; string&#10;  name          &#61; string&#10;  number        &#61; optional&#40;number&#41;&#10;  project_reuse &#61; optional&#40;bool, false&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> | ✓ |  |
+| [organization](variables.tf#L2) | Organization details. | <code title="object&#40;&#123;&#10;  id          &#61; number&#10;  domain      &#61; optional&#40;string&#41;&#10;  customer_id &#61; optional&#40;string&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> | ✓ |  |
+| [security_project](variables.tf#L58) | The security project ID where to manage encryption keys. | <code title="object&#40;&#123;&#10;  parent        &#61; string&#10;  name          &#61; string&#10;  number        &#61; optional&#40;number&#41;&#10;  project_reuse &#61; optional&#40;bool, false&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> | ✓ |  |
+| [log_sinks](variables.tf#L77) | Org-level log sinks, in name => {type, filter} format. | <code title="map&#40;object&#40;&#123;&#10;  filter     &#61; string&#10;  disabled   &#61; optional&#40;bool, false&#41;&#10;  exclusions &#61; optional&#40;map&#40;string&#41;, &#123;&#125;&#41;&#10;&#125;&#41;&#41;">map&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code title="&#123;&#10;  audit-logs &#61; &#123;&#10;    filter &#61; &#60;&#60;-FILTER&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;activity&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;system_event&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;policy&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;access_transparency&#34;&#41;&#10;    FILTER&#10;    exclusions &#61; &#123;&#10;      gke-audit &#61; &#34;protoPayload.serviceName&#61;&#92;&#34;k8s.io&#92;&#34;&#34;&#10;    &#125;&#10;  &#125;&#10;&#125;">&#123;&#8230;&#125;</code> |
+| [target_folders](variables.tf#L32) | A list of folder IDs to apply controls to. | <code>list&#40;string&#41;</code> |  | <code>&#91;&#93;</code> |
+| [target_organization](variables.tf#L26) | Set to true to apply controls at the organization level. | <code>bool</code> |  | <code>false</code> |
+| [target_projects](variables.tf#L38) | A list of project IDs to apply controls to. | <code title="list&#40;object&#40;&#123;&#10;  name   &#61; string&#10;  number &#61; number&#10;&#125;&#41;&#41;">list&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code>&#91;&#93;</code> |
+<!-- END TFDOC -->
 ## Tests
 
 You can test the compliance controls by running `terraform plan` and `terraform apply`. This will show you the changes that will be made to your environment and allow you to confirm that they are correct.
