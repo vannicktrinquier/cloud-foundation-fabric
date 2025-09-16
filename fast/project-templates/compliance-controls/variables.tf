@@ -13,6 +13,11 @@ variable "billing_project" {
   type        = string
 }
 
+variable "controls_folder" {
+  description = "The folder where controls are stored."
+  type        = string
+}
+
 variable "location" {
   description = "The location."
   type        = string

@@ -38,7 +38,7 @@ module "organization" {
   source          = "../../../modules/organization"
   organization_id = "organizations/${var.organization.id}"
   factories_config = {
-    org_policy_custom_constraints = "data/custom-constraints"
+    org_policy_custom_constraints = "${var.controls_folder}/custom-constraints"
   }
 
   context = {

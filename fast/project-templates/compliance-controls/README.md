@@ -48,26 +48,174 @@ logging_project = {
   parent = "folders/123456789012"
   name   = "your-logging-project-id"
 }
+# tftest skip
 ```
 <!-- BEGIN TFDOC -->
 ## Variables
 
 | name | description | type | required | default |
 |---|---|:---:|:---:|:---:|
-| [billing_account](variables.tf#L21) | The billing account. | <code>string</code> | ✓ |  |
+| [billing_account](variables.tf#L26) | The billing account. | <code>string</code> | ✓ |  |
 | [billing_project](variables.tf#L11) | The billing project ID. | <code>string</code> | ✓ |  |
-| [location](variables.tf#L16) | The location. | <code>string</code> | ✓ |  |
-| [logging_project](variables.tf#L67) | The logging project ID where to create log metrics and alerts. | <code title="object&#40;&#123;&#10;  parent        &#61; string&#10;  name          &#61; string&#10;  number        &#61; optional&#40;number&#41;&#10;  project_reuse &#61; optional&#40;bool, false&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> | ✓ |  |
+| [controls_folder](variables.tf#L16) | The folder where controls are stored. | <code>string</code> | ✓ |  |
+| [location](variables.tf#L21) | The location. | <code>string</code> | ✓ |  |
+| [logging_project](variables.tf#L72) | The logging project ID where to create log metrics and alerts. | <code title="object&#40;&#123;&#10;  parent        &#61; string&#10;  name          &#61; string&#10;  number        &#61; optional&#40;number&#41;&#10;  project_reuse &#61; optional&#40;bool, false&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> | ✓ |  |
 | [organization](variables.tf#L2) | Organization details. | <code title="object&#40;&#123;&#10;  id          &#61; number&#10;  domain      &#61; optional&#40;string&#41;&#10;  customer_id &#61; optional&#40;string&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> | ✓ |  |
-| [security_project](variables.tf#L58) | The security project ID where to manage encryption keys. | <code title="object&#40;&#123;&#10;  parent        &#61; string&#10;  name          &#61; string&#10;  number        &#61; optional&#40;number&#41;&#10;  project_reuse &#61; optional&#40;bool, false&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> | ✓ |  |
-| [log_sinks](variables.tf#L77) | Org-level log sinks, in name => {type, filter} format. | <code title="map&#40;object&#40;&#123;&#10;  filter     &#61; string&#10;  disabled   &#61; optional&#40;bool, false&#41;&#10;  exclusions &#61; optional&#40;map&#40;string&#41;, &#123;&#125;&#41;&#10;&#125;&#41;&#41;">map&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code title="&#123;&#10;  audit-logs &#61; &#123;&#10;    filter &#61; &#60;&#60;-FILTER&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;activity&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;system_event&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;policy&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;access_transparency&#34;&#41;&#10;    FILTER&#10;    exclusions &#61; &#123;&#10;      gke-audit &#61; &#34;protoPayload.serviceName&#61;&#92;&#34;k8s.io&#92;&#34;&#34;&#10;    &#125;&#10;  &#125;&#10;&#125;">&#123;&#8230;&#125;</code> |
-| [target_folders](variables.tf#L32) | A list of folder IDs to apply controls to. | <code>list&#40;string&#41;</code> |  | <code>&#91;&#93;</code> |
-| [target_organization](variables.tf#L26) | Set to true to apply controls at the organization level. | <code>bool</code> |  | <code>false</code> |
-| [target_projects](variables.tf#L38) | A list of project IDs to apply controls to. | <code title="list&#40;object&#40;&#123;&#10;  name   &#61; string&#10;  number &#61; number&#10;&#125;&#41;&#41;">list&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code>&#91;&#93;</code> |
+| [security_project](variables.tf#L63) | The security project ID where to manage encryption keys. | <code title="object&#40;&#123;&#10;  parent        &#61; string&#10;  name          &#61; string&#10;  number        &#61; optional&#40;number&#41;&#10;  project_reuse &#61; optional&#40;bool, false&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> | ✓ |  |
+| [log_sinks](variables.tf#L82) | Org-level log sinks, in name => {type, filter} format. | <code title="map&#40;object&#40;&#123;&#10;  filter     &#61; string&#10;  disabled   &#61; optional&#40;bool, false&#41;&#10;  exclusions &#61; optional&#40;map&#40;string&#41;, &#123;&#125;&#41;&#10;&#125;&#41;&#41;">map&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code title="&#123;&#10;  audit-logs &#61; &#123;&#10;    filter &#61; &#60;&#60;-FILTER&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;activity&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;system_event&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;policy&#34;&#41; OR&#10;      log_id&#40;&#34;cloudaudit.googleapis.com&#47;access_transparency&#34;&#41;&#10;    FILTER&#10;    exclusions &#61; &#123;&#10;      gke-audit &#61; &#34;protoPayload.serviceName&#61;&#92;&#34;k8s.io&#92;&#34;&#34;&#10;    &#125;&#10;  &#125;&#10;&#125;">&#123;&#8230;&#125;</code> |
+| [target_folders](variables.tf#L37) | A list of folder IDs to apply controls to. | <code>list&#40;string&#41;</code> |  | <code>&#91;&#93;</code> |
+| [target_organization](variables.tf#L31) | Set to true to apply controls at the organization level. | <code>bool</code> |  | <code>false</code> |
+| [target_projects](variables.tf#L43) | A list of project IDs to apply controls to. | <code title="list&#40;object&#40;&#123;&#10;  name   &#61; string&#10;  number &#61; number&#10;&#125;&#41;&#41;">list&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code>&#91;&#93;</code> |
 <!-- END TFDOC -->
 ## Tests
 
 You can test the compliance controls by running `terraform plan` and `terraform apply`. This will show you the changes that will be made to your environment and allow you to confirm that they are correct.
+
+```hcl
+module "controls" {
+  source = "./fabric/fast/project-templates/compliance-controls"
+
+  organization = {
+    id          = "123456789012"
+    domain      = "example.com"
+    customer_id = "C01234567"
+  }
+
+  billing_project = "your-billing-project-id"
+  location        = "your-location"
+  billing_account = "your-billing-account-id"
+
+  target_organization = true
+  controls_folder     = "data"
+
+  security_project = {
+    parent = "folders/123456789012"
+    name   = "your-security-project-id"
+  }
+
+  logging_project = {
+    parent = "folders/123456789012"
+    name   = "your-logging-project-id"
+  }
+}
+# tftest modules=8 resources=52 files=custom-module-sha-1,constraint-1,org-policies-1,observability-1 
+```
+
+```yaml
+compute.disableGuestAttributesAccess:
+  rules:
+  - enforce: true
+compute.skipDefaultNetworkCreation:
+  rules:
+  - enforce: true
+# tftest-file id=org-policies-1 path=data/org-policies/compute.yaml
+```
+
+```yaml
+custom.gkeEnableLogging:
+  resource_types:
+  - container.googleapis.com/Cluster
+  method_types:
+  - CREATE
+  - UPDATE
+  condition: resource.loggingService == "none"
+  action_type: DENY
+  display_name: Do not disable Cloud Logging
+custom.gkeEnableAutoUpgrade:
+  resource_types:
+  - container.googleapis.com/NodePool
+  method_types:
+  - CREATE
+  condition: resource.management.autoUpgrade == true
+  action_type: ALLOW
+  display_name: Enable node auto-upgrade
+  description: All node pools must have node auto-upgrade enabled.
+
+# tftest-file id=constraint-1 path=data/custom-constraints/gke.yaml
+```
+
+```yaml
+cloudkmKeyRotationPeriod:
+  description: "The rotation period of the identified cryptokey resource exceeds 30 days."
+  recommendation: "Set the rotation period to at most 30 days."
+  severity: "MEDIUM"
+  predicate:
+    expression: "resource.rotationPeriod > duration(\"2592000s\")"
+  resource_selector:
+    resource_types:
+    - "cloudkms.googleapis.com/CryptoKey"
+
+# tftest-file id=custom-module-sha-1 path=data/scc-custom-modules/cloudkmKeyRotationPeriod.yaml
+```
+
+```yaml
+alerts:
+  auditConfigChanges:
+    combiner: OR
+    conditions:
+    - condition_threshold:
+        aggregations:
+        - alignment_period: 60s
+          cross_series_reducer: REDUCE_SUM
+          group_by_fields:
+          - metric.label.principal
+          - metric.label.method_name
+          - metric.label.organization_id
+          - metric.label.folder_id
+          - metric.label.project_id
+          per_series_aligner: ALIGN_SUM
+        comparison: COMPARISON_GT
+        duration: 0s
+        filter: resource.type = "logging_bucket" AND metric.type = "logging.googleapis.com/user/auditConfigChanges"
+        threshold_value: 0
+        trigger:
+          count: 1
+      display_name: 'Log match condition: Audit Configuration Changes'
+    display_name: Audit Configuration Changes
+    documentation:
+      content: 'Log-based alerting policy in project ${project} detected audit configuration
+        changes.
+
+        This alert helps track GCP services audit log configuration changes to ensure
+        appropriate audit logs are being collected. ``` protoPayload.methodName="SetIamPolicy"
+        AND protoPayload.serviceData.policyDelta.auditConfigDeltas:* ```'
+      mime_type: text/markdown
+    notification_channels:
+    - alert-channel
+logging_metrics:
+  auditConfigChanges:
+    bucket_name: org-bucket
+    description: Audit Configuration Changes
+    filter: protoPayload.methodName="SetIamPolicy" AND protoPayload.serviceData.policyDelta.auditConfigDeltas:*
+    label_extractors:
+      folder_id: EXTRACT(labels.folder_id)
+      method_name: EXTRACT(protoPayload.methodName)
+      organization_id: EXTRACT(labels.organization_id)
+      principal: EXTRACT(protoPayload.authenticationInfo.principalEmail)
+      project_id: EXTRACT(labels.project_id)
+    metric_descriptor:
+      labels:
+      - description: principal
+        key: principal
+        value_type: STRING
+      - description: method_name
+        key: method_name
+        value_type: STRING
+      - description: organization_id
+        key: organization_id
+        value_type: STRING
+      - description: folder_id
+        key: folder_id
+        value_type: STRING
+      - description: project_id
+        key: project_id
+        value_type: STRING
+      metric_kind: DELTA
+      unit: '1'
+      value_type: INT64
+
+# tftest-file id=observability-1 path=data/observability/auditConfigChanges.yaml
+```
 
 ## Controls
 

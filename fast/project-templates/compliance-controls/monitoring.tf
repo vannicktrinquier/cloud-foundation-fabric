@@ -39,7 +39,7 @@ module "monitoring-alerts-project" {
     }
   }
   factories_config = {
-    observability = "data/observability"
+    observability = "${var.controls_folder}/observability"
   }
 
   depends_on = [module.logging-project]

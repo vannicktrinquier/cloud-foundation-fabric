@@ -28,8 +28,8 @@ module "target-projects" {
   }
 
   factories_config = {
-    org_policies       = "data/org-policies"
-    scc_custom_modules = "data/scc-custom-modules"
+    org_policies       = "${var.controls_folder}/org-policies"
+    scc_custom_modules = "${var.controls_folder}/scc-custom-modules"
   }
 
   context = {

@@ -19,8 +19,8 @@ module "control-organization" {
   organization_id = "organizations/${var.organization.id}"
 
   factories_config = {
-    org_policies       = var.target_organization ? "data/org-policies" : null
-    scc_custom_modules = var.target_organization ? "data/scc-custom-modules" : null
+    org_policies       = var.target_organization ? "${var.controls_folder}/org-policies" : null
+    scc_custom_modules = var.target_organization ? "${var.controls_folder}/scc-custom-modules" : null
   }
 
   context = {
