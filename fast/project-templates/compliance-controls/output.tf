@@ -38,3 +38,13 @@ output "kms_key" {
   description = "KMS key created"
   value       = module.kms.key_ids["key-sample"]
 }
+
+output "custom_constraints" {
+  description = "Custom constraints deployed."
+  value       = module.organization.custom_constraint_ids
+}
+
+output "monitoring_alerts" {
+  description = "Monitoring alerts deployed."
+  value       = module.monitoring-alerts-project.alert_ids
+}
