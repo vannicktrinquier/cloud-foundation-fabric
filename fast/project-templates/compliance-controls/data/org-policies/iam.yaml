@@ -24,7 +24,7 @@ custom.iamAllowedMembers:
 
 custom.iamDisableAdminServiceAccount:
   rules:
-    - enforce: true
+    - enforce: false
 
 custom.iamDisableBasicRoles:
   rules:
