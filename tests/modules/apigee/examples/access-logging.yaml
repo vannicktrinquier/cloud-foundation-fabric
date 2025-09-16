@@ -12,15 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-# sample subset of useful organization policies, edit to suit requirements
-# start of document (---) avoids errors if the file only contains comments
+values:
+  module.apigee.google_apigee_instance.instances["europe-west1"]:
+    access_logging_config:
+    - enabled: true
+      filter: statusCode >= 200 && statusCode < 300
+    description: Terraform-managed
+    disk_encryption_key_name: null
+    display_name: null
+    ip_range: 10.0.4.0/22,10.1.1.0/28
+    location: europe-west1
+    name: instance-europe-west1
+    org_id: organizations/my-project
+    timeouts: null
 
-# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
-
-essentialcontacts.managed.allowedContactDomains:
-  rules:
-    - enforce: true
-      parameters: >- 
-        { "allowedDomains": ["@${organization.domain}"] }
-
+counts:
+  google_apigee_instance: 1
+  modules: 1
+  resources: 1

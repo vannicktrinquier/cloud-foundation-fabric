@@ -12,13 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-# sample subset of useful organization policies, edit to suit requirements
-# start of document (---) avoids errors if the file only contains comments
+module: modules/secret-manager
 
-# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
-
-appengine.disableCodeDownload:
-  rules:
-    - enforce: true
-
+tests:
+  context:
+    skip_tofu: True

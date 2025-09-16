@@ -1,5 +1,5 @@
 /**
- * Copyright 2022 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+# tfdoc:file:description Folder-level Custom modules with Security Health Analytics.
 
 locals {
   _scc_custom_modules_factory_path = pathexpand(coalesce(var.factories_config.scc_custom_modules, "-"))
@@ -49,7 +51,7 @@ resource "google_scc_management_folder_security_health_analytics_custom_module" 
   provider = google
 
   for_each     = local.scc_custom_modules
-  folder = replace(local.folder_id, "folders/", "")
+  folder       = replace(local.folder_id, "folders/", "")
   location     = "global"
   display_name = each.value.name
   custom_config {
