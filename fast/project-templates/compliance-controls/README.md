@@ -3,9 +3,8 @@
 This folder contains a set of compliance controls that can be applied to your Google Cloud environment. It includes preventive controls (custom constraints and organization policies) and detective controls (SCC custom modules and observability).
 
 The diagram below shows the relationships between the components.
-<p align="center">
-  <img src="assets/diagram.png" alt="Compliance Control diagram">
-</p>
+![image](assets/diagram.png)
+
 
 ## Prerequisites
 
