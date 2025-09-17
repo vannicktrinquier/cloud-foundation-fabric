@@ -1928,12 +1928,14 @@ alerts:
 | [notification_channel_names](outputs.tf#L90) | Notification channel names. |  |
 | [notification_channels](outputs.tf#L98) | Full notification channel objects. |  |
 | [number](outputs.tf#L103) | Project number. |  |
-| [project_id](outputs.tf#L121) | Project id. |  |
-| [quota_configs](outputs.tf#L139) | Quota configurations. |  |
-| [quotas](outputs.tf#L150) | Quota resources. |  |
-| [service_agents](outputs.tf#L155) | List of all (active) service agents for this project. |  |
-| [services](outputs.tf#L164) | Service APIs to enable in the project. |  |
-| [sink_writer_identities](outputs.tf#L173) | Writer identities created for each sink. |  |
-| [tag_keys](outputs.tf#L180) | Tag key resources. |  |
-| [tag_values](outputs.tf#L189) | Tag value resources. |  |
+| [organization_policies_ids](outputs.tf#L118) | Map of ORGANIZATION_POLICIES => ID in the organization. |  |
+| [project_id](outputs.tf#L125) | Project id. |  |
+| [quota_configs](outputs.tf#L143) | Quota configurations. |  |
+| [quotas](outputs.tf#L154) | Quota resources. |  |
+| [scc_custom_sha_modules_ids](outputs.tf#L201) | Map of SCC CUSTOM SHA MODULES => ID in the organization. |  |
+| [service_agents](outputs.tf#L159) | List of all (active) service agents for this project. |  |
+| [services](outputs.tf#L168) | Service APIs to enable in the project. |  |
+| [sink_writer_identities](outputs.tf#L177) | Writer identities created for each sink. |  |
+| [tag_keys](outputs.tf#L184) | Tag key resources. |  |
+| [tag_values](outputs.tf#L193) | Tag value resources. |  |
 <!-- END TFDOC -->

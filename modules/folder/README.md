@@ -514,5 +514,7 @@ module "folder" {
 | [folder](outputs.tf#L22) | Folder resource. |  |
 | [id](outputs.tf#L27) | Fully qualified folder id. |  |
 | [name](outputs.tf#L38) | Folder name. |  |
-| [sink_writer_identities](outputs.tf#L47) | Writer identities created for each sink. |  |
+| [organization_policies_ids](outputs.tf#L47) | Map of ORGANIZATION_POLICIES => ID in the organization. |  |
+| [scc_custom_sha_modules_ids](outputs.tf#L60) | Map of SCC CUSTOM SHA MODULES => ID in the organization. |  |
+| [sink_writer_identities](outputs.tf#L52) | Writer identities created for each sink. |  |
 <!-- END TFDOC -->
