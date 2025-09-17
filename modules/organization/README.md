@@ -700,8 +700,8 @@ values:
 | [network_tag_values](outputs.tf#L59) | Tag value resources. |  |
 | [organization_id](outputs.tf#L69) | Organization id dependent on module resources. |  |
 | [organization_policies_ids](outputs.tf#L86) | Map of ORGANIZATION_POLICIES => ID in the organization. |  |
-| [scc_custom_sha_modules_ids](outputs.tf#L116) | Map of SCC CUSTOM SHA MODULES => ID in the organization. |  |
+| [scc_custom_sha_modules_ids](outputs.tf#L108) | Map of SCC CUSTOM SHA MODULES => ID in the organization. |  |
 | [sink_writer_identities](outputs.tf#L91) | Writer identities created for each sink. |  |
 | [tag_keys](outputs.tf#L99) | Tag key resources. |  |
-| [tag_values](outputs.tf#L108) | Tag value resources. |  |
+| [tag_values](outputs.tf#L113) | Tag value resources. |  |
 <!-- END TFDOC -->

@@ -156,6 +156,11 @@ output "quotas" {
   value       = google_cloud_quotas_quota_preference.default
 }
 
+output "scc_custom_sha_modules_ids" {
+  description = "Map of SCC CUSTOM SHA MODULES => ID in the organization."
+  value       = { for k, v in google_scc_management_project_security_health_analytics_custom_module.scc_project_custom_module : k => v.id }
+}
+
 output "service_agents" {
   description = "List of all (active) service agents for this project."
   value       = local.aliased_service_agents
@@ -196,9 +201,4 @@ output "tag_values" {
     for k, v in google_tags_tag_value.default :
     k => v if try(local.tag_values[k].tag_network, null) == null
   }
-}
-
-output "scc_custom_sha_modules_ids" {
-  description = "Map of SCC CUSTOM SHA MODULES => ID in the organization."
-  value       = { for k, v in google_scc_management_project_security_health_analytics_custom_module.scc_project_custom_module : k => v.id }
 }

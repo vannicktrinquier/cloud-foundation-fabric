@@ -105,6 +105,11 @@ output "tag_keys" {
   }
 }
 
+output "scc_custom_sha_modules_ids" {
+  description = "Map of SCC CUSTOM SHA MODULES => ID in the organization."
+  value       = { for k, v in google_scc_management_organization_security_health_analytics_custom_module.scc_organization_custom_module : k => v.id }
+}
+
 output "tag_values" {
   description = "Tag value resources."
   value = {
@@ -113,7 +118,3 @@ output "tag_values" {
   }
 }
 
-output "scc_custom_sha_modules_ids" {
-  description = "Map of SCC CUSTOM SHA MODULES => ID in the organization."
-  value       = { for k, v in google_scc_management_organization_security_health_analytics_custom_module.scc_organization_custom_module : k => v.id }
-}
