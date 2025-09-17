@@ -64,7 +64,8 @@ compute.restrictVpnPeerIPs:
   rules:
     - allow:
         values:
-            - "projects/${vpn.peer_ip_1}"
+            - "1.1.1.1"
+            - "2.2.2.2"
 
 custom.networkRequireCustomModeVpc:
   rules:

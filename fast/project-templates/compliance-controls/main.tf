@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 locals {
   ctx_condition_vars = {
     organization = {
@@ -25,12 +24,6 @@ locals {
     crypto = {
       project_1 = var.security_project.name
     }
-    vpn = {
-      peer_ip_1 = "1.1.1.1"
-    }
-    nat = {
-      project_1 = "dbs-validator-kcc-29ae"
-    }
   }
 }
 
@@ -39,9 +32,5 @@ module "organization" {
   organization_id = "organizations/${var.organization.id}"
   factories_config = {
     org_policy_custom_constraints = "${var.controls_folder}/custom-constraints"
-  }
-
-  context = {
-    condition_vars = local.ctx_condition_vars
   }
 }

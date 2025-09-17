@@ -26,7 +26,7 @@ compute.restrictCloudNATUsage:
   rules:
     - allow:
         values:
-            - "under:projects/${nat.project_1}"
+            - under:folders/1111
 
 compute.managed.vmCanIpForward:
   rules:

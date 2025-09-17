@@ -96,12 +96,14 @@ resource "google_project_service_identity" "logging_agent" {
   service  = "logging.googleapis.com"
 }
 
+# Needed to ensure logging service account managed CMEK is created
 data "google_logging_project_cmek_settings" "logging_cmek_settings" {
   project = module.logging-project.project_id
 
   depends_on = [google_project_service_identity.logging_agent]
 }
 
+# Provide delay to ensure logging service account is created before assigning permissions
 resource "time_sleep" "wait_for_sa_propagation" {
   create_duration = "30s"
 

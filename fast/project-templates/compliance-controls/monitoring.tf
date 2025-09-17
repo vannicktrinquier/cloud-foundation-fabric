@@ -23,6 +23,7 @@ resource "google_pubsub_topic" "notification_channel_topic" {
 module "monitoring-alerts-project" {
   source = "../../../modules/project"
   name   = var.logging_project.name
+
   project_reuse = {
     use_data_source = false
     attributes = {
@@ -30,6 +31,7 @@ module "monitoring-alerts-project" {
       number = module.logging-project.number
     }
   }
+  
   context = {
     notification_channels = {
       "alert-channel" = module.logging-project.notification_channels["alert-notification-channel"].id

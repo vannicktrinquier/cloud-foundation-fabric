@@ -70,7 +70,6 @@ logging_project = {
 ## Tests
 
 You can test the compliance controls by running `terraform plan` and `terraform apply`. This will show you the changes that will be made to your environment and allow you to confirm that they are correct.
-
 ```hcl
 module "controls" {
   source = "./fabric/fast/project-templates/compliance-controls"
@@ -81,13 +80,14 @@ module "controls" {
     customer_id = "C01234567"
   }
 
-  billing_project = "your-billing-project-id"
   location        = "your-location"
-  billing_account = "your-billing-account-id"
+  billing_account = "12345-ABCDE-12345"
 
+  # Controls configuration
   target_organization = true
-  controls_folder     = "data"
+  controls_folder     = "data/"
 
+  # Create new projects
   security_project = {
     parent = "folders/123456789012"
     name   = "your-security-project-id"
@@ -97,6 +97,21 @@ module "controls" {
     parent = "folders/123456789012"
     name   = "your-logging-project-id"
   }
+
+  # Reuse existing projects
+  # security_project = {
+  #   parent        = "folders/123456789012"
+  #   name          = "your-security-project-id"
+  #   number        = "11111111"
+  #   project_reuse = true
+  # }
+  #
+  # logging_project = {
+  #   parent = "folders/123456789012"
+  #   name   = "your-logging-project-id"
+  #   number        = "11111112"
+  #   project_reuse = true
+  # }
 }
 # tftest modules=8 resources=52 files=custom-module-sha-1,constraint-1,org-policies-1,observability-1 
 ```

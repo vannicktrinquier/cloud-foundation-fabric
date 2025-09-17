@@ -19,8 +19,9 @@ module "controls-folder" {
   source        = "../../../modules/folder"
   folder_create = false
 
-  name = each.key
   id   = "folders/${each.key}"
+  name = each.key
+  
   factories_config = {
     org_policies       = "${var.controls_folder}/org-policies"
     scc_custom_modules = "${var.controls_folder}/scc-custom-modules"
