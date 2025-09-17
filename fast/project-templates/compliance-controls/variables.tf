@@ -26,16 +26,6 @@ variable "location" {
   type        = string
 }
 
-variable "logging_project" {
-  description = "The logging project ID where to create log metrics and alerts."
-  type = object({
-    parent        = string
-    name          = string
-    number        = optional(number)
-    project_reuse = optional(bool, false)
-  })
-}
-
 variable "log_sinks" {
   description = "Org-level log sinks, in name => {type, filter} format."
   type = map(object({
@@ -57,6 +47,16 @@ variable "log_sinks" {
       }
     }
   }
+}
+
+variable "logging_project" {
+  description = "The logging project ID where to create log metrics and alerts."
+  type = object({
+    parent        = string
+    name          = string
+    number        = optional(number)
+    project_reuse = optional(bool, false)
+  })
 }
 
 variable "organization" {
