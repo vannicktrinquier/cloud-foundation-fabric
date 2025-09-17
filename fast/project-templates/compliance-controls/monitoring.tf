@@ -31,7 +31,7 @@ module "monitoring-alerts-project" {
       number = module.logging-project.number
     }
   }
-  
+
   context = {
     notification_channels = {
       "alert-channel" = module.logging-project.notification_channels["alert-notification-channel"].id
