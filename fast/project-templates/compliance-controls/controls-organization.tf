@@ -20,7 +20,7 @@ module "controls-organization" {
 
   factories_config = {
     org_policies       = var.target_organization ? "${var.controls_folder}/org-policies" : null
-    scc_custom_modules = var.target_organization ? "${var.controls_folder}/scc-custom-modules" : null
+    scc_customs_sha_modules = var.target_organization ? "${var.controls_folder}/scc-custom-sha-modules" : null
   }
 
   context = {

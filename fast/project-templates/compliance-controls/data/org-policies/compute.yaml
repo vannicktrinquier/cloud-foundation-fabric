@@ -26,7 +26,7 @@ compute.restrictCloudNATUsage:
   rules:
     - allow:
         values:
-            - "folders/11111111111"
+            - "under:folders/11111111111"
 
 compute.managed.vmCanIpForward:
   rules:

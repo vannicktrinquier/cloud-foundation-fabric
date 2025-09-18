@@ -159,7 +159,7 @@ cloudkmKeyRotationPeriod:
     resource_types:
     - "cloudkms.googleapis.com/CryptoKey"
 
-# tftest-file id=custom-module-sha-1 path=data/scc-custom-modules/cloudkmKeyRotationPeriod.yaml
+# tftest-file id=custom-module-sha-1 path=data/scc-custom-sha-modules/cloudkmKeyRotationPeriod.yaml
 ```
 
 ```yaml

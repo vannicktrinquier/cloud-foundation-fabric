@@ -24,7 +24,7 @@ module "controls-folder" {
 
   factories_config = {
     org_policies       = "${var.controls_folder}/org-policies"
-    scc_custom_modules = "${var.controls_folder}/scc-custom-modules"
+    scc_customs_sha_modules = "${var.controls_folder}/scc-custom-sha-modules"
   }
 
   context = {

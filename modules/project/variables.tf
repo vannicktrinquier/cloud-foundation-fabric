@@ -109,7 +109,7 @@ variable "factories_config" {
     observability      = optional(string)
     org_policies       = optional(string)
     quotas             = optional(string)
-    scc_custom_modules = optional(string)
+    scc_customs_sha_modules = optional(string)
     tags               = optional(string)
   })
   nullable = false

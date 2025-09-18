@@ -942,7 +942,7 @@ module "project" {
 
 ## Custom Security Health Analytics Modules
 
-[Security Health Analytics custom modules](https://cloud.google.com/security-command-center/docs/custom-modules-sha-create) can be defined via the `scc_custom_modules` variable:
+[Security Health Analytics custom modules](https://cloud.google.com/security-command-center/docs/custom-modules-sha-create) can be defined via the `scc_customs_sha_modules` variable:
 
 ```hcl
 module "project" {
@@ -951,7 +951,7 @@ module "project" {
   name            = "project"
   prefix          = var.prefix
   parent          = var.folder_id
-  scc_custom_modules = {
+  scc_customs_sha_modules = {
     cloudkmKeyRotationPeriod = {
       description    = "The rotation period of the identified cryptokey resource exceeds 30 days."
       recommendation = "Set the rotation period to at most 30 days."
@@ -982,14 +982,14 @@ module "project" {
   prefix          = var.prefix
   parent          = var.folder_id
   factories_config = {
-    scc_custom_modules = "data/scc_custom_modules"
+    scc_customs_sha_modules = "data/scc_customs_sha_modules"
   }
 }
 # tftest modules=1 resources=2 files=custom-module-sha-1 inventory=custom-modules-sha.yaml
 ```
 
 ```yaml
-# tftest-file id=custom-module-sha-1 path=data/scc_custom_modules/cloudkmKeyRotationPeriod.yaml
+# tftest-file id=custom-module-sha-1 path=data/scc_customs_sha_modules/cloudkmKeyRotationPeriod.yaml
 cloudkmKeyRotationPeriod:
   description: "The rotation period of the identified cryptokey resource exceeds 30 days."
   recommendation: "Set the rotation period to at most 30 days."
@@ -1849,7 +1849,7 @@ alerts:
 | [organization-policies.tf](./organization-policies.tf) | Project-level organization policies. | <code>google_org_policy_policy</code> |
 | [outputs.tf](./outputs.tf) | Module outputs. |  |
 | [quotas.tf](./quotas.tf) | None | <code>google_cloud_quotas_quota_preference</code> |
-| [scc-custom-modules.tf](./scc-custom-modules.tf) | Project-level Custom modules with Security Health Analytics. | <code>google_scc_management_project_security_health_analytics_custom_module</code> |
+| [scc-custom-sha-modules.tf](./scc-custom-sha-modules.tf) | Project-level Custom modules with Security Health Analytics. | <code>google_scc_management_project_security_health_analytics_custom_module</code> |
 | [service-agents.tf](./service-agents.tf) | Service agents supporting resources. | <code>google_project_default_service_accounts</code> · <code>google_project_iam_member</code> · <code>google_project_service_identity</code> |
 | [shared-vpc.tf](./shared-vpc.tf) | Shared VPC project-level configuration. | <code>google_compute_shared_vpc_host_project</code> · <code>google_compute_shared_vpc_service_project</code> · <code>google_compute_subnetwork_iam_member</code> · <code>google_project_iam_member</code> |
 | [tags.tf](./tags.tf) | Manages GCP Secure Tags, keys, values, and IAM. | <code>google_tags_tag_binding</code> · <code>google_tags_tag_key</code> · <code>google_tags_tag_key_iam_binding</code> · <code>google_tags_tag_key_iam_member</code> · <code>google_tags_tag_value</code> · <code>google_tags_tag_value_iam_binding</code> · <code>google_tags_tag_value_iam_member</code> |
@@ -1878,7 +1878,7 @@ alerts:
 | [default_service_account](variables.tf#L75) | Project default service account setting: can be one of `delete`, `deprivilege`, `disable`, or `keep`. | <code>string</code> |  | <code>&#34;keep&#34;</code> |
 | [deletion_policy](variables.tf#L88) | Deletion policy setting for this project. | <code>string</code> |  | <code>&#34;DELETE&#34;</code> |
 | [descriptive_name](variables.tf#L99) | Name of the project name. Used for project name instead of `name` variable. | <code>string</code> |  | <code>null</code> |
-| [factories_config](variables.tf#L105) | Paths to data files and folders that enable factory functionality. | <code title="object&#40;&#123;&#10;  custom_roles       &#61; optional&#40;string&#41;&#10;  observability      &#61; optional&#40;string&#41;&#10;  org_policies       &#61; optional&#40;string&#41;&#10;  quotas             &#61; optional&#40;string&#41;&#10;  scc_custom_modules &#61; optional&#40;string&#41;&#10;  tags               &#61; optional&#40;string&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>&#123;&#125;</code> |
+| [factories_config](variables.tf#L105) | Paths to data files and folders that enable factory functionality. | <code title="object&#40;&#123;&#10;  custom_roles       &#61; optional&#40;string&#41;&#10;  observability      &#61; optional&#40;string&#41;&#10;  org_policies       &#61; optional&#40;string&#41;&#10;  quotas             &#61; optional&#40;string&#41;&#10;  scc_customs_sha_modules &#61; optional&#40;string&#41;&#10;  tags               &#61; optional&#40;string&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [iam](variables-iam.tf#L17) | Authoritative IAM bindings in {ROLE => [MEMBERS]} format. | <code>map&#40;list&#40;string&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [iam_bindings](variables-iam.tf#L24) | Authoritative IAM bindings in {KEY => {role = ROLE, members = [], condition = {}}}. Keys are arbitrary. | <code title="map&#40;object&#40;&#123;&#10;  members &#61; list&#40;string&#41;&#10;  role    &#61; string&#10;  condition &#61; optional&#40;object&#40;&#123;&#10;    expression  &#61; string&#10;    title       &#61; string&#10;    description &#61; optional&#40;string&#41;&#10;  &#125;&#41;&#41;&#10;&#125;&#41;&#41;">map&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [iam_bindings_additive](variables-iam.tf#L39) | Individual additive IAM bindings. Keys are arbitrary. | <code title="map&#40;object&#40;&#123;&#10;  member &#61; string&#10;  role   &#61; string&#10;  condition &#61; optional&#40;object&#40;&#123;&#10;    expression  &#61; string&#10;    title       &#61; string&#10;    description &#61; optional&#40;string&#41;&#10;  &#125;&#41;&#41;&#10;&#125;&#41;&#41;">map&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
@@ -1899,7 +1899,7 @@ alerts:
 | [prefix](variables.tf#L179) | Optional prefix used to generate project id and name. | <code>string</code> |  | <code>null</code> |
 | [project_reuse](variables.tf#L189) | Reuse existing project if not null. If name and number are not passed in, a data source is used. | <code title="object&#40;&#123;&#10;  use_data_source &#61; optional&#40;bool, true&#41;&#10;  attributes &#61; optional&#40;object&#40;&#123;&#10;    name             &#61; string&#10;    number           &#61; number&#10;    services_enabled &#61; optional&#40;list&#40;string&#41;, &#91;&#93;&#41;&#10;  &#125;&#41;&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>null</code> |
 | [quotas](variables-quotas.tf#L17) | Service quota configuration. | <code title="map&#40;object&#40;&#123;&#10;  service              &#61; string&#10;  quota_id             &#61; string&#10;  preferred_value      &#61; number&#10;  dimensions           &#61; optional&#40;map&#40;string&#41;, &#123;&#125;&#41;&#10;  justification        &#61; optional&#40;string&#41;&#10;  contact_email        &#61; optional&#40;string&#41;&#10;  annotations          &#61; optional&#40;map&#40;string&#41;&#41;&#10;  ignore_safety_checks &#61; optional&#40;string&#41;&#10;&#125;&#41;&#41;">map&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
-| [scc_custom_modules](variables-scc.tf#L17) | SCC custom modules keyed by module name. | <code title="map&#40;object&#40;&#123;&#10;  description    &#61; optional&#40;string&#41;&#10;  severity       &#61; string&#10;  recommendation &#61; string&#10;  predicate &#61; object&#40;&#123;&#10;    expression &#61; string&#10;  &#125;&#41;&#10;  resource_selector &#61; object&#40;&#123;&#10;    resource_types &#61; list&#40;string&#41;&#10;  &#125;&#41;&#10;  enablement_state &#61; optional&#40;string, &#34;ENABLED&#34;&#41;&#10;&#125;&#41;&#41;">map&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
+| [scc_customs_sha_modules](variables-scc.tf#L17) | SCC custom modules keyed by module name. | <code title="map&#40;object&#40;&#123;&#10;  description    &#61; optional&#40;string&#41;&#10;  severity       &#61; string&#10;  recommendation &#61; string&#10;  predicate &#61; object&#40;&#123;&#10;    expression &#61; string&#10;  &#125;&#41;&#10;  resource_selector &#61; object&#40;&#123;&#10;    resource_types &#61; list&#40;string&#41;&#10;  &#125;&#41;&#10;  enablement_state &#61; optional&#40;string, &#34;ENABLED&#34;&#41;&#10;&#125;&#41;&#41;">map&#40;object&#40;&#123;&#8230;&#125;&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [service_agents_config](variables.tf#L209) | Automatic service agent configuration options. | <code title="object&#40;&#123;&#10;  create_primary_agents &#61; optional&#40;bool, true&#41;&#10;  grant_default_roles   &#61; optional&#40;bool, true&#41;&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code>&#123;&#125;</code> |
 | [service_config](variables.tf#L219) | Configure service API activation. | <code title="object&#40;&#123;&#10;  disable_on_destroy         &#61; bool&#10;  disable_dependent_services &#61; bool&#10;&#125;&#41;">object&#40;&#123;&#8230;&#125;&#41;</code> |  | <code title="&#123;&#10;  disable_on_destroy         &#61; false&#10;  disable_dependent_services &#61; false&#10;&#125;">&#123;&#8230;&#125;</code> |
 | [service_encryption_key_ids](variables.tf#L231) | Service Agents to be granted encryption/decryption permissions over Cloud KMS encryption keys. Format {SERVICE_AGENT => [KEY_ID]}. | <code>map&#40;list&#40;string&#41;&#41;</code> |  | <code>&#123;&#125;</code> |
