@@ -43,7 +43,7 @@ module "logging-project" {
 
   service_encryption_key_ids = merge({
     "compute.googleapis.com" = [module.kms.key_ids["key-${var.location}"]]
-    "pubsub.googleapis.com" = [module.kms.key_ids["key-${var.location}"]]
+    "pubsub.googleapis.com"  = [module.kms.key_ids["key-${var.location}"]]
     }, (var.logging_project.services != null ?
     { for service in var.logging_project.services : service => [module.kms.key_ids["key-${var.location}"]] } : {}
   ))
