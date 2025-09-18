@@ -97,7 +97,8 @@ variable "deletion_protection" {
 variable "factories_config" {
   description = "Paths to data files and folders that enable factory functionality."
   type = object({
-    org_policies = optional(string)
+    org_policies            = optional(string)
+    scc_customs_sha_modules = optional(string)
   })
   nullable = false
   default  = {}
@@ -170,6 +171,24 @@ variable "parent" {
     )
     error_message = "Parent must be of the form folders/folder_id or organizations/organization_id, or map to a context variable via $folder_ids:."
   }
+}
+
+variable "scc_customs_sha_modules" {
+  description = "SCC custom modules keyed by module name."
+  type = map(object({
+    description    = optional(string)
+    severity       = string
+    recommendation = string
+    predicate = object({
+      expression = string
+    })
+    resource_selector = object({
+      resource_types = list(string)
+    })
+    enablement_state = optional(string, "ENABLED")
+  }))
+  default  = {}
+  nullable = false
 }
 
 variable "tag_bindings" {

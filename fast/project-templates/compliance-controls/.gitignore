@@ -1,0 +1,5 @@
+**/*-providers.tf
+**/*.tfvars
+**/provider.tf
+**/*.tfvars
+

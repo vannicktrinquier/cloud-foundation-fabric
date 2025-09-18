@@ -53,6 +53,7 @@ variable "factories_config" {
     custom_roles                  = optional(string)
     org_policies                  = optional(string)
     org_policy_custom_constraints = optional(string)
+    scc_customs_sha_modules       = optional(string)
     tags                          = optional(string)
   })
   nullable = false
@@ -118,3 +119,22 @@ variable "organization_id" {
     error_message = "The organization_id must in the form organizations/nnn."
   }
 }
+
+variable "scc_customs_sha_modules" {
+  description = "SCC custom modules keyed by module name."
+  type = map(object({
+    description    = optional(string)
+    severity       = string
+    recommendation = string
+    predicate = object({
+      expression = string
+    })
+    resource_selector = object({
+      resource_types = list(string)
+    })
+    enablement_state = optional(string, "ENABLED")
+  }))
+  default  = {}
+  nullable = false
+}
+
