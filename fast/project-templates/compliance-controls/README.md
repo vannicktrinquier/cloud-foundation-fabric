@@ -123,7 +123,7 @@ module "controls" {
   #   project_reuse = true
   # }
 }
-# tftest modules=8 resources=52 files=custom-module-sha-1,constraint-1,org-policies-1,observability-1 
+# tftest modules=8 resources=41 files=custom-module-sha-1,constraint-1,org-policies-1,observability-1 
 ```
 
 ```yaml
