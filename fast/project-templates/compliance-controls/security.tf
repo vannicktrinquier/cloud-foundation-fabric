@@ -27,13 +27,13 @@ module "security-project" {
     }
   } : null
 
-  services = [
+  services = toset(concat([
+    "cloudkms.googleapis.com",
     "cloudresourcemanager.googleapis.com",
     "iam.googleapis.com",
     "serviceusage.googleapis.com",
-    "cloudkms.googleapis.com",
     "stackdriver.googleapis.com"
-  ]
+  ], var.security_project.services == null ? [] : var.security_project.services))
 }
 
 module "kms" {
@@ -44,6 +44,6 @@ module "kms" {
     name     = "security-key-ring"
   }
   keys = {
-    key-sample = {}
+    "key-${var.location}" = {}
   }
 }

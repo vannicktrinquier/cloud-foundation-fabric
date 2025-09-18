@@ -56,6 +56,7 @@ variable "logging_project" {
     name          = string
     number        = optional(number)
     project_reuse = optional(bool, false)
+    services      = optional(list(string))
   })
 }
 
@@ -75,6 +76,7 @@ variable "security_project" {
     name          = string
     number        = optional(number)
     project_reuse = optional(bool, false)
+    services      = optional(list(string))
   })
 }
 

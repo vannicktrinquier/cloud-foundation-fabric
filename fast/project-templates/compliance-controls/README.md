@@ -1,26 +1,37 @@
 # Compliance Controls
 
-This folder contains a set of compliance controls that can be applied to your Google Cloud environment. It includes preventive controls (custom constraints and organization policies) and detective controls (SCC custom modules and observability).
-
-The diagram below shows the relationships between the components.
-![image](assets/diagram.png)
-
+This folder contains a set of compliance controls that can be applied to your Google Cloud environment. It includes preventive controls (custom constraints and organization policies) and detective controls
+(Security Command Center custom modules and observability alerts).
 
 ## Prerequisites
 
-- A Google Cloud organization.
-- A billing account.
-- The following APIs enabled in the billing project:
-  - `cloudresourcemanager.googleapis.com`
-  - `billingbudgets.googleapis.com`
-  - `cloudbilling.googleapis.com`
-  - `iam.googleapis.com`
-  - `serviceusage.googleapis.com`
-  - `securitycenter.googleapis.com`
-  - `logging.googleapis.com`
-  - `monitoring.googleapis.com`
-  - `pubsub.googleapis.com`
-  - `cloudkms.googleapis.com`
+This Terraform module deploys a set of compliance and security controls based on recommendations gathered from various customer engagements.
+
+The **preventive controls** are based on a recommended list of organization policies and custom organization policies. Many of these help enforce CIS Benchmarks and PCI-DSS requirements and are broadly
+applicable.
+
+The **detective controls** are based on the following:
+  - Security Health Analytics (SHA) and Custom SHA modules: These require a Security Command Center (SCC) Premium or Enterprise subscription.
+  - Log-based metrics and Monitoring Alerts: These can be used by any organization.
+
+You can use a pre-existing project for storing encryption keys (security project) and for monitoring alerts (logging project). To do so, configure the security_project and logging_project input variables
+accordingly and set the project_reuse flag to true for each.
+
+### High level architecture
+
+This blueprint heavily uses a factory pattern to simplify control management. The data/ folder contains the configurations for various controls, which are consumed by the Terraform modules.
+
+|                                     	| Organization Policies 	|    Custom Constraint    	|  Monitoring Alerts 	|                    SCC SHA                   	|        SCC Custom SHA       	|
+|:-----------------------------------:	|:---------------------:	|:-----------------------:	|:------------------:	|:--------------------------------------------:	|:---------------------------:	|
+|           **Type of controls**          	|       Preventive      	|        Preventive       	|      Detective     	|                   Detective                  	|          Detective          	|
+|            **Factory folder**           	|   data/org-policies   	| data/custom-constraints 	| data/observability 	| Already included as part of SCC Subscription 	| data/scc-custom-sha-modules 	|
+| **Requires SCC Premium or Enterprise ?** 	|           NO          	|            NO           	|         NO         	|                      YES                     	|             YES             	|
+
+
+
+The diagram below shows the relationships between the components:
+
+![image](assets/diagram.png)
 
 ## Variable configuration
 

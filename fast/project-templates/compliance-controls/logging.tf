@@ -30,32 +30,27 @@ module "logging-project" {
     }
   } : null
 
-  services = [
+  services = toset(concat([
     "cloudbilling.googleapis.com",
     "cloudresourcemanager.googleapis.com",
     "iam.googleapis.com",
     "serviceusage.googleapis.com",
-    "storage.googleapis.com",
     "stackdriver.googleapis.com",
     "compute.googleapis.com",
-    "storage.googleapis.com",
     "logging.googleapis.com",
-    "run.googleapis.com",
-    "artifactregistry.googleapis.com",
-    "pubsub.googleapis.com"
-  ]
+    "pubsub.googleapis.com",
+  ], var.logging_project.services == null ? [] : var.logging_project.services))
 
-  service_encryption_key_ids = {
-    "compute.googleapis.com"          = [module.kms.key_ids["key-sample"]]
-    "storage.googleapis.com"          = [module.kms.key_ids["key-sample"]]
-    "run.googleapis.com"              = [module.kms.key_ids["key-sample"]]
-    "artifactregistry.googleapis.com" = [module.kms.key_ids["key-sample"]]
-    "pubsub.googleapis.com"           = [module.kms.key_ids["key-sample"]]
-  }
+  service_encryption_key_ids = merge({
+    "compute.googleapis.com" = [module.kms.key_ids["key-${var.location}"]]
+    "pubsub.googleapis.com" = [module.kms.key_ids["key-${var.location}"]]
+    }, (var.logging_project.services != null ?
+    { for service in var.logging_project.services : service => [module.kms.key_ids["key-${var.location}"]] } : {}
+  ))
 
   logging_sinks = {
     "activity-logs" : {
-      destination = module.logging-bucket.id
+      destination = module.audit-logs-bucket.id
       iam         = false
       filter      = <<-FILTER
           log_id("cloudaudit.googleapis.com/activity") OR
@@ -79,13 +74,13 @@ module "logging-project" {
   }
 }
 
-module "logging-bucket" {
+module "audit-logs-bucket" {
   source       = "../../../modules/logging-bucket"
   parent_type  = "project"
   location     = var.location
   parent       = module.logging-project.project_id
-  name         = "org-logging-bucket"
-  kms_key_name = module.kms.key_ids["key-sample"]
+  name         = "audit-logs-bucket"
+  kms_key_name = module.kms.key_ids["key-${var.location}"]
 
   depends_on = [google_kms_crypto_key_iam_member.service_agent_cmek]
 }
@@ -113,7 +108,7 @@ resource "time_sleep" "wait_for_sa_propagation" {
 }
 
 resource "google_kms_crypto_key_iam_member" "service_agent_cmek" {
-  crypto_key_id = module.kms.key_ids["key-sample"]
+  crypto_key_id = module.kms.key_ids["key-${var.location}"]
   member        = "serviceAccount:service-${module.logging-project.number}@gcp-sa-logging.iam.gserviceaccount.com"
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
 

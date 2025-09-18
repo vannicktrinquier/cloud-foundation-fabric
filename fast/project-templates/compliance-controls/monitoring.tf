@@ -17,7 +17,7 @@
 resource "google_pubsub_topic" "notification_channel_topic" {
   name         = "monitoring-alert-topic"
   project      = module.logging-project.project_id
-  kms_key_name = module.kms.key_ids["key-sample"]
+  kms_key_name = module.kms.key_ids["key-${var.location}"]
 }
 
 module "monitoring-alerts-project" {
@@ -37,7 +37,7 @@ module "monitoring-alerts-project" {
       "alert-channel" = module.logging-project.notification_channels["alert-notification-channel"].id
     }
     logging_bucket_names = {
-      "org-bucket" = module.logging-bucket.id
+      "org-bucket" = module.audit-logs-bucket.id
     }
   }
   factories_config = {

@@ -21,7 +21,7 @@ output "custom_constraints" {
 
 output "kms_key" {
   description = "KMS key created"
-  value       = module.kms.key_ids["key-sample"]
+  value       = module.kms.key_ids["key-${var.location}"]
 }
 
 output "logging_project_id" {
