@@ -33,6 +33,13 @@ iam_by_principals:
     - roles/iam.workloadIdentityPoolAdmin
     - roles/owner
     - roles/storage.admin
+  # Added for project factory
+  $iam_principals:service_accounts/iac-0/iac-pf-rw:
+    - roles/cloudbuild.builds.editor
+    - roles/iam.serviceAccountAdmin
+    - roles/iam.workloadIdentityPoolAdmin
+    - roles/owner
+    - roles/storage.admin
 services:
   - accesscontextmanager.googleapis.com
   - bigquery.googleapis.com

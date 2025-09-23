@@ -41,6 +41,9 @@ module "factory" {
     folder_ids = merge(
       var.folder_ids, var.context.folder_ids
     )
+    project_ids = merge(
+      var.project_ids, var.context.project_ids
+    )
     iam_principals = merge(
       var.iam_principals,
       {
