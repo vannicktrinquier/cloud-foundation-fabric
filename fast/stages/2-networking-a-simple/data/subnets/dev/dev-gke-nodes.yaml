@@ -11,3 +11,7 @@ secondary_ip_ranges:
     ip_cidr_range: 100.68.0.0/16
   services:
     ip_cidr_range: 100.71.1.0/24
+flow_logs_config:
+  aggregation_interval: "INTERVAL_15_MIN"
+  flow_sampling: 0.5        
+  metadata: "INCLUDE_ALL_METADATA" 

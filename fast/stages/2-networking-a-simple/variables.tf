@@ -145,8 +145,8 @@ variable "regions" {
     secondary = string
   })
   default = {
-    primary   = "europe-west1"
-    secondary = "europe-west4"
+    primary   = "asia-southeast1"
+    secondary = "asia-southeast2"
   }
 }
 

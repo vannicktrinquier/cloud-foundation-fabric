@@ -25,4 +25,4 @@ gcp.resourceLocations:
             - "global"
             - "in:asia-locations"
             - "in:sg-locations"
-
+            - "in:id-locations"

@@ -310,18 +310,18 @@ ln -s ~/fast-config/fast-test-00/2-nsec.auto.tfvars.json ./
 # File linking commands for networking (simple) stage
 
 # provider file
-gcloud storage cp gs://xxx-prod-iac-core-outputs-0/providers/2-networking-providers.tf ./
+gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/providers/2-networking-providers.tf ./
 
 # input files from other stages
-gcloud storage cp gs://xxx-prod-iac-core-outputs-0/tfvars/0-globals.auto.tfvars.json ./
-gcloud storage cp gs://xxx-prod-iac-core-outputs-0/tfvars/0-org-setup.auto.tfvars.json ./
-gcloud storage cp gs://xxx-prod-iac-core-outputs-0/tfvars/1-resman.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/0-globals.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/0-org-setup.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/1-vpcsc.auto.tfvars.json ./
 
 # conventional place for stage tfvars (manually created)
-gcloud storage cp gs://xxx-prod-iac-core-outputs-0/2-networking.auto.tfvars ./
+gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/2-networking.auto.tfvars ./
 
 # optional files
-gcloud storage cp gs://xxx-prod-iac-core-outputs-0/2-nsec.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/2-nsec.auto.tfvars.json ./
 ```
 
 ### Impersonating the automation service account

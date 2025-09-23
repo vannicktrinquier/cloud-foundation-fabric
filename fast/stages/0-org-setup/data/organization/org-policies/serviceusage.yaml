@@ -33,6 +33,7 @@ gcp.restrictServiceUsage:
             - "compute.googleapis.com"
             - "container.googleapis.com"
             - "dataproc.googleapis.com"
+            - "dns.googleapis.com"
             - "deploymentmanager.googleapis.com"
             - "eventarc.googleapis.com"
             - "firestore.googleapis.com"
