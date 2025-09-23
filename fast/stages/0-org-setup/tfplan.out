@@ -1,0 +1,2425 @@
+terraform_data.precondition: Refreshing state... [id=7dc2c982-c897-9842-d956-458d1a32fc9f]
+module.factory.terraform_data.defaults_preconditions: Refreshing state... [id=2e73a559-0b77-b2c3-43de-808851c413e6]
+module.organization[0].google_organization_iam_custom_role.roles["organization_admin_viewer"]: Refreshing state... [id=organizations/424877732054/roles/organizationAdminViewer]
+module.organization[0].google_organization_iam_custom_role.roles["network_firewall_policies_admin"]: Refreshing state... [id=organizations/424877732054/roles/networkFirewallPoliciesAdmin]
+module.organization[0].google_logging_organization_settings.default[0]: Refreshing state... [id=organizations/424877732054/settings]
+module.organization[0].google_organization_iam_custom_role.roles["project_iam_viewer"]: Refreshing state... [id=organizations/424877732054/roles/projectIamViewer]
+module.organization[0].google_organization_iam_custom_role.roles["service_project_network_admin"]: Refreshing state... [id=organizations/424877732054/roles/serviceProjectNetworkAdmin]
+module.organization[0].google_organization_iam_custom_role.roles["tag_viewer"]: Refreshing state... [id=organizations/424877732054/roles/tagViewer]
+module.organization[0].google_organization_iam_custom_role.roles["organization_iam_admin"]: Refreshing state... [id=organizations/424877732054/roles/organizationIamAdmin]
+module.organization[0].google_organization_iam_custom_role.roles["storage_viewer"]: Refreshing state... [id=organizations/424877732054/roles/storageViewer]
+module.organization[0].google_tags_tag_key.default["environment"]: Refreshing state... [id=tagKeys/281481012667860]
+module.organization[0].google_org_policy_custom_constraint.constraint["custom.denyBridgePerimeters"]: Refreshing state... [id=organizations/424877732054/customConstraints/custom.denyBridgePerimeters]
+module.organization[0].google_tags_tag_key.default["org-policies"]: Refreshing state... [id=tagKeys/281475029639181]
+module.organization[0].google_tags_tag_key.default["context"]: Refreshing state... [id=tagKeys/281482620816357]
+module.organization[0].google_tags_tag_value.default["context/project-factory"]: Refreshing state... [id=tagValues/281479683364357]
+module.organization[0].google_tags_tag_value.default["org-policies/allowed-essential-contacts-domains-all"]: Refreshing state... [id=tagValues/281475140237123]
+module.organization[0].google_tags_tag_value.default["environment/development"]: Refreshing state... [id=tagValues/281482394549583]
+module.organization[0].google_tags_tag_value.default["org-policies/allowed-policy-member-domains-all"]: Refreshing state... [id=tagValues/281480870117844]
+module.organization[0].google_tags_tag_value.default["environment/production"]: Refreshing state... [id=tagValues/281483037812689]
+module.factory.module.folder-1["data-platform"].google_folder.folder[0]: Refreshing state... [id=folders/1009301921797]
+module.factory.module.folder-1["teams"].google_folder.folder[0]: Refreshing state... [id=folders/446150822089]
+module.factory.module.folder-1["security"].google_folder.folder[0]: Refreshing state... [id=folders/637700229696]
+module.factory.module.folder-1["networking"].google_folder.folder[0]: Refreshing state... [id=folders/483515187448]
+module.factory.module.folder-1["teams"].google_tags_tag_binding.binding["context"]: Refreshing state... [id=tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Ffolders%2F446150822089/tagValues/281479683364357]
+module.factory.module.folder-2["networking/dev"].google_folder.folder[0]: Refreshing state... [id=folders/454838158403]
+module.factory.module.folder-2["data-platform/dev"].google_folder.folder[0]: Refreshing state... [id=folders/737419207308]
+module.factory.module.folder-2["networking/prod"].google_folder.folder[0]: Refreshing state... [id=folders/625729372755]
+module.factory.module.folder-2["data-platform/prod"].google_folder.folder[0]: Refreshing state... [id=folders/232787919960]
+module.factory.module.folder-2["networking/dev"].google_tags_tag_binding.binding["environment"]: Refreshing state... [id=tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Ffolders%2F454838158403/tagValues/281482394549583]
+module.factory.module.folder-2["networking/prod"].google_tags_tag_binding.binding["environment"]: Refreshing state... [id=tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Ffolders%2F625729372755/tagValues/281483037812689]
+module.factory.module.folder-2["data-platform/prod"].google_tags_tag_binding.binding["environment"]: Refreshing state... [id=tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Ffolders%2F232787919960/tagValues/281483037812689]
+module.factory.module.folder-2["data-platform/dev"].google_tags_tag_binding.binding["environment"]: Refreshing state... [id=tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Ffolders%2F737419207308/tagValues/281482394549583]
+module.factory.module.projects["iac-0"].google_project.project[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0]
+module.factory.module.projects["log-0"].google_project.project[0]: Refreshing state... [id=projects/pso-fsi-00-prod-audit-logs-0]
+module.factory.module.projects["iac-0"].google_org_policy_policy.default["iam.workloadIdentityPoolProviders"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/policies/iam.workloadIdentityPoolProviders]
+module.factory.module.projects["iac-0"].google_project_service.project_services["cloudkms.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/cloudkms.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["container.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/container.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["storage.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/storage.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["monitoring.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/monitoring.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["datacatalog.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/datacatalog.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["bigqueryreservation.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/bigqueryreservation.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["orgpolicy.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/orgpolicy.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["pubsub.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/pubsub.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["serviceusage.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/serviceusage.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["bigquerystorage.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/bigquerystorage.googleapis.com]
+module.factory.module.projects["log-0"].google_project_service.project_services["storage.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/storage.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["bigquery.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/bigquery.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["compute.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/compute.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["logging.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/logging.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["cloudresourcemanager.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/cloudresourcemanager.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["accesscontextmanager.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/accesscontextmanager.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["servicenetworking.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/servicenetworking.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["sts.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/sts.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["cloudbuild.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/cloudbuild.googleapis.com]
+module.factory.module.projects["log-0"].google_project_service.project_services["logging.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/logging.googleapis.com]
+module.factory.module.projects["log-0"].google_project_service.project_services["pubsub.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/pubsub.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["iam.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/iam.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["billingbudgets.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/billingbudgets.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["iamcredentials.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/iamcredentials.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["cloudquotas.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/cloudquotas.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["essentialcontacts.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/essentialcontacts.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["networksecurity.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/networksecurity.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["cloudbilling.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/cloudbilling.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["storage-component.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/storage-component.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service.project_services["cloudasset.googleapis.com"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/cloudasset.googleapis.com]
+module.factory.module.projects["log-0"].google_project_service_identity.default["pubsub.googleapis.com"]: Refreshing state... [id=projects/pso-fsi-00-prod-audit-logs-0/services/pubsub.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service_identity.default["cloudkms.googleapis.com"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/services/cloudkms.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service_identity.default["cloudasset.googleapis.com"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/services/cloudasset.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service_identity.default["container.googleapis.com"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/services/container.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service_identity.default["servicenetworking.googleapis.com"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/services/servicenetworking.googleapis.com]
+module.factory.module.projects["log-0"].data.google_storage_project_service_account.gcs_sa[0]: Reading...
+module.factory.module.projects["iac-0"].data.google_storage_project_service_account.gcs_sa[0]: Reading...
+module.factory.module.projects["iac-0"].data.google_bigquery_default_service_account.bq_sa[0]: Reading...
+module.factory.module.projects["iac-0"].google_project_service_identity.default["monitoring.googleapis.com"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/services/monitoring.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service_identity.default["pubsub.googleapis.com"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/services/pubsub.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_service_identity.default["networksecurity.googleapis.com"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/services/networksecurity.googleapis.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["cloudkms"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/cloudkms.serviceAgent/serviceAccount:service-311921644873@gcp-sa-cloudkms.iam.gserviceaccount.com]
+module.factory.module.projects["log-0"].google_project_iam_member.service_agents["pubsub"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/roles/pubsub.serviceAgent/serviceAccount:service-1079722963501@gcp-sa-pubsub.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["pubsub"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/pubsub.serviceAgent/serviceAccount:service-311921644873@gcp-sa-pubsub.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["monitoring-notification"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/monitoring.notificationServiceAgent/serviceAccount:service-311921644873@gcp-sa-monitoring-notification.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["cloudasset"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/cloudasset.serviceAgent/serviceAccount:service-311921644873@gcp-sa-cloudasset.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["cloudbuild"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/cloudbuild.serviceAgent/serviceAccount:service-311921644873@gcp-sa-cloudbuild.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["container-engine-robot"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/container.serviceAgent/serviceAccount:service-311921644873@container-engine-robot.iam.gserviceaccount.com]
+module.factory.module.projects["log-0"].data.google_storage_project_service_account.gcs_sa[0]: Read complete after 0s [id=service-1079722963501@gs-project-accounts.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["gkenode"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/container.defaultNodeServiceAgent/serviceAccount:service-311921644873@gcp-sa-gkenode.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["service-networking"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/servicenetworking.serviceAgent/serviceAccount:service-311921644873@service-networking.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].data.google_bigquery_default_service_account.bq_sa[0]: Read complete after 0s [id=bq-311921644873@bigquery-encryption.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["compute-system"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/compute.serviceAgent/serviceAccount:service-311921644873@compute-system.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].data.google_storage_project_service_account.gcs_sa[0]: Read complete after 1s [id=service-311921644873@gs-project-accounts.iam.gserviceaccount.com]
+module.factory.module.projects["iac-0"].google_project_iam_member.service_agents["cloudbuild-sa"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/cloudbuild.builds.builder/serviceAccount:311921644873@cloudbuild.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-org-cicd-rw"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-org-cicd-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-pf-rw"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-pf-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-networking-rw"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-networking-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-org-ro"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-org-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-dp-dev-rw"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-dp-dev-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-org-cicd-ro"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-org-cicd-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-dp-dev-ro"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-dp-dev-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-networking-ro"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-networking-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-org-rw"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-org-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-security-ro"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-security-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-vpcsc-rw"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-vpcsc-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-security-rw"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-security-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-vpcsc-ro"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-vpcsc-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service-accounts["iac-0/iac-pf-ro"].google_service_account.service_account[0]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-pf-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.buckets["iac-0/iac-outputs"].google_storage_bucket.bucket[0]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs]
+module.factory.module.buckets["iac-0/iac-org-state"].google_storage_bucket.bucket[0]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-org-state]
+module.factory.module.log-buckets["log-0/vpc-sc"].google_logging_project_bucket_config.bucket[0]: Refreshing state... [id=projects/pso-fsi-00-prod-audit-logs-0/locations/global/buckets/vpc-sc]
+module.factory.module.service_accounts-iam["iac-0/iac-org-cicd-rw"].data.google_service_account.service_account[0]: Reading...
+module.factory.module.service_accounts-iam["iac-0/iac-org-cicd-ro"].data.google_service_account.service_account[0]: Reading...
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_bucket.bucket[0]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-stage-state]
+module.factory.module.log-buckets["log-0/iam"].google_logging_project_bucket_config.bucket[0]: Refreshing state... [id=projects/pso-fsi-00-prod-audit-logs-0/locations/global/buckets/iam]
+module.factory.module.log-buckets["log-0/audit-logs"].google_logging_project_bucket_config.bucket[0]: Refreshing state... [id=projects/pso-fsi-00-prod-audit-logs-0/locations/global/buckets/audit-logs]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.bindings["dp_dev_ro"]: Refreshing state... [id=folders/483515187448/roles/compute.networkViewer/Data platform dev network viewer.//resource.matchTag('424877732054/environment', 'development')
+]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.bindings["project_factory"]: Refreshing state... [id=folders/637700229696/roles/resourcemanager.projectIamAdmin/Project factory delegated IAM grant.//api.getAttribute('iam.googleapis.com/modifiedGrantsByRole', []).hasOnly([
+  'roles/cloudkms.cryptoKeyEncrypterDecrypter'
+])]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.bindings["project_factory"]: Refreshing state... [id=folders/483515187448/roles/resourcemanager.projectIamAdmin/Project factory delegated IAM grant.//api.getAttribute('iam.googleapis.com/modifiedGrantsByRole', []).hasOnly([
+  'roles/compute.networkUser', 'roles/composer.sharedVpcAgent',
+  'roles/container.hostServiceAgentUser', 'roles/vpcaccess.user'
+])]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.bindings["dp_dev_rw"]: Refreshing state... [id=folders/483515187448/organizations/424877732054/roles/serviceProjectNetworkAdmin/Data platform dev service project admin.//resource.matchTag('424877732054/environment', 'development')
+]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/logging.admin"]: Refreshing state... [id=folders/637700229696/roles/logging.admin]
+module.factory.module.service_accounts-iam["iac-0/iac-org-cicd-ro"].data.google_service_account.service_account[0]: Read complete after 1s [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-org-cicd-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/cloudkms.viewer"]: Refreshing state... [id=folders/637700229696/roles/cloudkms.viewer]
+module.factory.module.folder-1-iam["teams"].google_folder_iam_binding.authoritative["roles/resourcemanager.tagViewer"]: Refreshing state... [id=folders/446150822089/roles/resourcemanager.tagViewer]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/owner"]: Refreshing state... [id=folders/637700229696/roles/owner]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/viewer"]: Refreshing state... [id=folders/637700229696/roles/viewer]
+module.factory.module.service_accounts-iam["iac-0/iac-org-cicd-rw"].data.google_service_account.service_account[0]: Read complete after 1s [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-org-cicd-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/compute.xpnAdmin"]: Refreshing state... [id=folders/483515187448/roles/compute.xpnAdmin]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["$custom_roles:service_project_network_admin"]: Refreshing state... [id=folders/483515187448/organizations/424877732054/roles/serviceProjectNetworkAdmin]
+module.factory.module.folder-1-iam["teams"].google_folder_iam_binding.authoritative["roles/viewer"]: Refreshing state... [id=folders/446150822089/roles/viewer]
+module.factory.module.folder-1-iam["teams"].google_folder_iam_binding.authoritative["roles/resourcemanager.folderAdmin"]: Refreshing state... [id=folders/446150822089/roles/resourcemanager.folderAdmin]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/resourcemanager.tagViewer"]: Refreshing state... [id=folders/637700229696/roles/resourcemanager.tagViewer]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/resourcemanager.folderAdmin"]: Refreshing state... [id=folders/483515187448/roles/resourcemanager.folderAdmin]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["$custom_roles:project_iam_viewer"]: Refreshing state... [id=folders/637700229696/organizations/424877732054/roles/projectIamViewer]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/owner"]: Refreshing state... [id=folders/483515187448/roles/owner]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/resourcemanager.folderViewer"]: Refreshing state... [id=folders/483515187448/roles/resourcemanager.folderViewer]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/compute.viewer"]: Refreshing state... [id=folders/483515187448/roles/compute.viewer]
+module.factory.module.folder-1-iam["teams"].google_folder_iam_binding.authoritative["roles/resourcemanager.folderViewer"]: Refreshing state... [id=folders/446150822089/roles/resourcemanager.folderViewer]
+module.factory.module.folder-1-iam["teams"].google_folder_iam_binding.authoritative["$custom_roles:service_project_network_admin"]: Refreshing state... [id=folders/446150822089/organizations/424877732054/roles/serviceProjectNetworkAdmin]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["$custom_roles:project_iam_viewer"]: Refreshing state... [id=folders/483515187448/organizations/424877732054/roles/projectIamViewer]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/resourcemanager.projectCreator"]: Refreshing state... [id=folders/637700229696/roles/resourcemanager.projectCreator]
+module.factory.module.folder-1-iam["teams"].google_folder_iam_binding.authoritative["roles/resourcemanager.tagUser"]: Refreshing state... [id=folders/446150822089/roles/resourcemanager.tagUser]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/logging.admin"]: Refreshing state... [id=folders/483515187448/roles/logging.admin]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/resourcemanager.folderAdmin"]: Refreshing state... [id=folders/637700229696/roles/resourcemanager.folderAdmin]
+module.factory.module.folder-1-iam["teams"].google_folder_iam_binding.authoritative["roles/resourcemanager.projectCreator"]: Refreshing state... [id=folders/446150822089/roles/resourcemanager.projectCreator]
+module.factory.module.folder-1-iam["teams"].google_folder_iam_binding.authoritative["roles/owner"]: Refreshing state... [id=folders/446150822089/roles/owner]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/cloudkms.cryptoKeyEncrypterDecrypter"]: Refreshing state... [id=folders/637700229696/roles/cloudkms.cryptoKeyEncrypterDecrypter]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/resourcemanager.tagUser"]: Refreshing state... [id=folders/637700229696/roles/resourcemanager.tagUser]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/viewer"]: Refreshing state... [id=folders/483515187448/roles/viewer]
+module.factory.module.folder-1-iam["security"].google_folder_iam_binding.authoritative["roles/resourcemanager.folderViewer"]: Refreshing state... [id=folders/637700229696/roles/resourcemanager.folderViewer]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/resourcemanager.projectCreator"]: Refreshing state... [id=folders/483515187448/roles/resourcemanager.projectCreator]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/resourcemanager.tagUser"]: Refreshing state... [id=folders/483515187448/roles/resourcemanager.tagUser]
+module.factory.module.folder-1-iam["networking"].google_folder_iam_binding.authoritative["roles/resourcemanager.tagViewer"]: Refreshing state... [id=folders/483515187448/roles/resourcemanager.tagViewer]
+module.factory.module.folder-2-iam["networking/dev"].google_folder_iam_binding.bindings["dp_dev"]: Refreshing state... [id=folders/454838158403/roles/resourcemanager.projectIamAdmin/Data platform dev delegated IAM grant.//api.getAttribute('iam.googleapis.com/modifiedGrantsByRole', []).hasOnly([
+  'organizations/424877732054/roles/serviceProjectNetworkAdmin'
+])
+]
+module.factory.module.folder-2-iam["data-platform/dev"].google_folder_iam_binding.authoritative["roles/resourcemanager.folderViewer"]: Refreshing state... [id=folders/737419207308/roles/resourcemanager.folderViewer]
+module.factory.module.folder-2-iam["data-platform/dev"].google_folder_iam_binding.authoritative["roles/compute.xpnAdmin"]: Refreshing state... [id=folders/737419207308/roles/compute.xpnAdmin]
+module.factory.module.folder-2-iam["networking/dev"].google_folder_iam_binding.authoritative["$custom_roles:project_iam_viewer"]: Refreshing state... [id=folders/454838158403/organizations/424877732054/roles/projectIamViewer]
+module.factory.module.folder-2-iam["data-platform/dev"].google_folder_iam_binding.authoritative["roles/logging.admin"]: Refreshing state... [id=folders/737419207308/roles/logging.admin]
+module.factory.module.folder-2-iam["data-platform/dev"].google_folder_iam_binding.authoritative["roles/viewer"]: Refreshing state... [id=folders/737419207308/roles/viewer]
+module.factory.module.folder-2-iam["data-platform/dev"].google_folder_iam_binding.authoritative["roles/owner"]: Refreshing state... [id=folders/737419207308/roles/owner]
+module.factory.module.folder-2-iam["data-platform/dev"].google_folder_iam_binding.authoritative["roles/resourcemanager.folderAdmin"]: Refreshing state... [id=folders/737419207308/roles/resourcemanager.folderAdmin]
+module.factory.module.folder-2-iam["data-platform/dev"].google_folder_iam_binding.authoritative["roles/resourcemanager.projectCreator"]: Refreshing state... [id=folders/737419207308/roles/resourcemanager.projectCreator]
+module.factory.module.buckets["iac-0/iac-org-state"].google_storage_bucket_iam_binding.authoritative["$custom_roles:storage_viewer"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-org-state/organizations/424877732054/roles/storageViewer]
+module.factory.module.buckets["iac-0/iac-outputs"].google_storage_bucket_iam_binding.authoritative["$custom_roles:storage_viewer"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-outputs/organizations/424877732054/roles/storageViewer]
+module.factory.module.buckets["iac-0/iac-outputs"].google_storage_bucket_iam_binding.authoritative["roles/storage.admin"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-outputs/roles/storage.admin]
+module.factory.module.buckets["iac-0/iac-org-state"].google_storage_bucket_iam_binding.authoritative["roles/storage.admin"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-org-state/roles/storage.admin]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder.folder["2-networking/"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-stage-state/2-networking/]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder.folder["2-security/"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-stage-state/2-security/]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder.folder["2-project-factory/"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-stage-state/2-project-factory/]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder.folder["3-data-platform-dev/"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-stage-state/3-data-platform-dev/]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder.folder["1-vpcsc/"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-stage-state/1-vpcsc/]
+module.factory.module.service_accounts-iam["iac-0/iac-org-cicd-rw"].google_service_account_iam_member.additive["$service_account_ids:iac-0/iac-org-rw-roles/iam.workloadIdentityUser"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-org-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:iac-org-cicd-rw@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.service_accounts-iam["iac-0/iac-org-cicd-ro"].google_service_account_iam_member.additive["$service_account_ids:iac-0/iac-org-ro-roles/iam.workloadIdentityUser"]: Refreshing state... [id=projects/pso-fsi-00-prod-iac-core-0/serviceAccounts/iac-org-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com/roles/iam.workloadIdentityUser/serviceAccount:iac-org-cicd-ro@pso-fsi-00-prod-iac-core-0.iam.gserviceaccount.com]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/storage.admin"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/storage.admin]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/viewer"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/viewer]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/iam.serviceAccountViewer"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/iam.serviceAccountViewer]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/iam.workloadIdentityPoolAdmin"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/iam.workloadIdentityPoolAdmin]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["$custom_roles:storage_viewer"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/organizations/424877732054/roles/storageViewer]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/owner"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/owner]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/browser"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/browser]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/cloudbuild.builds.viewer"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/cloudbuild.builds.viewer]
+module.factory.module.projects-iam["log-0"].google_project_iam_binding.authoritative["roles/owner"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/roles/owner]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/iam.serviceAccountTokenCreator"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/iam.serviceAccountTokenCreator]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/iam.serviceAccountAdmin"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/iam.serviceAccountAdmin]
+module.factory.module.projects-iam["log-0"].google_project_iam_binding.authoritative["roles/viewer"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/roles/viewer]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/iam.workloadIdentityPoolViewer"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/iam.workloadIdentityPoolViewer]
+module.factory.module.projects-iam["iac-0"].google_project_iam_binding.authoritative["roles/cloudbuild.builds.editor"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0/roles/cloudbuild.builds.editor]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["2-project-factory/roles/storage.admin"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/2-project-factory//roles/storage.admin]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["1-vpcsc/$custom_roles:storage_viewer"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/1-vpcsc//organizations/424877732054/roles/storageViewer]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["3-data-platform-dev/roles/storage.admin"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/3-data-platform-dev//roles/storage.admin]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["2-project-factory/$custom_roles:storage_viewer"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/2-project-factory//organizations/424877732054/roles/storageViewer]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["2-security/roles/storage.admin"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/2-security//roles/storage.admin]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["3-data-platform-dev/$custom_roles:storage_viewer"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/3-data-platform-dev//organizations/424877732054/roles/storageViewer]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["1-vpcsc/roles/storage.admin"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/1-vpcsc//roles/storage.admin]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["2-networking/$custom_roles:storage_viewer"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/2-networking//organizations/424877732054/roles/storageViewer]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["2-networking/roles/storage.admin"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/2-networking//roles/storage.admin]
+module.factory.module.buckets["iac-0/iac-stage-state"].google_storage_managed_folder_iam_binding.authoritative["2-security/$custom_roles:storage_viewer"]: Refreshing state... [id=b/pso-fsi-00-prod-iac-core-0-iac-stage-state/managedFolders/2-security//organizations/424877732054/roles/storageViewer]
+local_file.providers["0-org-setup"]: Refreshing state... [id=b9be07a8df08353508d0b7801c4a5760c192c268]
+local_file.providers["2-security-ro"]: Refreshing state... [id=32d6ea2e59b87e5204883ea533d5dbd67b65471a]
+local_file.providers["0-org-setup-ro"]: Refreshing state... [id=b9be07a8df08353508d0b7801c4a5760c192c268]
+local_file.providers["1-vpcsc"]: Refreshing state... [id=8777dc90907bf1231b2a0582aa65daba526c682d]
+local_file.providers["3-data-platform-dev"]: Refreshing state... [id=e71c5f148c6ab0415a4dbab2be863c098d4469ff]
+local_file.providers["2-networking"]: Refreshing state... [id=e71003b584e79aa6ab4fc14be47c9f84358ed2d2]
+local_file.providers["1-vpcsc-ro"]: Refreshing state... [id=16f552f226971519cd3924b70d6482a0ac88c936]
+local_file.providers["2-project-factory"]: Refreshing state... [id=eedea9fd6a4fc52edb15f5b3dfd448d89702409f]
+local_file.providers["2-networking-ro"]: Refreshing state... [id=f93d0ba92d3fb6cef1eea6aa7424cfde840fcdd6]
+local_file.providers["3-data-platform-dev-ro"]: Refreshing state... [id=f249c4b67f59d95ab7d76d35e5baceef9f12881b]
+local_file.providers["2-project-factory-ro"]: Refreshing state... [id=1705e7bb1a738524219bcb04f2d8ee7d5995c77a]
+local_file.providers["2-security"]: Refreshing state... [id=8810bf88bdf61edf7bfe28041b1193f697185d0c]
+module.organization-iam[0].google_organization_iam_binding.bindings["pf_org_policy_admin"]: Refreshing state... [id=424877732054/roles/orgpolicy.policyAdmin/Project factory org policy admin//resource.matchTag('424877732054/context', 'project-factory')]
+module.organization-iam[0].google_organization_iam_binding.bindings["pf_org_policy_viewer"]: Refreshing state... [id=424877732054/roles/orgpolicy.policyViewer/Project factory org policy viewer//resource.matchTag('424877732054/context', 'project-factory')]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/resourcemanager.projectCreator"]: Refreshing state... [id=424877732054/roles/resourcemanager.projectCreator]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/resourcemanager.folderAdmin"]: Refreshing state... [id=424877732054/roles/resourcemanager.folderAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/orgpolicy.policyViewer"]: Refreshing state... [id=424877732054/roles/orgpolicy.policyViewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/cloudsupport.admin"]: Refreshing state... [id=424877732054/roles/cloudsupport.admin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/compute.orgFirewallPolicyUser"]: Refreshing state... [id=424877732054/roles/compute.orgFirewallPolicyUser]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/cloudasset.owner"]: Refreshing state... [id=424877732054/roles/cloudasset.owner]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/resourcemanager.tagAdmin"]: Refreshing state... [id=424877732054/roles/resourcemanager.tagAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/billing.creator"]: Refreshing state... [id=424877732054/roles/billing.creator]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/compute.xpnAdmin"]: Refreshing state... [id=424877732054/roles/compute.xpnAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/resourcemanager.folderViewer"]: Refreshing state... [id=424877732054/roles/resourcemanager.folderViewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/logging.viewer"]: Refreshing state... [id=424877732054/roles/logging.viewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/owner"]: Refreshing state... [id=424877732054/roles/owner]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/resourcemanager.tagViewer"]: Refreshing state... [id=424877732054/roles/resourcemanager.tagViewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/orgpolicy.policyAdmin"]: Refreshing state... [id=424877732054/roles/orgpolicy.policyAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/iam.workforcePoolViewer"]: Refreshing state... [id=424877732054/roles/iam.workforcePoolViewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/iam.organizationRoleAdmin"]: Refreshing state... [id=424877732054/roles/iam.organizationRoleAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/compute.osLoginExternalUser"]: Refreshing state... [id=424877732054/roles/compute.osLoginExternalUser]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/serviceusage.serviceUsageViewer"]: Refreshing state... [id=424877732054/roles/serviceusage.serviceUsageViewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/logging.admin"]: Refreshing state... [id=424877732054/roles/logging.admin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/resourcemanager.tagUser"]: Refreshing state... [id=424877732054/roles/resourcemanager.tagUser]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/accesscontextmanager.policyAdmin"]: Refreshing state... [id=424877732054/roles/accesscontextmanager.policyAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/resourcemanager.organizationAdmin"]: Refreshing state... [id=424877732054/roles/resourcemanager.organizationAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/iam.organizationRoleViewer"]: Refreshing state... [id=424877732054/roles/iam.organizationRoleViewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/essentialcontacts.viewer"]: Refreshing state... [id=424877732054/roles/essentialcontacts.viewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/compute.orgFirewallPolicyAdmin"]: Refreshing state... [id=424877732054/roles/compute.orgFirewallPolicyAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/accesscontextmanager.policyReader"]: Refreshing state... [id=424877732054/roles/accesscontextmanager.policyReader]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/essentialcontacts.admin"]: Refreshing state... [id=424877732054/roles/essentialcontacts.admin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/compute.osAdminLogin"]: Refreshing state... [id=424877732054/roles/compute.osAdminLogin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/cloudasset.viewer"]: Refreshing state... [id=424877732054/roles/cloudasset.viewer]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/iam.workforcePoolAdmin"]: Refreshing state... [id=424877732054/roles/iam.workforcePoolAdmin]
+module.organization-iam[0].google_organization_iam_binding.authoritative["roles/resourcemanager.projectMover"]: Refreshing state... [id=424877732054/roles/resourcemanager.projectMover]
+google_storage_bucket_object.providers["0-org-setup-ro"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/0-org-setup-ro-providers.tf]
+google_storage_bucket_object.providers["2-networking-ro"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/2-networking-ro-providers.tf]
+google_storage_bucket_object.providers["1-vpcsc-ro"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/1-vpcsc-ro-providers.tf]
+google_storage_bucket_object.providers["1-vpcsc"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/1-vpcsc-providers.tf]
+google_storage_bucket_object.providers["3-data-platform-dev-ro"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/3-data-platform-dev-ro-providers.tf]
+google_storage_bucket_object.providers["2-security"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/2-security-providers.tf]
+google_storage_bucket_object.providers["2-security-ro"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/2-security-ro-providers.tf]
+google_storage_bucket_object.providers["2-project-factory"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/2-project-factory-providers.tf]
+google_storage_bucket_object.providers["2-networking"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/2-networking-providers.tf]
+google_storage_bucket_object.providers["3-data-platform-dev"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/3-data-platform-dev-providers.tf]
+google_storage_bucket_object.providers["0-org-setup"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/0-org-setup-providers.tf]
+google_storage_bucket_object.providers["2-project-factory-ro"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-providers/2-project-factory-ro-providers.tf]
+module.organization-iam[0].google_logging_organization_sink.sink["audit-logs"]: Refreshing state... [id=organizations/424877732054/sinks/audit-logs]
+module.organization-iam[0].google_logging_organization_sink.sink["vpc-sc"]: Refreshing state... [id=organizations/424877732054/sinks/vpc-sc]
+module.organization-iam[0].google_logging_organization_sink.sink["iam"]: Refreshing state... [id=organizations/424877732054/sinks/iam]
+module.organization-iam[0].google_tags_tag_value_iam_binding.default["environment/production:roles/resourcemanager.tagUser"]: Refreshing state... [id=tagValues/281483037812689/roles/resourcemanager.tagUser]
+module.organization-iam[0].google_tags_tag_value_iam_binding.default["environment/development:roles/resourcemanager.tagUser"]: Refreshing state... [id=tagValues/281482394549583/roles/resourcemanager.tagUser]
+module.organization-iam[0].google_tags_tag_value_iam_binding.default["environment/development:roles/resourcemanager.tagViewer"]: Refreshing state... [id=tagValues/281482394549583/roles/resourcemanager.tagViewer]
+module.organization-iam[0].google_tags_tag_value_iam_binding.default["environment/production:roles/resourcemanager.tagViewer"]: Refreshing state... [id=tagValues/281483037812689/roles/resourcemanager.tagViewer]
+module.organization-iam[0].google_org_policy_policy.default["compute.requireOsLogin"]: Refreshing state... [id=organizations/424877732054/policies/compute.requireOsLogin]
+module.organization-iam[0].google_org_policy_policy.default["iam.disableAuditLoggingExemption"]: Refreshing state... [id=organizations/424877732054/policies/iam.disableAuditLoggingExemption]
+module.organization-iam[0].google_org_policy_policy.default["storage.secureHttpTransport"]: Refreshing state... [id=organizations/424877732054/policies/storage.secureHttpTransport]
+module.organization-iam[0].google_org_policy_policy.default["compute.disableSerialPortAccess"]: Refreshing state... [id=organizations/424877732054/policies/compute.disableSerialPortAccess]
+module.organization-iam[0].google_org_policy_policy.default["compute.disableVpcExternalIpv6"]: Refreshing state... [id=organizations/424877732054/policies/compute.disableVpcExternalIpv6]
+module.organization-iam[0].google_org_policy_policy.default["run.managed.requireInvokerIam"]: Refreshing state... [id=organizations/424877732054/policies/run.managed.requireInvokerIam]
+module.organization-iam[0].google_org_policy_policy.default["storage.uniformBucketLevelAccess"]: Refreshing state... [id=organizations/424877732054/policies/storage.uniformBucketLevelAccess]
+module.organization-iam[0].google_org_policy_policy.default["iam.disableServiceAccountKeyCreation"]: Refreshing state... [id=organizations/424877732054/policies/iam.disableServiceAccountKeyCreation]
+module.organization-iam[0].google_org_policy_policy.default["storage.publicAccessPrevention"]: Refreshing state... [id=organizations/424877732054/policies/storage.publicAccessPrevention]
+module.organization-iam[0].google_org_policy_policy.default["cloudbuild.useComputeServiceAccount"]: Refreshing state... [id=organizations/424877732054/policies/cloudbuild.useComputeServiceAccount]
+module.organization-iam[0].google_org_policy_policy.default["run.allowedIngress"]: Refreshing state... [id=organizations/424877732054/policies/run.allowedIngress]
+module.organization-iam[0].google_org_policy_policy.default["compute.disableInternetNetworkEndpointGroup"]: Refreshing state... [id=organizations/424877732054/policies/compute.disableInternetNetworkEndpointGroup]
+module.organization-iam[0].google_org_policy_policy.default["compute.setNewProjectDefaultToZonalDNSOnly"]: Refreshing state... [id=organizations/424877732054/policies/compute.setNewProjectDefaultToZonalDNSOnly]
+module.organization-iam[0].google_org_policy_policy.default["gcp.resourceLocations"]: Refreshing state... [id=organizations/424877732054/policies/gcp.resourceLocations]
+module.organization-iam[0].google_org_policy_policy.default["iam.disableServiceAccountKeyUpload"]: Refreshing state... [id=organizations/424877732054/policies/iam.disableServiceAccountKeyUpload]
+module.organization-iam[0].google_org_policy_policy.default["iam.allowedPolicyMemberDomains"]: Refreshing state... [id=organizations/424877732054/policies/iam.allowedPolicyMemberDomains]
+module.organization-iam[0].google_org_policy_policy.default["sql.restrictPublicIp"]: Refreshing state... [id=organizations/424877732054/policies/sql.restrictPublicIp]
+module.organization-iam[0].google_org_policy_policy.default["iam.serviceAccountKeyExposureResponse"]: Refreshing state... [id=organizations/424877732054/policies/iam.serviceAccountKeyExposureResponse]
+module.organization-iam[0].google_org_policy_policy.default["compute.disableNestedVirtualization"]: Refreshing state... [id=organizations/424877732054/policies/compute.disableNestedVirtualization]
+module.organization-iam[0].google_org_policy_policy.default["iam.workloadIdentityPoolProviders"]: Refreshing state... [id=organizations/424877732054/policies/iam.workloadIdentityPoolProviders]
+module.organization-iam[0].google_org_policy_policy.default["container.managed.enablePrivateNodes"]: Refreshing state... [id=organizations/424877732054/policies/container.managed.enablePrivateNodes]
+module.organization-iam[0].google_org_policy_policy.default["storage.restrictAuthTypes"]: Refreshing state... [id=organizations/424877732054/policies/storage.restrictAuthTypes]
+module.organization-iam[0].google_org_policy_policy.default["compute.disableGuestAttributesAccess"]: Refreshing state... [id=organizations/424877732054/policies/compute.disableGuestAttributesAccess]
+module.organization-iam[0].google_org_policy_policy.default["cloudbuild.disableCreateDefaultServiceAccount"]: Refreshing state... [id=organizations/424877732054/policies/cloudbuild.disableCreateDefaultServiceAccount]
+module.organization-iam[0].google_org_policy_policy.default["compute.restrictProtocolForwardingCreationForTypes"]: Refreshing state... [id=organizations/424877732054/policies/compute.restrictProtocolForwardingCreationForTypes]
+module.organization-iam[0].google_org_policy_policy.default["sql.restrictAuthorizedNetworks"]: Refreshing state... [id=organizations/424877732054/policies/sql.restrictAuthorizedNetworks]
+module.organization-iam[0].google_org_policy_policy.default["compute.restrictLoadBalancerCreationForTypes"]: Refreshing state... [id=organizations/424877732054/policies/compute.restrictLoadBalancerCreationForTypes]
+module.organization-iam[0].google_org_policy_policy.default["iam.automaticIamGrantsForDefaultServiceAccounts"]: Refreshing state... [id=organizations/424877732054/policies/iam.automaticIamGrantsForDefaultServiceAccounts]
+module.organization-iam[0].google_org_policy_policy.default["custom.denyBridgePerimeters"]: Refreshing state... [id=organizations/424877732054/policies/custom.denyBridgePerimeters]
+module.organization-iam[0].google_org_policy_policy.default["compute.trustedImageProjects"]: Refreshing state... [id=organizations/424877732054/policies/compute.trustedImageProjects]
+module.organization-iam[0].google_org_policy_policy.default["iam.workloadIdentityPoolAwsAccounts"]: Refreshing state... [id=organizations/424877732054/policies/iam.workloadIdentityPoolAwsAccounts]
+module.organization-iam[0].google_org_policy_policy.default["compute.skipDefaultNetworkCreation"]: Refreshing state... [id=organizations/424877732054/policies/compute.skipDefaultNetworkCreation]
+module.organization-iam[0].google_org_policy_policy.default["cloudbuild.useBuildServiceAccount"]: Refreshing state... [id=organizations/424877732054/policies/cloudbuild.useBuildServiceAccount]
+module.organization-iam[0].google_org_policy_policy.default["compute.vmExternalIpAccess"]: Refreshing state... [id=organizations/424877732054/policies/compute.vmExternalIpAccess]
+module.organization-iam[0].google_org_policy_policy.default["iam.managed.disableServiceAccountApiKeyCreation"]: Refreshing state... [id=organizations/424877732054/policies/iam.managed.disableServiceAccountApiKeyCreation]
+module.organization-iam[0].google_project_iam_member.bucket-sinks-binding["iam"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/roles/logging.bucketWriter/serviceAccount:service-org-424877732054@gcp-sa-logging.iam.gserviceaccount.com/iam bucket writer/Grants bucketWriter to serviceAccount:service-org-424877732054@gcp-sa-logging.iam.gserviceaccount.com used by log sink iam on organizations/424877732054/resource.name.endsWith('projects/pso-fsi-00-prod-audit-logs-0/locations/global/buckets/iam')]
+module.organization-iam[0].google_project_iam_member.bucket-sinks-binding["vpc-sc"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/roles/logging.bucketWriter/serviceAccount:service-org-424877732054@gcp-sa-logging.iam.gserviceaccount.com/vpc-sc bucket writer/Grants bucketWriter to serviceAccount:service-org-424877732054@gcp-sa-logging.iam.gserviceaccount.com used by log sink vpc-sc on organizations/424877732054/resource.name.endsWith('projects/pso-fsi-00-prod-audit-logs-0/locations/global/buckets/vpc-sc')]
+module.organization-iam[0].google_project_iam_member.bucket-sinks-binding["audit-logs"]: Refreshing state... [id=pso-fsi-00-prod-audit-logs-0/roles/logging.bucketWriter/serviceAccount:service-org-424877732054@gcp-sa-logging.iam.gserviceaccount.com/audit-logs bucket writer/Grants bucketWriter to serviceAccount:service-org-424877732054@gcp-sa-logging.iam.gserviceaccount.com used by log sink audit-logs on organizations/424877732054/resource.name.endsWith('projects/pso-fsi-00-prod-audit-logs-0/locations/global/buckets/audit-logs')]
+local_file.tfvars["globals"]: Refreshing state... [id=5fcd5e79a1992acda31026e98f18e4421348376c]
+local_file.tfvars["org-setup"]: Refreshing state... [id=18c3764d4637630162cdd5565dcae26d0bd521d5]
+google_storage_bucket_object.tfvars["globals"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-tfvars/0-globals.auto.tfvars.json]
+google_storage_bucket_object.tfvars["org-setup"]: Refreshing state... [id=pso-fsi-00-prod-iac-core-0-iac-outputs-tfvars/0-org-setup.auto.tfvars.json]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+  - destroy
+
+Terraform will perform the following actions:
+
+  # module.organization-iam[0].google_org_policy_policy.default["ainotebooks.disableFileDownloads"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/ainotebooks.disableFileDownloads"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["ainotebooks.disableRootAccess"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/ainotebooks.disableRootAccess"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["ainotebooks.restrictPublicIp"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/ainotebooks.restrictPublicIp"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["ainotebooks.restrictVpcNetworks"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/ainotebooks.restrictVpcNetworks"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "under:organizations/424877732054",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["appengine.disableCodeDownload"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/appengine.disableCodeDownload"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["bigquery.disableBQOmniAWS"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/bigquery.disableBQOmniAWS"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["bigquery.disableBQOmniAzure"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/bigquery.disableBQOmniAzure"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["cloudbuild.allowedIntegrations"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/cloudbuild.allowedIntegrations"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + deny_all = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["cloudbuild.allowedWorkerPools"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/cloudbuild.allowedWorkerPools"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "under:organizations/424877732054",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["cloudbuild.useBuildServiceAccount"] will be destroyed
+  # (because key ["cloudbuild.useBuildServiceAccount"] is not in for_each map)
+  - resource "google_org_policy_policy" "default" {
+      - etag   = "CL7TxcYGEJCZva4D-" -> null
+      - id     = "organizations/424877732054/policies/cloudbuild.useBuildServiceAccount" -> null
+      - name   = "cloudbuild.useBuildServiceAccount" -> null
+      - parent = "organizations/424877732054" -> null
+
+      - spec {
+          - etag                = "CL7TxcYGEJCZva4D" -> null
+          - inherit_from_parent = false -> null
+          - reset               = false -> null
+          - update_time         = "2025-09-22T15:22:38.902778Z" -> null
+
+          - rules {
+              - enforce    = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["cloudbuild.useComputeServiceAccount"] will be destroyed
+  # (because key ["cloudbuild.useComputeServiceAccount"] is not in for_each map)
+  - resource "google_org_policy_policy" "default" {
+      - etag   = "CLjTxcYGEMCQof8C-" -> null
+      - id     = "organizations/424877732054/policies/cloudbuild.useComputeServiceAccount" -> null
+      - name   = "cloudbuild.useComputeServiceAccount" -> null
+      - parent = "organizations/424877732054" -> null
+
+      - spec {
+          - etag                = "CLjTxcYGEMCQof8C" -> null
+          - inherit_from_parent = false -> null
+          - reset               = false -> null
+          - update_time         = "2025-09-22T15:22:32.803752Z" -> null
+
+          - rules {
+              - enforce    = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["cloudfunctions.allowedIngressSettings"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/cloudfunctions.allowedIngressSettings"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "ALLOW_INTERNAL_ONLY",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["cloudfunctions.allowedVpcConnectorEgressSettings"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/cloudfunctions.allowedVpcConnectorEgressSettings"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "ALL_TRAFFIC",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["cloudfunctions.requireVPCConnector"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/cloudfunctions.requireVPCConnector"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.disableGuestAttributesAccess"] will be destroyed
+  # (because key ["compute.disableGuestAttributesAccess"] is not in for_each map)
+  - resource "google_org_policy_policy" "default" {
+      - etag   = "CLzTxcYGENDbtwE=-" -> null
+      - id     = "organizations/424877732054/policies/compute.disableGuestAttributesAccess" -> null
+      - name   = "compute.disableGuestAttributesAccess" -> null
+      - parent = "organizations/424877732054" -> null
+
+      - spec {
+          - etag                = "CLzTxcYGENDbtwE=" -> null
+          - inherit_from_parent = false -> null
+          - reset               = false -> null
+          - update_time         = "2025-09-22T15:22:36.003010Z" -> null
+
+          - rules {
+              - enforce    = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.disableNestedVirtualization"] will be destroyed
+  # (because key ["compute.disableNestedVirtualization"] is not in for_each map)
+  - resource "google_org_policy_policy" "default" {
+      - etag   = "CLzTxcYGEJCJgTE=-" -> null
+      - id     = "organizations/424877732054/policies/compute.disableNestedVirtualization" -> null
+      - name   = "compute.disableNestedVirtualization" -> null
+      - parent = "organizations/424877732054" -> null
+
+      - spec {
+          - etag                = "CLzTxcYGEJCJgTE=" -> null
+          - inherit_from_parent = false -> null
+          - reset               = false -> null
+          - update_time         = "2025-09-22T15:22:36.102778Z" -> null
+
+          - rules {
+              - enforce    = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.disableSerialPortAccess"] will be destroyed
+  # (because key ["compute.disableSerialPortAccess"] is not in for_each map)
+  - resource "google_org_policy_policy" "default" {
+      - etag   = "CL3TxcYGEKDpn58C-" -> null
+      - id     = "organizations/424877732054/policies/compute.disableSerialPortAccess" -> null
+      - name   = "compute.disableSerialPortAccess" -> null
+      - parent = "organizations/424877732054" -> null
+
+      - spec {
+          - etag                = "CL3TxcYGEKDpn58C" -> null
+          - inherit_from_parent = false -> null
+          - reset               = false -> null
+          - update_time         = "2025-09-22T15:22:37.602404Z" -> null
+
+          - rules {
+              - enforce    = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.managed.blockPreviewFeatures"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.managed.blockPreviewFeatures"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.managed.disableGuestAttributesAccess"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.managed.disableGuestAttributesAccess"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.managed.disableNestedVirtualization"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.managed.disableNestedVirtualization"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.managed.disableSerialPortAccess"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.managed.disableSerialPortAccess"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.managed.disableSerialPortLogging"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.managed.disableSerialPortLogging"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.managed.vmCanIpForward"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.managed.vmCanIpForward"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.managed.vmExternalIpAccess"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.managed.vmExternalIpAccess"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.requireShieldedVm"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.requireShieldedVm"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.requireSslPolicy"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.requireSslPolicy"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "under:organizations/424877732054",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.requireVpcFlowLogs"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.requireVpcFlowLogs"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "ESSENTIAL",
+                      + "LIGHT",
+                      + "COMPREHENSIVE",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.restrictCloudNATUsage"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.restrictCloudNATUsage"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "under:folders/11111111111",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.restrictDedicatedInterconnectUsage"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.restrictDedicatedInterconnectUsage"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "under:organizations/424877732054",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.restrictNonConfidentialComputing"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.restrictNonConfidentialComputing"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + denied_values = [
+                      + "compute.googleapis.com",
+                      + "container.googleapis.com",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.restrictPartnerInterconnectUsage"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.restrictPartnerInterconnectUsage"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "under:organizations/424877732054",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.restrictSharedVpcHostProjects"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.restrictSharedVpcHostProjects"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "under:organizations/424877732054",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.restrictVpcPeering"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.restrictVpcPeering"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "under:organizations/424877732054",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.restrictVpnPeerIPs"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/compute.restrictVpnPeerIPs"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "1.1.1.1",
+                      + "2.2.2.2",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["compute.vmExternalIpAccess"] will be destroyed
+  # (because key ["compute.vmExternalIpAccess"] is not in for_each map)
+  - resource "google_org_policy_policy" "default" {
+      - etag   = "CLjTxcYGEKir8f4C-" -> null
+      - id     = "organizations/424877732054/policies/compute.vmExternalIpAccess" -> null
+      - name   = "compute.vmExternalIpAccess" -> null
+      - parent = "organizations/424877732054" -> null
+
+      - spec {
+          - etag                = "CLjTxcYGEKir8f4C" -> null
+          - inherit_from_parent = false -> null
+          - reset               = false -> null
+          - update_time         = "2025-09-22T15:22:32.802969Z" -> null
+
+          - rules {
+              - deny_all   = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.disableABAC"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.disableABAC"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.disableInsecureKubeletReadOnlyPort"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.disableInsecureKubeletReadOnlyPort"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.disableLegacyClientCertificateIssuance"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.disableLegacyClientCertificateIssuance"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.disableRBACSystemBindings"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.disableRBACSystemBindings"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.disallowDefaultComputeServiceAccount"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.disallowDefaultComputeServiceAccount"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.enableBinaryAuthorization"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.enableBinaryAuthorization"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.enableCloudLogging"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.enableCloudLogging"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.enableGoogleGroupsRBAC"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.enableGoogleGroupsRBAC"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.enableNetworkPolicy"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.enableNetworkPolicy"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.enableSecretsEncryption"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.enableSecretsEncryption"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.enableSecurityBulletinNotifications"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.enableSecurityBulletinNotifications"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.enableShieldedNodes"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.enableShieldedNodes"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["container.managed.enableWorkloadIdentityFederation"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/container.managed.enableWorkloadIdentityFederation"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudbuildDisableWorkerPoolExternalIP"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudbuildDisableWorkerPoolExternalIP"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudkmsAllowedRotationPeriod"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudkmsAllowedRotationPeriod"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudrunDisableEnvironmentVariablePattern"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudrunDisableEnvironmentVariablePattern"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlDisablePublicAuthorizedNetworks"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlDisablePublicAuthorizedNetworks"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlEnforcePasswordComplexity"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlEnforcePasswordComplexity"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlRequireAutomatedBackup"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlRequireAutomatedBackup"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlRequireMySQLDatabaseFlags"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlRequireMySQLDatabaseFlags"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlRequirePointInTimeRecovery"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlRequirePointInTimeRecovery"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlRequirePostgreSQLDatabaseFlags"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlRequirePostgreSQLDatabaseFlags"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlRequireRootPassword"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlRequireRootPassword"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlRequireSQLServerDatabaseFlags"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlRequireSQLServerDatabaseFlags"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.cloudsqlRequireSSLConnection"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.cloudsqlRequireSSLConnection"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.dataprocRequireDiskCmekEncryption"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.dataprocRequireDiskCmekEncryption"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.dnsAllowedSigningAlgorithms"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.dnsAllowedSigningAlgorithms"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.dnsRequireManageZoneDNSSEC"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.dnsRequireManageZoneDNSSEC"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.dnsRequirePolicyLogging"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.dnsRequirePolicyLogging"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.firewallRestrictOpenWorldRule"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.firewallRestrictOpenWorldRule"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.firewallRestrictRdpPolicyRule"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.firewallRestrictRdpPolicyRule"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.firewallRestrictRdpRule"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.firewallRestrictRdpRule"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.firewallRestrictSshPolicyRule"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.firewallRestrictSshPolicyRule"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.firewallRestrictSshRule"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.firewallRestrictSshRule"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeAllowedInitialClusterVersions"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeAllowedInitialClusterVersions"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeAllowedNodePoolImages"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeAllowedNodePoolImages"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeAllowedReleaseChannels"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeAllowedReleaseChannels"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeDisableAlphaCluster"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeDisableAlphaCluster"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeDisableKubernetesDashboard"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeDisableKubernetesDashboard"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeDisableLegacyAbac"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeDisableLegacyAbac"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeDisableLegacyMetadataEndpoints"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeDisableLegacyMetadataEndpoints"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireCOSImage"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireCOSImage"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireDataplaneV2"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireDataplaneV2"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireGKEMetadataServer"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireGKEMetadataServer"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireIntegrityMonitoring"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireIntegrityMonitoring"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireIntraNodeVisibility"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireIntraNodeVisibility"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireMasterAuthorizedNetworks"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireMasterAuthorizedNetworks"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireMonitoring"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireMonitoring"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireNodePoolAutoRepair"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireNodePoolAutoRepair"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireNodePoolAutoUpgrade"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireNodePoolAutoUpgrade"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireNodePoolCMEKEncryption"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireNodePoolCMEKEncryption"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireNodePoolSandbox"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireNodePoolSandbox"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequirePrivateEndpoint"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequirePrivateEndpoint"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireRegionalClusters"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireRegionalClusters"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireSecureBoot"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireSecureBoot"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.gkeRequireVPCNativeCluster"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.gkeRequireVPCNativeCluster"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.iamAllowedMembers"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.iamAllowedMembers"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.iamDisableAdminServiceAccount"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.iamDisableAdminServiceAccount"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.iamDisableBasicRoles"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.iamDisableBasicRoles"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.iamDisableProjectServiceAccountImpersonationRoles"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.iamDisableProjectServiceAccountImpersonationRoles"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.iamDisablePublicBindings"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.iamDisablePublicBindings"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.networkDisableTargetHTTPProxy"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.networkDisableTargetHTTPProxy"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.networkDisableWeakSSLPolicy"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.networkDisableWeakSSLPolicy"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.networkRequireBackendServiceLogging"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.networkRequireBackendServiceLogging"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.networkRequireCustomModeVpc"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.networkRequireCustomModeVpc"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["custom.networkRequireSubnetPrivateGoogleAccess"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/custom.networkRequireSubnetPrivateGoogleAccess"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["essentialcontacts.managed.allowedContactDomains"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/essentialcontacts.managed.allowedContactDomains"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce    = "TRUE"
+              + parameters = jsonencode(
+                    {
+                      + allowedDomains = [
+                          + "@fast-00.fsi.com",
+                        ]
+                    }
+                )
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["gcp.resourceLocations"] will be updated in-place
+  ~ resource "google_org_policy_policy" "default" {
+        id     = "organizations/424877732054/policies/gcp.resourceLocations"
+        name   = "gcp.resourceLocations"
+        # (2 unchanged attributes hidden)
+
+      ~ spec {
+            # (4 unchanged attributes hidden)
+
+          ~ rules {
+              - allow_all  = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+
+              + values {
+                  + allowed_values = [
+                      + "in:asia-locations",
+                      + "in:sg-locations",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["gcp.restrictServiceUsage"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/gcp.restrictServiceUsage"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "artifactregistry.googleapis.com",
+                      + "bigquery.googleapis.com",
+                      + "bigquerydatatransfer.googleapis.com",
+                      + "binaryauthorization.googleapis.com",
+                      + "cloudbuild.googleapis.com",
+                      + "cloudfunctions.googleapis.com",
+                      + "cloudkms.googleapis.com",
+                      + "clouderrorreporting.googleapis.com",
+                      + "compute.googleapis.com",
+                      + "container.googleapis.com",
+                      + "dataproc.googleapis.com",
+                      + "deploymentmanager.googleapis.com",
+                      + "eventarc.googleapis.com",
+                      + "firestore.googleapis.com",
+                      + "gkebackup.googleapis.com",
+                      + "logging.googleapis.com",
+                      + "notebooks.googleapis.com",
+                      + "pubsub.googleapis.com",
+                      + "redis.googleapis.com",
+                      + "run.googleapis.com",
+                      + "secretmanager.googleapis.com",
+                      + "securitycenter.googleapis.com",
+                      + "securitycentermanagement.googleapis.com",
+                      + "securesourcemanager.googleapis.com",
+                      + "spanner.googleapis.com",
+                      + "sqladmin.googleapis.com",
+                      + "storage.googleapis.com",
+                      + "storagetransfer.googleapis.com",
+                      + "vpcaccess.googleapis.com",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["gcp.restrictTLSCipherSuites"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/gcp.restrictTLSCipherSuites"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "in:NIST-800-52-recommended-ciphers",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["gcp.restrictTLSVersion"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/gcp.restrictTLSVersion"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + denied_values = [
+                      + "TLS_VERSION_1",
+                      + "TLS_VERSION_1_1",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["iam.disableServiceAccountKeyCreation"] will be destroyed
+  # (because key ["iam.disableServiceAccountKeyCreation"] is not in for_each map)
+  - resource "google_org_policy_policy" "default" {
+      - etag   = "CL7TxcYGEKDZ4e8B-" -> null
+      - id     = "organizations/424877732054/policies/iam.disableServiceAccountKeyCreation" -> null
+      - name   = "iam.disableServiceAccountKeyCreation" -> null
+      - parent = "organizations/424877732054" -> null
+
+      - spec {
+          - etag                = "CL7TxcYGEKDZ4e8B" -> null
+          - inherit_from_parent = false -> null
+          - reset               = false -> null
+          - update_time         = "2025-09-22T15:22:38.502820Z" -> null
+
+          - rules {
+              - enforce    = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["iam.disableServiceAccountKeyUpload"] will be destroyed
+  # (because key ["iam.disableServiceAccountKeyUpload"] is not in for_each map)
+  - resource "google_org_policy_policy" "default" {
+      - etag   = "CL3TxcYGEPi2sQE=-" -> null
+      - id     = "organizations/424877732054/policies/iam.disableServiceAccountKeyUpload" -> null
+      - name   = "iam.disableServiceAccountKeyUpload" -> null
+      - parent = "organizations/424877732054" -> null
+
+      - spec {
+          - etag                = "CL3TxcYGEPi2sQE=" -> null
+          - inherit_from_parent = false -> null
+          - reset               = false -> null
+          - update_time         = "2025-09-22T15:22:37.002907Z" -> null
+
+          - rules {
+              - enforce    = "TRUE" -> null
+                # (3 unchanged attributes hidden)
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["iam.managed.allowedPolicyMembers"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/iam.managed.allowedPolicyMembers"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce    = "TRUE"
+              + parameters = jsonencode(
+                    {
+                      + allowedPrincipalSets = [
+                          + "//cloudresourcemanager.googleapis.com/organizations/424877732054",
+                        ]
+                    }
+                )
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["iam.managed.disableServiceAccountKeyCreation"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/iam.managed.disableServiceAccountKeyCreation"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["iam.managed.disableServiceAccountKeyUpload"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/iam.managed.disableServiceAccountKeyUpload"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + enforce = "TRUE"
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["run.allowedBinaryAuthorizationPolicies"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/run.allowedBinaryAuthorizationPolicies"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "default",
+                    ]
+                }
+            }
+        }
+    }
+
+  # module.organization-iam[0].google_org_policy_policy.default["run.allowedVPCEgress"] will be created
+  + resource "google_org_policy_policy" "default" {
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + name   = "organizations/424877732054/policies/run.allowedVPCEgress"
+      + parent = "organizations/424877732054"
+
+      + spec {
+          + etag        = (known after apply)
+          + update_time = (known after apply)
+
+          + rules {
+              + values {
+                  + allowed_values = [
+                      + "all-traffic",
+                    ]
+                }
+            }
+        }
+    }
+
+Plan: 105 to add, 1 to change, 8 to destroy.
+
+Warning: Value for undeclared variable
+
+The root module does not declare a variable named "billing_account" but a value was found in file "terraform.tfvars". If you meant to use this value, add a "variable" block to the configuration.
+
+To silence these warnings, use TF_VAR_... environment variables to provide certain "global" settings to all configurations in your organization. To reduce the verbosity of these warnings, use the -compact-warnings option.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

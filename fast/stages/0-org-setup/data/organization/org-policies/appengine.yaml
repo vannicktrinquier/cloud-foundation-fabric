@@ -18,22 +18,7 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
-  rules:
-    - enforce: true
-
-cloudbuild.allowedIntegrations:
-  rules:
-    - deny:
-        all: true
-
-cloudbuild.allowedWorkerPools:
-  rules:
-    - allow:
-        values:
-            - "under:organizations/${organization.id}"
-
-custom.cloudbuildDisableWorkerPoolExternalIP:
+appengine.disableCodeDownload:
   rules:
     - enforce: true
 

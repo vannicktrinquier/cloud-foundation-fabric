@@ -18,22 +18,10 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
-  rules:
-    - enforce: true
-
-cloudbuild.allowedIntegrations:
-  rules:
-    - deny:
-        all: true
-
-cloudbuild.allowedWorkerPools:
+gcp.resourceLocations:
   rules:
     - allow:
         values:
-            - "under:organizations/${organization.id}"
-
-custom.cloudbuildDisableWorkerPoolExternalIP:
-  rules:
-    - enforce: true
+            - "in:asia-locations"
+            - "in:sg-locations"
 

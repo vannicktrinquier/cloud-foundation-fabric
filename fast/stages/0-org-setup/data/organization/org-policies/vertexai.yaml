@@ -18,22 +18,21 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
+ainotebooks.disableFileDownloads:
   rules:
     - enforce: true
 
-cloudbuild.allowedIntegrations:
+ainotebooks.disableRootAccess:
   rules:
-    - deny:
-        all: true
+    - enforce: true
 
-cloudbuild.allowedWorkerPools:
+ainotebooks.restrictPublicIp:
+  rules:
+    - enforce: true
+
+ainotebooks.restrictVpcNetworks:
   rules:
     - allow:
         values:
             - "under:organizations/${organization.id}"
-
-custom.cloudbuildDisableWorkerPoolExternalIP:
-  rules:
-    - enforce: true
 

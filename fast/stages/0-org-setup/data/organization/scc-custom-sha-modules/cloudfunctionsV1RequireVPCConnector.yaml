@@ -12,27 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-# sample subset of useful organization policies, edit to suit requirements
-# start of document (---) avoids errors if the file only contains comments
-
-# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
-
-storage.publicAccessPrevention:
-  rules:
-    - enforce: true
-
-storage.uniformBucketLevelAccess:
-  rules:
-    - enforce: true
-
-storage.secureHttpTransport:
-  rules:
-    - enforce: true
-
-storage.restrictAuthTypes:
-  rules:
-    - deny:
-        values:
-            - "in:ALL_HMAC_SIGNED_REQUESTS"
-
+cloudfunctionsV1RequireVPCConnector:
+  description: Detect if Gen1 Cloud Functions are configured without any VPC Connector
+  predicate:
+    expression: (!has(resource.vpcConnector))
+  recommendation: Ensure Gen1 Cloud Functions are configured with VPC Connector
+  resource_selector:
+    resource_types:
+    - cloudfunctions.googleapis.com/CloudFunction
+  severity: MEDIUM

@@ -12,27 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-# sample subset of useful organization policies, edit to suit requirements
-# start of document (---) avoids errors if the file only contains comments
-
-# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
-
-storage.publicAccessPrevention:
-  rules:
-    - enforce: true
-
-storage.uniformBucketLevelAccess:
-  rules:
-    - enforce: true
-
-storage.secureHttpTransport:
-  rules:
-    - enforce: true
-
-storage.restrictAuthTypes:
-  rules:
-    - deny:
-        values:
-            - "in:ALL_HMAC_SIGNED_REQUESTS"
-
+custom.gkeDisableKubernetesDashboard:
+  action_type: DENY
+  condition: |-
+    resource.addonsConfig.kubernetesDashboard.disabled == false
+  description: Enforce that GKE clusters does not have Web UI dashboard enabled
+  display_name: Disable Web UI dashboard
+  method_types:
+  - CREATE
+  - UPDATE
+  resource_types:
+  - container.googleapis.com/Cluster

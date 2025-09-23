@@ -18,22 +18,15 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
+bigquery.disableBQOmniAWS:
   rules:
     - enforce: true
 
-cloudbuild.allowedIntegrations:
+bigquery.disableBQOmniAzure:
   rules:
-    - deny:
-        all: true
+    - enforce: true
 
-cloudbuild.allowedWorkerPools:
-  rules:
-    - allow:
-        values:
-            - "under:organizations/${organization.id}"
-
-custom.cloudbuildDisableWorkerPoolExternalIP:
+custom.iamDisablePublicBindings:
   rules:
     - enforce: true
 

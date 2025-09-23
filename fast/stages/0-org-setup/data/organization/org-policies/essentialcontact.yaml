@@ -18,22 +18,9 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
+essentialcontacts.managed.allowedContactDomains:
   rules:
     - enforce: true
-
-cloudbuild.allowedIntegrations:
-  rules:
-    - deny:
-        all: true
-
-cloudbuild.allowedWorkerPools:
-  rules:
-    - allow:
-        values:
-            - "under:organizations/${organization.id}"
-
-custom.cloudbuildDisableWorkerPoolExternalIP:
-  rules:
-    - enforce: true
+      parameters: >- 
+        { "allowedDomains": ["@${organization.domain}"] }
 

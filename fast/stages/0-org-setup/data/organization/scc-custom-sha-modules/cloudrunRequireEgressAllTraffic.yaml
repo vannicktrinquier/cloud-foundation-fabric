@@ -12,27 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-# sample subset of useful organization policies, edit to suit requirements
-# start of document (---) avoids errors if the file only contains comments
-
-# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
-
-storage.publicAccessPrevention:
-  rules:
-    - enforce: true
-
-storage.uniformBucketLevelAccess:
-  rules:
-    - enforce: true
-
-storage.secureHttpTransport:
-  rules:
-    - enforce: true
-
-storage.restrictAuthTypes:
-  rules:
-    - deny:
-        values:
-            - "in:ALL_HMAC_SIGNED_REQUESTS"
-
+cloudrunRequireEgressAllTraffic:
+  description: Detect if Cloud Run services and jobs are not configured to route all
+    traffic through the VPC connector
+  predicate:
+    expression: (!resource.spec.template.metadata.annotations['run.googleapis.com/vpc-access-egress'].matches('all-traffic'))
+  recommendation: Ensure Cloud Run services and jobs are configured to route all traffic
+    through the VPC connector
+  resource_selector:
+    resource_types:
+    - run.googleapis.com/Service
+    - run.googleapis.com/Job
+  severity: HIGH

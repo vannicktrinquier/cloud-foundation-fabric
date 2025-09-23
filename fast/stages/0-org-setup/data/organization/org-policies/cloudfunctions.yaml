@@ -18,22 +18,19 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
-  rules:
-    - enforce: true
-
-cloudbuild.allowedIntegrations:
-  rules:
-    - deny:
-        all: true
-
-cloudbuild.allowedWorkerPools:
+cloudfunctions.allowedIngressSettings:
   rules:
     - allow:
         values:
-            - "under:organizations/${organization.id}"
+            - "ALLOW_INTERNAL_ONLY"
 
-custom.cloudbuildDisableWorkerPoolExternalIP:
+cloudfunctions.requireVPCConnector:
   rules:
     - enforce: true
+
+cloudfunctions.allowedVpcConnectorEgressSettings:
+  rules:
+    - allow:
+        values:
+            - "ALL_TRAFFIC"
 

@@ -12,27 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-# sample subset of useful organization policies, edit to suit requirements
-# start of document (---) avoids errors if the file only contains comments
-
-# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
-
-storage.publicAccessPrevention:
-  rules:
-    - enforce: true
-
-storage.uniformBucketLevelAccess:
-  rules:
-    - enforce: true
-
-storage.secureHttpTransport:
-  rules:
-    - enforce: true
-
-storage.restrictAuthTypes:
-  rules:
-    - deny:
-        values:
-            - "in:ALL_HMAC_SIGNED_REQUESTS"
-
+custom.gkeDisableLegacyMetadataEndpoints:
+  action_type: DENY
+  condition: |-
+    ('disable-legacy-endpoints' in resource.config.metadata && resource.config.metadata['disable-legacy-endpoints'] == 'false')
+  description: Enforce that GKE clusters are created with legacy metadata endpoints
+    disabled
+  display_name: Disable legacy metadata endpoints
+  method_types:
+  - CREATE
+  - UPDATE
+  resource_types:
+  - container.googleapis.com/NodePool

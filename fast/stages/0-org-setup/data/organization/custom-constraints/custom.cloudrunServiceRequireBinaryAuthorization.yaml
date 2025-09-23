@@ -12,27 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-# sample subset of useful organization policies, edit to suit requirements
-# start of document (---) avoids errors if the file only contains comments
-
-# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
-
-storage.publicAccessPrevention:
-  rules:
-    - enforce: true
-
-storage.uniformBucketLevelAccess:
-  rules:
-    - enforce: true
-
-storage.secureHttpTransport:
-  rules:
-    - enforce: true
-
-storage.restrictAuthTypes:
-  rules:
-    - deny:
-        values:
-            - "in:ALL_HMAC_SIGNED_REQUESTS"
-
+custom.cloudrunServiceRequireBinaryAuthorization:
+  action_type: DENY
+  condition: |-
+    !('run.googleapis.com/binary-authorization' in resource.metadata.annotations)
+  description: Enforce that Cloud Run Service are using binary authorization
+  display_name: Disable creation of Cloud Run Service without Binary Authorization
+  method_types:
+  - CREATE
+  - UPDATE
+  resource_types:
+  - run.googleapis.com/Service

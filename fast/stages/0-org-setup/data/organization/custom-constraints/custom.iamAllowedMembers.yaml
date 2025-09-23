@@ -12,27 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-# sample subset of useful organization policies, edit to suit requirements
-# start of document (---) avoids errors if the file only contains comments
-
-# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
-
-storage.publicAccessPrevention:
-  rules:
-    - enforce: true
-
-storage.uniformBucketLevelAccess:
-  rules:
-    - enforce: true
-
-storage.secureHttpTransport:
-  rules:
-    - enforce: true
-
-storage.restrictAuthTypes:
-  rules:
-    - deny:
-        values:
-            - "in:ALL_HMAC_SIGNED_REQUESTS"
-
+custom.iamAllowedMembers:
+  action_type: DENY
+  condition: |-
+    resource.bindings.exists(binding, binding.members.exists(member, !MemberSubjectEndsWith(member, ["@vannick.altostrat.com", "@google.com", ".gserviceaccount.com"])))
+  description: Ensure no binding are done with members outside the organization domain
+  display_name: Deny principals and members outside the organization domain
+  method_types:
+  - CREATE
+  - UPDATE
+  resource_types:
+  - iam.googleapis.com/AllowPolicy

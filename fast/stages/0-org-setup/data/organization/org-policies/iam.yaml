@@ -16,48 +16,29 @@
 # sample subset of useful organization policies, edit to suit requirements
 # start of document (---) avoids errors if the file only contains comments
 
-# yaml-language-server: $schema=../../../schemas/org-policies.schema.json
+# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-iam.allowedPolicyMemberDomains:
-  rules:
-    - allow:
-        values:
-          - is:C017xlhqd
-          - is:principalSet://iam.googleapis.com/organizations/424877732054
-
-# iam.allowedPolicyMemberDomains:
-#   rules:
-#     - allow:
-#         values:
-#           - is:${organization.customer_id}
-#       condition:
-#         title: Restrict member domains
-#         expression: |
-#           !resource.matchTag('${organization.id}/org-policies', 'allowed-policy-member-domains-all')
-#     - allow:
-#         all: true
-#       condition:
-#         title: Allow any member domain
-#         expression: |
-#           resource.matchTag('${organization.id}/org-policies', 'allowed-policy-member-domains-all')
-
-iam.disableAuditLoggingExemption:
+custom.iamAllowedMembers:
   rules:
     - enforce: true
 
-iam.automaticIamGrantsForDefaultServiceAccounts:
+custom.iamDisableAdminServiceAccount:
   rules:
     - enforce: true
 
-iam.disableServiceAccountKeyCreation:
+custom.iamDisableBasicRoles:
   rules:
     - enforce: true
 
-iam.disableServiceAccountKeyUpload:
+custom.iamDisableProjectServiceAccountImpersonationRoles:
   rules:
     - enforce: true
 
-iam.managed.disableServiceAccountApiKeyCreation:
+iam.managed.disableServiceAccountKeyCreation:
+  rules:
+    - enforce: true
+
+iam.managed.disableServiceAccountKeyUpload:
   rules:
     - enforce: true
 
@@ -65,7 +46,35 @@ iam.serviceAccountKeyExposureResponse:
   rules:
     - allow:
         values:
-          - is:DISABLE_KEY
+            - "is:DISABLE_KEY"
+
+iam.managed.disableServiceAccountApiKeyCreation:
+  rules:
+    - enforce: true
+
+iam.managed.allowedPolicyMembers:
+  rules:
+    - enforce: true
+      parameters: >- 
+        { "allowedPrincipalSets": ["//cloudresourcemanager.googleapis.com/organizations/${organization.id}"] }
+
+# iam.allowedPolicyMemberDomains:
+#   rules:
+#     - allow:
+#         values:
+#             - "${organization.customer_id}"
+
+# Replace by FAST one
+iam.allowedPolicyMemberDomains:
+  rules:
+    - allow:
+        values:
+          - is:C017xlhqd
+          - is:principalSet://iam.googleapis.com/organizations/424877732054
+
+iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts:
+  rules:
+    - enforce: true
 
 iam.workloadIdentityPoolAwsAccounts:
   rules:
@@ -76,3 +85,8 @@ iam.workloadIdentityPoolProviders:
   rules:
     - deny:
         all: true
+
+iam.disableAuditLoggingExemption:
+  rules:
+    - enforce: true
+

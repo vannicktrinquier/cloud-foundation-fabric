@@ -16,131 +16,126 @@
 # sample subset of useful organization policies, edit to suit requirements
 # start of document (---) avoids errors if the file only contains comments
 
-# yaml-language-server: $schema=../../../schemas/org-policies.schema.json
+# yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-compute.disableGuestAttributesAccess:
+compute.managed.disableNestedVirtualization:
   rules:
     - enforce: true
 
 compute.disableInternetNetworkEndpointGroup:
   rules:
-  - enforce: true
-
-compute.disableNestedVirtualization:
-  rules:
-  - enforce: true
-
-compute.disableSerialPortAccess:
-  rules:
-  - enforce: true
+    - enforce: true
 
 compute.disableVpcExternalIpv6:
   rules:
-  - enforce: true
-
-compute.requireOsLogin:
-  rules:
     - enforce: true
 
-compute.restrictLoadBalancerCreationForTypes:
+compute.restrictCloudNATUsage:
   rules:
     - allow:
         values:
-          - in:INTERNAL
-
-compute.skipDefaultNetworkCreation:
-  rules:
-    - enforce: true
+            - "under:folders/11111111111"
 
 compute.setNewProjectDefaultToZonalDNSOnly:
   rules:
   - enforce: true
 
-# only allow GCP images by default
-compute.trustedImageProjects:
+compute.managed.vmCanIpForward:
   rules:
-  - allow:
-      values:
-        - "is:projects/centos-cloud"
-        - "is:projects/cos-cloud"
-        - "is:projects/debian-cloud"
-        - "is:projects/fedora-cloud"
-        - "is:projects/fedora-coreos-cloud"
-        - "is:projects/opensuse-cloud"
-        - "is:projects/rhel-cloud"
-        - "is:projects/rhel-sap-cloud"
-        - "is:projects/rocky-linux-cloud"
-        - "is:projects/suse-cloud"
-        - "is:projects/suse-sap-cloud"
-        - "is:projects/ubuntu-os-cloud"
-        - "is:projects/ubuntu-os-pro-cloud"
-        - "is:projects/windows-cloud"
-        - "is:projects/windows-sql-cloud"
-        - "is:projects/confidential-vm-images"
-        - "is:projects/confidential-space-images"
-        - "is:projects/backupdr-images"
-        - "is:projects/deeplearning-platform-release"
-        - "is:projects/serverless-vpc-access-images"
-        - "is:projects/gke-node-images"
-        - "is:projects/gke-windows-node-images"
-        - "is:projects/ubuntu-os-gke-cloud"
+    - enforce: true
 
-
-compute.vmExternalIpAccess:
+compute.restrictNonConfidentialComputing:
   rules:
     - deny:
-        all: true
+        values:
+            - "compute.googleapis.com"
+            - "container.googleapis.com"
 
-# compute.disableInternetNetworkEndpointGroup:
-#   rules:
-#   - enforce: true
+# compute.managed.disableGuestAttributesAccess:
+compute.disableGuestAttributesAccess:
+  rules:
+    - enforce: true
 
-# compute.restrictCloudNATUsage:
-#   rules:
-#   - deny:
-#       all: true
+compute.skipDefaultNetworkCreation:
+  rules:
+    - enforce: true
 
-# compute.restrictDedicatedInterconnectUsage:
-#   rules:
-#   - deny:
-#       all: true
-
-# compute.restrictPartnerInterconnectUsage:
-#   rules:
-#   - deny:
-#       all: true
-
-compute.restrictProtocolForwardingCreationForTypes:
+gcp.restrictTLSCipherSuites:
   rules:
     - allow:
         values:
-          - is:INTERNAL
+            - "in:NIST-800-52-recommended-ciphers"
 
-# compute.restrictSharedVpcHostProjects:
-#   rules:
-#   - deny:
-#       all: true
+gcp.restrictTLSVersion:
+  rules:
+    - deny:
+        values:
+            - "TLS_VERSION_1"
+            - "TLS_VERSION_1_1"
 
-# compute.restrictSharedVpcSubnetworks:
-#   rules:
-#   - deny:
-#       all: true
+compute.requireSslPolicy:
+  rules:
+    - allow:
+        values:
+            - "under:organizations/${organization.id}"
 
-# compute.restrictVpcPeering:
-#   rules:
-#   - deny:
-#       all: true
+iam.automaticIamGrantsForDefaultServiceAccounts:
+  rules:
+    - enforce: true
 
-# compute.restrictVpnPeerIPs:
-#   rules:
-#   - deny:
-#       all: true
+compute.requireOsLogin:
+  rules:
+    - enforce: true
 
-# compute.restrictXpnProjectLienRemoval:
-#   rules:
-#   - enforce: true
+compute.managed.disableSerialPortAccess:
+  rules:
+    - enforce: true
 
-# compute.vmCanIpForward:
-#   rules:
-#   - deny:
-#       all: true
+compute.managed.disableSerialPortLogging:
+  rules:
+    - enforce: true
+
+compute.requireShieldedVm:
+  rules:
+    - enforce: true
+
+compute.managed.vmExternalIpAccess:
+  rules:
+    - enforce: true
+
+compute.managed.blockPreviewFeatures:
+  rules:
+    - enforce: true
+
+compute.trustedImageProjects:
+  rules:
+    - allow:
+        values:
+            - "is:projects/centos-cloud"
+            - "is:projects/cos-cloud"
+            - "is:projects/debian-cloud"
+            - "is:projects/fedora-cloud"
+            - "is:projects/fedora-coreos-cloud"
+            - "is:projects/opensuse-cloud"
+            - "is:projects/rhel-cloud"
+            - "is:projects/rhel-sap-cloud"
+            - "is:projects/rocky-linux-cloud"
+            - "is:projects/suse-cloud"
+            - "is:projects/suse-sap-cloud"
+            - "is:projects/ubuntu-os-cloud"
+            - "is:projects/ubuntu-os-pro-cloud"
+            - "is:projects/windows-cloud"
+            - "is:projects/windows-sql-cloud"
+            - "is:projects/confidential-vm-images"
+            - "is:projects/confidential-space-images"
+            - "is:projects/backupdr-images"
+            - "is:projects/deeplearning-platform-release"
+            - "is:projects/serverless-vpc-access-images"
+            - "is:projects/gke-node-images"
+            - "is:projects/gke-windows-node-images"
+            - "is:projects/ubuntu-os-gke-cloud"
+
+custom.networkRequireSubnetPrivateGoogleAccess:
+  rules:
+    - enforce: true
+

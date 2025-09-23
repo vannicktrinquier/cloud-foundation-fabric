@@ -18,22 +18,29 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
+custom.cloudrunDisableEnvironmentVariablePattern:
   rules:
     - enforce: true
 
-cloudbuild.allowedIntegrations:
-  rules:
-    - deny:
-        all: true
-
-cloudbuild.allowedWorkerPools:
+run.allowedBinaryAuthorizationPolicies:
   rules:
     - allow:
         values:
-            - "under:organizations/${organization.id}"
+            - "default"
 
-custom.cloudbuildDisableWorkerPoolExternalIP:
+run.allowedIngress:
+  rules:
+    - allow:
+        values:
+            - "is:internal-and-cloud-load-balancing"
+
+run.allowedVPCEgress:
+  rules:
+    - allow:
+        values:
+            - "all-traffic"
+
+run.managed.requireInvokerIam:
   rules:
     - enforce: true
 

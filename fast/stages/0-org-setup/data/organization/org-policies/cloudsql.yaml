@@ -18,22 +18,47 @@
 
 # yaml-language-server: $schema=../../../../../modules/organization/schemas/org-policies.schema.json
 
-cloudbuild.disableCreateDefaultServiceAccount:
+custom.cloudsqlDisablePublicAuthorizedNetworks:
   rules:
     - enforce: true
 
-cloudbuild.allowedIntegrations:
+sql.restrictAuthorizedNetworks:
   rules:
-    - deny:
-        all: true
+    - enforce: true
 
-cloudbuild.allowedWorkerPools:
+custom.cloudsqlEnforcePasswordComplexity:
   rules:
-    - allow:
-        values:
-            - "under:organizations/${organization.id}"
+    - enforce: true
 
-custom.cloudbuildDisableWorkerPoolExternalIP:
+custom.cloudsqlRequireAutomatedBackup:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireMySQLDatabaseFlags:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequirePointInTimeRecovery:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequirePostgreSQLDatabaseFlags:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireRootPassword:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireSQLServerDatabaseFlags:
+  rules:
+    - enforce: true
+
+custom.cloudsqlRequireSSLConnection:
+  rules:
+    - enforce: true
+
+sql.restrictPublicIp:
   rules:
     - enforce: true
 
