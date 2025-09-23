@@ -22,17 +22,24 @@ iam.allowedPolicyMemberDomains:
   rules:
     - allow:
         values:
-          - is:${organization.customer_id}
-      condition:
-        title: Restrict member domains
-        expression: |
-          !resource.matchTag('${organization.id}/org-policies', 'allowed-policy-member-domains-all')
-    - allow:
-        all: true
-      condition:
-        title: Allow any member domain
-        expression: |
-          resource.matchTag('${organization.id}/org-policies', 'allowed-policy-member-domains-all')
+          - is:C017xlhqd
+          - is:principalSet://iam.googleapis.com/organizations/424877732054
+
+# iam.allowedPolicyMemberDomains:
+#   rules:
+#     - allow:
+#         values:
+#           - is:${organization.customer_id}
+#       condition:
+#         title: Restrict member domains
+#         expression: |
+#           !resource.matchTag('${organization.id}/org-policies', 'allowed-policy-member-domains-all')
+#     - allow:
+#         all: true
+#       condition:
+#         title: Allow any member domain
+#         expression: |
+#           resource.matchTag('${organization.id}/org-policies', 'allowed-policy-member-domains-all')
 
 iam.disableAuditLoggingExemption:
   rules:

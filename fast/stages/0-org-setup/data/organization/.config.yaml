@@ -39,6 +39,46 @@ iam_bindings:
       title: Project factory org policy viewer
 # authoritative IAM bindings by principal
 iam_by_principals:
+  # Vannick permissions
+  user:vannick@gcp.altostrat.com:
+    - roles/iam.organizationRoleAdmin
+    - roles/orgpolicy.policyAdmin
+    - roles/resourcemanager.organizationAdmin
+    - roles/resourcemanager.projectCreator
+  # Argolis enforced permissions
+  group:argolis-gcp-resource-mgmt@twosync.google.com:
+    - roles/cloudasset.owner
+    - roles/orgpolicy.policyAdmin
+    - roles/resourcemanager.organizationAdmin
+  group:eip-cloud-multiorg@twosync.google.com:
+    - roles/orgpolicy.policyViewer
+  group:argolis-multiorg-org-type-owner@twosync.google.com:
+    - roles/resourcemanager.organizationAdmin
+  group:ops-security-incident_tools-cloud-chargeback@twosync-src.google.com:
+    - roles/orgpolicy.policyAdmin
+  group:sst-robots@twosync-src.google.com:
+    - roles/cloudasset.viewer
+  mdb:oslo-chp-multiorg-enrichment-clients:
+    - roles/cloudasset.viewer
+  serviceAccount:611923862592@cloudbuild.gserviceaccount.com:
+    - roles/orgpolicy.policyAdmin
+    - roles/owner
+    - roles/resourcemanager.projectCreator
+  serviceAccount:cloud-environments.google.com@appspot.gserviceaccount.com:
+    - roles/cloudasset.owner
+    - roles/essentialcontacts.admin
+    - roles/orgpolicy.policyAdmin
+    - roles/resourcemanager.folderAdmin
+    - roles/resourcemanager.organizationAdmin
+  serviceAccount:gcp-metadata@system.gserviceaccount.com:
+    - roles/cloudasset.viewer
+  serviceAccount:latchkey-multiorg-ephemeral-custom-automation@system.gserviceaccount.com:
+    - roles/iam.organizationRoleAdmin
+  serviceAccount:latchkey-multiorg-ephemeral-org-policy-automation@system.gserviceaccount.com:
+    - roles/orgpolicy.policyAdmin
+  serviceAccount:latchkey-multiorg-ephemeral-iam-automation@system.gserviceaccount.com:
+    - roles/resourcemanager.organizationAdmin
+  # Existing
   $iam_principals:gcp-organization-admins:
     - roles/cloudasset.owner
     - roles/cloudsupport.admin

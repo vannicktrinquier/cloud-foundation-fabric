@@ -16,26 +16,27 @@
 
 global:
   # use `gcloud beta billing accounts list` to populate
-  billing_account: ABCDEF-0123456-ABCDEF
+  billing_account: 01AD45-7C7CDF-40CB67
   locations:
-    bigquery: europe-west1
-    logging: europe-west1
+    bigquery: asia-southeast1
+    logging: asia-southeast1
   organization:
     # use `gcloud organizations list`` to populate
-    domain: fast-test-00.example.com
-    id: 1234567890
-    customer_id: abcd123456
+    domain: fast-00.fsi.com
+    id: 424877732054
+    # customer_id: abcd123456
 projects:
   defaults:
     # prefix must be unique and less than 9 characters
-    prefix: test00
-    storage_location: europe-west1
+    prefix: pso-fsi-00
+    storage_location: asia-southeast1
   overrides: {}
 context:
   # you can populate context variables here for use in YAML replacements
   iam_principals:
     # this is the default group used in boostrap, initial user must be a member
-    gcp-organization-admins: group:gcp-organization-admins@example.com
+    # gcp-organization-admins: group:gcp-organization-admins@example.com
+    gcp-organization-admins: user:vannick@gcp.altostrat.com
 output_files:
   # local path is optional but recommended when starting
   local_path: ~/fast-config/fast-test-00
