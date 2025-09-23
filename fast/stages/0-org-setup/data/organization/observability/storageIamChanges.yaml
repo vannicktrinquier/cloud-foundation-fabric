@@ -43,8 +43,6 @@ alerts:
         Storage buckets. ``` resource.type="gcs_bucket" AND protoPayload.methodName="storage.setIamPermissions"
         ```'
       mime_type: text/markdown
-    notification_channels:
-    - alert-channel
 logging_metrics:
   storageIamChanges:
     bucket_name: org-bucket

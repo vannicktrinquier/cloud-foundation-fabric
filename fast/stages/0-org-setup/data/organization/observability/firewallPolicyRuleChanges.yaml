@@ -41,8 +41,6 @@ alerts:
         \ OR \n  protoPayload.methodName:\"compute.networkFirewallPolicies.patchRule\"\
         )\n```"
       mime_type: text/markdown
-    notification_channels:
-    - alert-channel
 logging_metrics:
   firewallPolicyRuleChanges:
     bucket_name: org-bucket

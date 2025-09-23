@@ -43,8 +43,6 @@ alerts:
         \ OR \n    protoPayload.methodName=\"google.iam.admin.v1.UpdateRole\" OR \n\
         \    protoPayload.methodName=\"google.iam.admin.v1.DeleteRole\"\n  )\n```"
       mime_type: text/markdown
-    notification_channels:
-    - alert-channel
 logging_metrics:
   customRoleChanges:
     bucket_name: org-bucket

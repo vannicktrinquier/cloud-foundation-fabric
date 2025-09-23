@@ -44,8 +44,6 @@ alerts:
         compute.networks.updatePeering\" OR \n  protoPayload.methodName:\"compute.networks.removePeering\"\
         \n) ```"
       mime_type: text/markdown
-    notification_channels:
-    - alert-channel
 logging_metrics:
   networkChanges:
     bucket_name: org-bucket

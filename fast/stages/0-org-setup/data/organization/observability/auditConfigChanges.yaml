@@ -43,11 +43,12 @@ alerts:
         appropriate audit logs are being collected. ``` protoPayload.methodName="SetIamPolicy"
         AND protoPayload.serviceData.policyDelta.auditConfigDeltas:* ```'
       mime_type: text/markdown
-    notification_channels:
-    - alert-channel
+    # notification_channels:
+    # - alert-channel
 logging_metrics:
   auditConfigChanges:
     bucket_name: org-bucket
+    # bucket_name: ${organization.id}
     description: Audit Configuration Changes
     filter: protoPayload.methodName="SetIamPolicy" AND protoPayload.serviceData.policyDelta.auditConfigDeltas:*
     label_extractors:

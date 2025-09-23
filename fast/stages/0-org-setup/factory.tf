@@ -57,3 +57,29 @@ module "factory" {
     projects          = var.factories_config.projects
   }
 }
+
+
+module "monitoring-alerts-project" {
+  source = "../../../modules/project"
+  name   = module.factory.project_ids["log-0"]
+
+  project_reuse = {
+    use_data_source = false
+    attributes = {
+      name   = module.factory.project_ids["log-0"]
+      number = module.factory.project_numbers["log-0"]
+    }
+  }
+
+  context = {
+    logging_bucket_names = {
+      "org-bucket":  module.factory.projects["log-0"]["log_buckets"]["log-0/audit-logs"]
+    }
+  }
+
+  factories_config = {
+    observability =  "${local.paths.organization}/observability"
+  }
+
+  depends_on = [module.factory]
+}

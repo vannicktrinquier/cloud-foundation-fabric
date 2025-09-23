@@ -43,8 +43,6 @@ alerts:
         OR protoPayload.methodName:"compute.firewalls.insert" OR protoPayload.methodName:"compute.firewalls.delete")
         ```'
       mime_type: text/markdown
-    notification_channels:
-    - alert-channel
 logging_metrics:
   firewallRuleChanges:
     bucket_name: org-bucket

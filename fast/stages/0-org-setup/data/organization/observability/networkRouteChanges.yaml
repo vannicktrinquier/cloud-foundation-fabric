@@ -41,8 +41,6 @@ alerts:
         \  protoPayload.methodName:\"compute.routes.insert\" OR \n  protoPayload.methodName:\"\
         compute.routes.delete\"\n) ```"
       mime_type: text/markdown
-    notification_channels:
-    - alert-channel
 logging_metrics:
   networkRouteChanges:
     bucket_name: org-bucket

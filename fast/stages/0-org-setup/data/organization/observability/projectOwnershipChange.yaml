@@ -44,8 +44,6 @@ alerts:
         ADD\" AND \n  protoPayload.serviceData.policyDelta.bindingDeltas.role=\"roles/owner\"\
         \n) ```"
       mime_type: text/markdown
-    notification_channels:
-    - alert-channel
 logging_metrics:
   projectOwnershipChange:
     bucket_name: org-bucket
