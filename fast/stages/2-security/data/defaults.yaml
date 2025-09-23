@@ -16,8 +16,8 @@
 
 context:
   locations:
-    primary: europe-west1
-    secondary: europe-west3
+    primary: asia-southeast1
+    secondary: asia-southeast12
 projects:
   defaults:
-    storage_location: eu
+    storage_location: asia
