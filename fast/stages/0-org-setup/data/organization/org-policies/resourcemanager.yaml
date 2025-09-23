@@ -22,6 +22,7 @@ gcp.resourceLocations:
   rules:
     - allow:
         values:
+            - "global"
             - "in:asia-locations"
             - "in:sg-locations"
 

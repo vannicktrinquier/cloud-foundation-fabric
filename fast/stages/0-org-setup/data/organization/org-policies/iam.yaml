@@ -22,9 +22,10 @@ custom.iamAllowedMembers:
   rules:
     - enforce: true
 
-custom.iamDisableAdminServiceAccount:
-  rules:
-    - enforce: true
+# Disable for FAST
+# custom.iamDisableAdminServiceAccount:
+#   rules:
+#     - enforce: true
 
 custom.iamDisableBasicRoles:
   rules:
@@ -52,11 +53,12 @@ iam.managed.disableServiceAccountApiKeyCreation:
   rules:
     - enforce: true
 
-iam.managed.allowedPolicyMembers:
-  rules:
-    - enforce: true
-      parameters: >- 
-        { "allowedPrincipalSets": ["//cloudresourcemanager.googleapis.com/organizations/${organization.id}"] }
+# Failing with Fabric
+# iam.managed.allowedPolicyMembers:
+#   rules:
+#     - enforce: true
+#       parameters: >- 
+#         { "allowedPrincipalSets": ["//cloudresourcemanager.googleapis.com/organizations/${organization.id}"] }
 
 # iam.allowedPolicyMemberDomains:
 #   rules:
