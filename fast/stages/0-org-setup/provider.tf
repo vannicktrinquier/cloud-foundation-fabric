@@ -1,5 +1,5 @@
 /**
- * Copyright 2025 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -9,17 +9,32 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES, OR CONDITIONS OF ANY KIND, either express or implied.
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
 
+terraform {
+  backend "gcs" {
+    bucket                      = "pso-fsi-01-prod-iac-core-0-iac-org-state"
+    impersonate_service_account = "iac-org-rw@pso-fsi-01-prod-iac-core-0.iam.gserviceaccount.com"
+    
+  }
+}
 provider "google" {
-  billing_project       = "tmp-fsi-argolis-billing"
-  user_project_override = true
+  impersonate_service_account = "iac-org-rw@pso-fsi-01-prod-iac-core-0.iam.gserviceaccount.com"
+}
+provider "google-beta" {
+  impersonate_service_account = "iac-org-rw@pso-fsi-01-prod-iac-core-0.iam.gserviceaccount.com"
 }
 
-provider "google-beta" {
-  billing_project       = "tmp-fsi-argolis-billing"
-  user_project_override = true
-}
+
+# provider "google" {
+#   billing_project       = "tmp-fsi-argolis-billing"
+#   user_project_override = true
+# }
+
+# provider "google-beta" {
+#   billing_project       = "tmp-fsi-argolis-billing"
+#   user_project_override = true
+# }
