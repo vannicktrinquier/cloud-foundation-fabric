@@ -87,6 +87,7 @@ module "organization" {
     org_policy_custom_constraints = "${local.paths.organization}/custom-constraints"
     custom_roles                  = "${local.paths.organization}/custom-roles"
     tags                          = "${local.paths.organization}/tags"
+    # scc_customs_sha_modules        = "${local.paths.organization}/scc-custom-sha-modules"
   }
   tags_config = {
     ignore_iam = true

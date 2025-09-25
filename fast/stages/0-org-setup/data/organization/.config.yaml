@@ -106,6 +106,8 @@ iam_by_principals:
     - roles/resourcemanager.projectMover
     - roles/resourcemanager.tagAdmin
     - roles/resourcemanager.tagUser
+    # To add for FAST
+    - roles/securityposture.admin
   $iam_principals:service_accounts/iac-0/iac-org-ro:
     - roles/cloudasset.viewer
     - roles/essentialcontacts.viewer
