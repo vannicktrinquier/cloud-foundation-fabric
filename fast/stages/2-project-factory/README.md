@@ -178,13 +178,13 @@ ln -s ~/fast-config/fast-test-00/2-vpcsc.auto.tfvars.json ./
 # File linking commands for project factory (org level) stage
 
 # provider file
-gcloud storage cp gs://pso-fsi-01-prod-iac-core-0-iac-outputs/providers/2-project-factory-providers.tf ./
+gcloud storage cp gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/providers/2-project-factory-providers.tf ./
 
 # input files from other stages
-gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/0-globals.auto.tfvars.json ./
-gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/0-org-setup.auto.tfvars.json ./
-gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/1-vpcsc.auto.tfvars.json ./
-gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/2-networking.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/tfvars/0-globals.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/tfvars/0-org-setup.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/tfvars/1-vpcsc.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/tfvars/2-networking.auto.tfvars.json ./
 
 # conventional place for stage tfvars (manually created)
 gcloud storage cp gs://xxx-prod-iac-core-outputs-0/2-project-factory.auto.tfvars ./

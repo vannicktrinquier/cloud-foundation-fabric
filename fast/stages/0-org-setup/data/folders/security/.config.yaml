@@ -14,7 +14,7 @@
 
 # yaml-language-server: $schema=../../../schemas/folder.schema.json
 
-name: FSI Security
+name: FSI 5 Security
 iam_by_principals:
   $iam_principals:service_accounts/iac-0/iac-security-rw:
     - roles/logging.admin
@@ -31,6 +31,8 @@ iam_by_principals:
   $iam_principals:service_accounts/iac-0/iac-pf-ro:
     - roles/cloudkms.viewer
     - $custom_roles:project_iam_viewer
+tag_bindings:
+  org-policies: $tag_values:org-policies/allowed-non-cmek-services
 iam_bindings:
   project_factory:
     role: roles/resourcemanager.projectIamAdmin

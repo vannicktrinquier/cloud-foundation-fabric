@@ -62,6 +62,17 @@ gcp.restrictNonCmekServices:
             - "storage.googleapis.com"
             - "storagetransfer.googleapis.com"
             - "workstations.googleapis.com"
+      condition:
+        title: Restrict services to use CMEK
+        expression: |
+          !resource.matchTag('${organization.id}/org-policies', 'allowed-non-cmek-services')
+    - allow:
+        all: true
+      condition:
+        title: Allow service to not use CMEK
+        expression: |
+          resource.matchTag('${organization.id}/org-policies', 'allowed-non-cmek-services')
+
 
 gcp.restrictCmekCryptoKeyProjects:
   rules:

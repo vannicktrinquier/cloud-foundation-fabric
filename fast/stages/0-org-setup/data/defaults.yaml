@@ -28,7 +28,7 @@ global:
 projects:
   defaults:
     # prefix must be unique and less than 9 characters
-    prefix: pso-fsi-01
+    prefix: pso-fsi-00
     storage_location: asia-southeast1
   overrides: {}
 context:

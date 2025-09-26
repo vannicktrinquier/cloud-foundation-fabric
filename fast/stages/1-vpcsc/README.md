@@ -111,19 +111,19 @@ ln -s ~/fast-config/fast-test-00/1-vpcsc.auto.tfvars ./
 
 ```bash
 # the outputs bucket name is in the stage 0 outputs and tfvars file
-../fast-links.sh  gs://pso-fsi-01-prod-iac-core-0-iac-outputs
+../fast-links.sh  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs
 
 # File linking commands for vpc service controls stage
 
 # provider file
-gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/providers/1-vpcsc-providers.tf ./
+gcloud storage cp  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/providers/1-vpcsc-providers.tf ./
 
 # input files from other stages
-gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/0-globals.auto.tfvars.json ./
-gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/0-org-setup.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/tfvars/0-globals.auto.tfvars.json ./
+gcloud storage cp  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/tfvars/0-org-setup.auto.tfvars.json ./
 
 # conventional place for stage tfvars (manually created)
-gcloud storage cp  gs://pso-fsi-01-prod-iac-core-0-iac-outputs/1-vpcsc.auto.tfvars ./
+# gcloud storage cp  gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/1-vpcsc.auto.tfvars ./
 ```
 
 ### Impersonating the automation service account

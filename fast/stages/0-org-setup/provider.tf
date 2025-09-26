@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-terraform {
-  backend "gcs" {
-    bucket                      = "pso-fsi-01-prod-iac-core-0-iac-org-state"
-    impersonate_service_account = "iac-org-rw@pso-fsi-01-prod-iac-core-0.iam.gserviceaccount.com"
-    
-  }
-}
-provider "google" {
-  impersonate_service_account = "iac-org-rw@pso-fsi-01-prod-iac-core-0.iam.gserviceaccount.com"
-}
-provider "google-beta" {
-  impersonate_service_account = "iac-org-rw@pso-fsi-01-prod-iac-core-0.iam.gserviceaccount.com"
-}
 
+# terraform {
+#   backend "gcs" {
+#     bucket                      = "pso-fsi-00-prod-iac-core-0-a-iac-org-state"
+#     impersonate_service_account = "iac-org-rw@pso-fsi-00-prod-iac-core-0-a.iam.gserviceaccount.com"
+    
+#   }
+# }
+# provider "google" {
+#   impersonate_service_account = "iac-org-rw@pso-fsi-00-prod-iac-core-0-a.iam.gserviceaccount.com"
+# }
+# provider "google-beta" {
+#   impersonate_service_account = "iac-org-rw@pso-fsi-00-prod-iac-core-0-a.iam.gserviceaccount.com"
+# }
 
 # provider "google" {
 #   billing_project       = "tmp-fsi-argolis-billing"
-#   user_project_override = true
+#   user_project_override = trueyes
 # }
 
 # provider "google-beta" {

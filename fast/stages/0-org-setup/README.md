@@ -220,15 +220,15 @@ ln -s /home/user/fast-configs/test-0/0-org-setup.auto.tfvars ./
 If you did not configure local output files use the GCS bucket to fetch output files. The bucket name can be derived from the `tfvars.org_setup.automation.outputs_bucket` Terraform output. Adjust the path, run the script, then copy/paste the resulting commands.
 
 ```bash
-../fast-links.sh gs://pso-fsi-01-prod-iac-core-0-iac-outputs
+../fast-links.sh gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs
 # File linking commands for FAST Organization Setup stage
 
 # provider file
-gcloud storage cp gs://pso-fsi-01-prod-iac-core-0-iac-outputs/providers/0-org-setup-providers.tf ./
+gcloud storage cp gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/providers/0-org-setup-providers.tf ./
 
 # conventional location for this stage terraform.tfvars (manually managed)
-gcloud storage cp gs:/pso-fsi-01-prod-iac-core-0-iac-outputs/0-org-setup.auto.tfvars ./
-gcloud storage cp gs://pso-fsi-01-prod-iac-core-0-iac-outputs/tfvars/0-org-setup.auto.tfvars.json .
+# gcloud storage cp gs:/pso-fsi-00-prod-iac-core-0-a-iac-outputs/0-org-setup.auto.tfvars ./
+gcloud storage cp gs://pso-fsi-00-prod-iac-core-0-a-iac-outputs/tfvars/0-org-setup.auto.tfvars.json .
 ```
 
 Once the provider file has been setup, migrate local state to the GCS backend and re-run apply.
