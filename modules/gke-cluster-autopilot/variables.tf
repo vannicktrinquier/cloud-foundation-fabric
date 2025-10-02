@@ -52,6 +52,7 @@ variable "backup_configs" {
       include_volume_data               = optional(bool, true)
       labels                            = optional(map(string))
       namespaces                        = optional(list(string))
+      permissive_mode                   = optional(bool)
       region                            = string
       schedule                          = string
       retention_policy_days             = optional(string)
@@ -250,6 +251,7 @@ variable "node_config" {
     tags                          = optional(list(string))
     workload_metadata_config_mode = optional(string)
     kubelet_readonly_port_enabled = optional(bool, true)
+    resource_manager_tags         = optional(map(string), {})
   })
   default  = {}
   nullable = false

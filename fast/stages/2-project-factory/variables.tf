@@ -17,6 +17,7 @@
 variable "context" {
   description = "Context-specific interpolations."
   type = object({
+    condition_vars        = optional(map(map(string)), {})
     custom_roles          = optional(map(string), {})
     folder_ids            = optional(map(string), {})
     iam_principals        = optional(map(string), {})
@@ -35,6 +36,7 @@ variable "context" {
 variable "factories_config" {
   description = "Path to folder with YAML resource description data files."
   type = object({
+    defaults = optional(string, "data/defaults.yaml")
     folders  = optional(string, "data/folders")
     projects = optional(string, "data/projects")
     budgets = optional(object({
