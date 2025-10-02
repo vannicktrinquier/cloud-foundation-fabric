@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-# tfdoc:file:description Organization-level Custom modules with Security Health Analytics.
+# tfdoc:file:description Folder-level Custom modules with Security Health Analytics.
 
 locals {
-  _scc_custom_modules_factory_path = pathexpand(coalesce(var.factories_config.scc_custom_modules, "-"))
-  _scc_custom_modules_factory_data_raw = merge([
-    for f in try(fileset(local._scc_custom_modules_factory_path, "*.yaml"), []) :
-    yamldecode(file("${local._scc_custom_modules_factory_path}/${f}"))
+  _scc_sha_custom_modules_factory_path = pathexpand(coalesce(var.factories_config.scc_sha_custom_modules, "-"))
+  _scc_sha_custom_modules_factory_data_raw = merge([
+    for f in try(fileset(local._scc_sha_custom_modules_factory_path, "*.yaml"), []) :
+    yamldecode(file("${local._scc_sha_custom_modules_factory_path}/${f}"))
   ]...)
-  _scc_custom_modules_factory_data = {
-    for k, v in local._scc_custom_modules_factory_data_raw :
+  _scc_sha_custom_modules_factory_data = {
+    for k, v in local._scc_sha_custom_modules_factory_data_raw :
     k => {
       description       = try(v.description, null)
       severity          = v.severity
@@ -33,24 +33,25 @@ locals {
       enablement_state  = try(v.enablement_state, "ENABLED")
     }
   }
-  _scc_custom_modules = merge(
-    local._scc_custom_modules_factory_data,
-    var.scc_custom_modules
+  _scc_sha_custom_modules = merge(
+    local._scc_sha_custom_modules_factory_data,
+    var.scc_sha_custom_modules
   )
-  scc_custom_modules = {
-    for k, v in local._scc_custom_modules :
+  scc_sha_custom_modules = {
+    for k, v in local._scc_sha_custom_modules :
     k => merge(v, {
       name   = k
-      parent = var.organization_id
+      parent = local.folder_id
     })
   }
+
 }
 
-resource "google_scc_management_organization_security_health_analytics_custom_module" "scc_organization_custom_module" {
+resource "google_scc_management_folder_security_health_analytics_custom_module" "scc_folder_custom_module" {
   provider = google
 
-  for_each     = local.scc_custom_modules
-  organization = replace(var.organization_id, "organizations/", "")
+  for_each     = local.scc_sha_custom_modules
+  folder       = replace(local.folder_id, "folders/", "")
   location     = "global"
   display_name = each.value.name
   custom_config {

@@ -53,7 +53,7 @@ variable "factories_config" {
     custom_roles                  = optional(string)
     org_policies                  = optional(string)
     org_policy_custom_constraints = optional(string)
-    scc_custom_modules            = optional(string)
+    scc_sha_custom_modules            = optional(string)
     tags                          = optional(string)
   })
   nullable = false
@@ -120,7 +120,7 @@ variable "organization_id" {
   }
 }
 
-variable "scc_custom_modules" {
+variable "scc_sha_custom_modules" {
   description = "SCC custom modules keyed by module name."
   type = map(object({
     description    = optional(string)

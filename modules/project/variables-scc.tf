@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-variable "scc_custom_modules" {
+variable "scc_sha_custom_modules" {
   description = "SCC custom modules keyed by module name."
   type = map(object({
     description    = optional(string)
