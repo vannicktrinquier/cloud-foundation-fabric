@@ -119,22 +119,3 @@ variable "organization_id" {
     error_message = "The organization_id must in the form organizations/nnn."
   }
 }
-
-variable "scc_sha_custom_modules" {
-  description = "SCC custom modules keyed by module name."
-  type = map(object({
-    description    = optional(string)
-    severity       = string
-    recommendation = string
-    predicate = object({
-      expression = string
-    })
-    resource_selector = object({
-      resource_types = list(string)
-    })
-    enablement_state = optional(string, "ENABLED")
-  }))
-  default  = {}
-  nullable = false
-}
-
