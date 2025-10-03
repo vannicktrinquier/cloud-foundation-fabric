@@ -418,7 +418,7 @@ module "folder" {
 ```
 
 ```yaml
-# tftest-file id=custom-module-sha-1 path=data/scc_sha_custom_modules/cloudkmKeyRotationPeriod.yaml
+# tftest-file id=custom-module-sha-1 path=data/scc_sha_custom_modules/cloudkmKeyRotationPeriod.yaml schema=scc-sha-custom-modules.schema.json
 cloudkmKeyRotationPeriod:
   description: "The rotation period of the identified cryptokey resource exceeds 30 days."
   recommendation: "Set the rotation period to at most 30 days."
