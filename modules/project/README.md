@@ -989,7 +989,7 @@ module "project" {
 ```
 
 ```yaml
-# tftest-file id=custom-module-sha-1 path=data/scc_sha_custom_modules/cloudkmKeyRotationPeriod.yaml
+# tftest-file id=custom-module-sha-1 path=data/scc_sha_custom_modules/cloudkmKeyRotationPeriod.yaml schema=osrg-policies.schema.json
 cloudkmKeyRotationPeriod:
   description: "The rotation period of the identified cryptokey resource exceeds 30 days."
   recommendation: "Set the rotation period to at most 30 days."
@@ -1928,12 +1928,14 @@ alerts:
 | [notification_channel_names](outputs.tf#L90) | Notification channel names. |  |
 | [notification_channels](outputs.tf#L98) | Full notification channel objects. |  |
 | [number](outputs.tf#L103) | Project number. |  |
-| [project_id](outputs.tf#L121) | Project id. |  |
-| [quota_configs](outputs.tf#L139) | Quota configurations. |  |
-| [quotas](outputs.tf#L150) | Quota resources. |  |
-| [service_agents](outputs.tf#L155) | List of all (active) service agents for this project. |  |
-| [services](outputs.tf#L164) | Service APIs to enable in the project. |  |
-| [sink_writer_identities](outputs.tf#L173) | Writer identities created for each sink. |  |
-| [tag_keys](outputs.tf#L180) | Tag key resources. |  |
-| [tag_values](outputs.tf#L189) | Tag value resources. |  |
+| [organization_policies_ids](outputs.tf#L118) | Map of ORGANIZATION_POLICIES => ID in the organization. |  |
+| [project_id](outputs.tf#L125) | Project id. |  |
+| [quota_configs](outputs.tf#L143) | Quota configurations. |  |
+| [quotas](outputs.tf#L154) | Quota resources. |  |
+| [scc_custom_sha_modules_ids](outputs.tf#L159) | Map of SCC CUSTOM SHA MODULES => ID in the organization. |  |
+| [service_agents](outputs.tf#L164) | List of all (active) service agents for this project. |  |
+| [services](outputs.tf#L173) | Service APIs to enable in the project. |  |
+| [sink_writer_identities](outputs.tf#L182) | Writer identities created for each sink. |  |
+| [tag_keys](outputs.tf#L189) | Tag key resources. |  |
+| [tag_values](outputs.tf#L198) | Tag value resources. |  |
 <!-- END TFDOC -->
